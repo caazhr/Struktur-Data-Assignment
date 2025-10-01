@@ -246,6 +246,7 @@ int main() {
 #### Output:
 <img width="1156" height="167" alt="Image" src="https://github.com/user-attachments/assets/8b29d765-f55f-4393-941a-fd6a09b42399" />
 
+
 Kode di atas digunakan untuk menghitung penjumlahan, pengurangan, pembagian, dan perkalian. Dengan 2 buah inputan bertipe float
 
 #### Full code Screenshot:
@@ -292,6 +293,7 @@ int main() {
 ```
 #### Output:
 <img width="1071" height="77" alt="Image" src="https://github.com/user-attachments/assets/4ca01138-10c6-4302-91bf-fc8ac16c003d" />
+
 
 Kode di atas digunakan untuk Mengubah angka bilangan bulat positif (0-100) menjadi bentuk text menggunakan bahasa indonesia.
 

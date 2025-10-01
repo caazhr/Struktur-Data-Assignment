@@ -293,10 +293,10 @@ int main() {
 #### Output:
 <img width="1156" height="167" alt="Image" src="https://github.com/user-attachments/assets/8b29d765-f55f-4393-941a-fd6a09b42399" />
 
-Kode di atas digunakan untuk menghitung penjumlahan, pengurangan, pembagian, dan perkalian. Dengan 2 buah inputan bertipe float
+Kode di atas digunakan untuk Mengubah angka bilangan bulat positif (0-100) menjadi bentuk text menggunakan bahasa indonesia.
 
 #### Full code Screenshot:
-<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/05a0004d-aac1-4679-a50a-df68b23e5c4b" />
+<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/f859e8fb-3598-464b-b97f-74fc7cc55a39" />
 
 
 ### 3. [mirror]

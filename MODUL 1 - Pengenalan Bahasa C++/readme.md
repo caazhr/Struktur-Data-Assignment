@@ -220,7 +220,7 @@ kode diatas digunakan untuk mencatat nama dan umur mahasiswa yang jumlahnya dite
 
 ## Unguided 
 
-### 1. [Aritmatika]
+### 1. [Buatlah program yang menerima input-an dua buah bilangan betipe float, kemudian memberikan output-an hasil penjumlahan, pengurangan, perkalian, dan pembagian dari dua bilangan tersebut.]
 
 ```C++
 #include <iostream>

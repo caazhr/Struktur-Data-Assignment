@@ -32,21 +32,36 @@ Bahasa C++ merupakan bahasa yang kaya dengan operator yaitu:
 
 Kondisional -> (if, if-else, switch)
 Perulangan (Looping) -> Perulangan digunakan untuk menjalankan satu pernyataan berulang kali selama kondisi terpenuhi
-Struct
+Struct -> merupakan tipe data bentukan yang isinya kumpulan dari variabel yang dinyatakan sebuah nama, variabelnya bisa memiliki tipe yang berbeda-beda. Jadi struct digunakan untuk mengelompokan informasi yang saling berkaitan.
+
 ## Guided 
 
-### 1. [Nama Topik]
+### 1. [Hello Word]
 
 ```C++
 #include <iostream>
 using namespace std;
 
 int main() {
-    cout << "ini adalah file code guided praktikan" << endl;
+    // Write C++ code here
+   cout << "Hello world!";
     return 0;
 }
 ```
-Kode di atas digunakan untuk mencetak teks "ini adalah file code guided praktikan" ke layar menggunakan function cout untuk mengeksekusi nya.
+Kode di atas digunakan untuk menamplkan teks ke layar dengan output "Hello World!"
+
+### 2. [Hello Word]
+
+```C++
+#include <iostream>
+using namespace std;
+
+int main() {
+    // Write C++ code here
+   cout << "Hello world!";
+    return 0;
+}
+```
 
 ## Unguided 
 

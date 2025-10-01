@@ -3,8 +3,36 @@
 
 ## Dasar Teori
 
-Pada Modul 1 ini berisi panduan pengantar .
+Pada Modul 1 ini berisi panduan untuk menginstal dan menggunakan code blocks dan mempelajari dasar-dasar dan pengenalan mengenai bahasa pemrograman C++.
 
+Dimulai dengan pengenalan code bloks, instalasi code bloks, cara menggunakannya.
+selanjutnya membahas sekilas mengenai C++
+jadi C++ diciptakan oleh Bjarne Stroustrup di AT&T Bell Laboratories awal tahun 1980-an didasarkan pada C ANSI,.
+
+Pada modul 1 ini membahas mengenai struktur program C++.
+Selanjutnya membahas pengenal(identifier) -> nama yang digunakan untuk variabel, konstanta, fungsi, atau objek lain. Dalam modul ini membahas juga mengenai tipe dasar, dari yang saya pelajari dalam modul ini data berdasarkan jenisnya dibagi ke dalam 5 kelompok, yaitu: 
+1. Bil bulat(integer),
+2. Bil real [resisi-tunggal,
+3. Bil real presisi-ganda,
+4. Karakterr,
+5. Tak bertipe.
+Adapun daftar tipe data, yaitu: char, int, long, float, double.
+
+lalu membahas variabel, jadi variabel merupakan program yang digunakan untuk menyimpan nilai. 
+lalu membahas konstanta -> menyatakan nilai yang selalu tetap dan mempunyai tipe. 
+input/output -> merupakan masukan dan keluaran. 
+operator -> simbol yang digunakan untuk melakukan suatu operasi atau manipulasi.
+Bahasa C++ merupakan bahasa yang kaya dengan operator yaitu:
+1. operator Aritmatika
+2. Operator Pengerjaan (Assigment)
+3. Operator Logika
+4. Operator Unary
+5. Operator Sizeof
+6. Operator Increment dan Decrement
+
+Kondisional -> (if, if-else, switch)
+Perulangan (Looping) -> Perulangan digunakan untuk menjalankan satu pernyataan berulang kali selama kondisi terpenuhi
+Struct
 ## Guided 
 
 ### 1. [Nama Topik]

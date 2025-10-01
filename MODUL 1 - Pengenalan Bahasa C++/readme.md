@@ -50,29 +50,196 @@ int main() {
 ```
 Kode di atas digunakan untuk menamplkan teks ke layar dengan output "Hello World!"
 
-### 2. [Hello Word]
+### 2. [inputOutput]
 
 ```C++
-#include <iostream>
-using namespace std;
-
+#include <iostream> 
+using namespace std; 
 int main() {
-    // Write C++ code here
-   cout << "Hello world!";
+    int n;
+    const float phi = 3.14;
+
+    cout << "Masukkan Angka: ";
+    cin >> n;
+
+    cout << "Angka Dikeluarkan: " << n << endl;
+    cout << "Nilai Konstanta Phi: " << phi << endl;
     return 0;
 }
 ```
+Kode diatas digunakan dengan cara memasukkan input angka dari user, menyimpannya dalam variabel, dan kemudian menampilkan angka bersama dengan nilai phi. 
 
-## Unguided 
-
-### 1. [Soal]
+### 3. [Operator]
 
 ```C++
 #include <iostream>
 using namespace std;
 
 int main() {
-    cout << "ini adalah file code unguided praktikan" << endl;
+   int a;
+   int b;
+
+   cout << "Masukkan Angka1: ";
+    cin >> a;
+    cout << "Masukkan Angka2: ";
+    cin >> b;
+
+    //operator aritmatika
+    cout << "a + b = " << (a + b) << endl;
+    cout << "a - b = " << (a - b) << endl;
+    cout << "a * b = " << (a * b) << endl;
+    cout << "a / b = " << (a / b) << endl;
+    cout << "a % b = " << (a % b) << endl;
+
+    // Operator Logika
+    cout << "a > b = " << (a > b) << endl;
+    cout << "a < b = " << (a < b) << endl;
+    cout << "a >= b = " << (a >= b) << endl;
+    cout << "a <= b = " << (a <= b) << endl;
+    cout << "a == b = " << (a == b) << endl;
+    cout << "a != b = " << (a != b) << endl;
+    return 0;
+
+}
+```
+Kode diatas digunakan untuk demonstrasi operator aritmatika dan operator logika, dengan menginput dua angka (a dan b), kemudian menghitung dan menampilkan hasil dari operasi aritmatika dan perbandingan logis antara kedua angka tersebut.
+
+### 4. [Percabangan]
+
+```C++
+#include <iostream>
+using namespace std;
+int main() {
+    int angka1 = 10;
+    int angka2 = 20;
+
+    if (angka1 > angka2) {
+        cout << "Angka 1 lebih besar dari Angka 2" << endl;
+    } else if (angka1 < angka2) {
+        cout << "Angka 1 lebih kecil dari Angka 2" << endl;
+    } else {
+        cout << "Angka 1 sama dengan Angka 2" << endl; 
+    }
+    return 0;
+}
+
+```
+Kode diatas digunakan untuk menguji, memandingkan dua nilai yang telah ditetapkan(angka1=10 dan angka2=20), menggunakan if-else if-else.
+
+### 5. [Perulangan Do While]
+
+```C++
+#include <iostream>
+using namespace std;
+
+int main() {
+   int i = 0;
+   int j = 20;
+
+   while (i <= 10) {
+         cout << i <<  "-";
+         i++;
+      }
+      cout << endl;
+
+    do {
+        cout << j << "-";
+        j++;
+    } while (j <= 10);
+
+    return 0;
+   }
+```
+kode diatas digunakan untuk mendemostrasikan dua jenis perulangan yaitu while dan do-while. Untuk output pada baris pertama berisi angka 0-10 dengan tanda (-) ditengah tengah angka, kemudian untuk baris kedua berisi nilai 20
+
+### 6. [Perulangan For Do while]
+
+```C++
+#include <iostream>
+using namespace std;
+int main() {
+   int i ;
+   int j = 0;
+
+   for (int i = 0; i < 10; i++) {
+         cout << i <<  "-";
+      }
+      cout << endl;
+
+    do {
+        cout << j << "-";
+        j++;
+    } while (j < 10);
+
+    return 0;
+   }
+
+```
+Kode diatas digunakan untuk menampilkan deretan angka 0-9, dengan tanda (-) diantara angka, kode ini menggunakan dua jenis perulangan yaitu perulangan for, dan do while. jadi outputnya akan menampilkan deretan angka 0-9 sebanyak 2 kali.
+
+### 7. [Struktur]
+
+```C++
+#include <iostream>
+using namespace std;
+
+struct Mahasiswa {
+    string nama;
+    int umur;
+    
+};
+
+int main() {
+  int jumlah;
+
+  cout << "Masukkan jumlah mahasiswa: ";
+    cin >> jumlah;
+
+    Mahasiswa mhs[jumlah];
+
+    //input data  menggunakan loop
+    for (int i = 0; i < jumlah; i++) {
+        cout << "\nMahasiswa ke-" << i + 1 << endl;
+        cout << "Masukkan Nama: ";
+        cin >> mhs[i].nama;
+        cout << "Masukkan Umur: ";
+        cin >> mhs[i].umur;
+    }
+    //Tampilkan data
+    cout << "\n=== Data Mahasiswa ===\n";
+    for (int i = 0; i < jumlah; i++) {
+        cout << "Mahasiswa ke-" << i + 1 
+             << " | Nama: " << mhs[i].nama 
+             << " | Umur: " << mhs[i].umur << endl;
+    }
+
+    return 0;
+}
+```
+kode diatas digunakan untuk mencatat nama dan umur mahasiswa yang jumlahnya ditentukan oleh user
+
+## Unguided 
+
+### 1. [Aritmatika]
+
+```C++
+#include <iostream>
+using namespace std;
+
+int main() {
+   float a, b;
+
+   cout << "Masukkan Angka1: ";
+    cin >> a;
+    cout << "Masukkan Angka2: ";
+    cin >> b;
+
+    cout << "Hasil Penjumlahan = " << (a + b) << endl;
+    cout << "Hasil Pengurangan = " << (a - b) << endl;
+    cout << "Hasil Perkalian = " << (a * b) << endl;
+    cout << "Hasil Pembagian = " << (a / b) << endl;
+   
+
     return 0;
 }
 ```
@@ -84,6 +251,84 @@ Kode di atas digunakan untuk mencetak teks "ini adalah file code guided praktika
 #### Full code Screenshot:
 ![240309_10h21m35s_screenshot](https://github.com/suxeno/Struktur-Data-Assignment/assets/111122086/41e9641c-ad4e-4e50-9ca4-a0215e336b04)
 
+### 2. [Angka]
+
+```C++
+#include <iostream>
+using namespace std;
+
+string satuan[] = {"nol", "satu", "dua", "tiga", "empat", "lima", 
+                   "enam", "tujuh", "delapan", "sembilan"};
+
+string terbilang(int n) {
+    if (n == 0) return "nol";
+    else if (n == 10) return "sepuluh";
+    else if (n == 11) return "sebelas";
+    else if (n < 10) return satuan[n];
+    else if (n < 20) return satuan[n % 10] + " belas";
+    else if (n < 100) {
+        int puluh = n / 10;
+        int sisa = n % 10;
+        string hasil = satuan[puluh] + " puluh";
+        if (sisa > 0) hasil += " " + satuan[sisa];
+        return hasil;
+    } 
+    else if (n == 100) return "seratus";
+    return "";
+}
+
+int main() {
+    int angka;
+    cout << "Masukkan angka (0 - 100): ";
+    cin >> angka;
+
+    if (angka < 0 || angka > 100) {
+        cout << "Masukkan bilangan bulat positif!";
+    } else {
+        cout << angka << " : " << terbilang(angka) << endl;
+    }
+    return 0;
+}
+```
+### 3. [mirror]
+
+```C++
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Input: ";
+    cin >> n;
+
+    cout << "Output:" << endl;
+
+    for (int i = n; i >= 1; i--) {
+        for (int s = n; s > i; s--) {
+            cout << "  "; 
+        }
+
+        for (int j = i; j >= 1; j--) {
+            cout << j << " ";
+        }
+
+        cout << "* ";
+
+        for (int j = 1; j <= i; j++) {
+            cout << j << " ";
+        }
+
+        cout << endl;
+    }
+   
+    for (int s = 0; s < n; s++) {
+        cout << "  ";
+    }
+    cout << "*" << endl;
+
+    return 0;
+}
+```
 
 ## Kesimpulan
 Ringkasan dan interpretasi pandangan kalia dari hasil praktikum dan pembelajaran yang didapat[1].

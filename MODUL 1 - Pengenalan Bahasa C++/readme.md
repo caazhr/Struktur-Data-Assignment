@@ -344,11 +344,10 @@ int main() {
 <img width="1071" height="77" alt="Image" src="https://github.com/user-attachments/assets/4ca01138-10c6-4302-91bf-fc8ac16c003d" />
 
 
-Kode di atas digunakan untuk Mengubah angka bilangan bulat positif (0-100) menjadi bentuk text menggunakan bahasa indonesia.
+Kode di atas digunakan untuk menghasilkan output angka dengan pola simetris berbentuk piramida
 
 #### Full code Screenshot:
-<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/f859e8fb-3598-464b-b97f-74fc7cc55a39" />
-
+<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/f2885f52-e5d2-47f6-83d3-0e3942608387" />vv
 
 
 

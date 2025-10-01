@@ -347,13 +347,16 @@ int main() {
 Kode di atas digunakan untuk menghasilkan output angka dengan pola simetris berbentuk piramida
 
 #### Full code Screenshot:
-<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/f2885f52-e5d2-47f6-83d3-0e3942608387" />vv
+<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/f2885f52-e5d2-47f6-83d3-0e3942608387" />
 
 
 
 
 ## Kesimpulan
-Ringkasan dan interpretasi pandangan kalia dari hasil praktikum dan pembelajaran yang didapat[1].
+Ringkasan dan interpretasi pandangan saya adalah setelah mempelajari modul ini saya makin memahami bahwa codingan itu kuncinya ada di logika, bukan hanya menghafal sintaks.
+
+saya juga jadi belajar mengenai struktur dasar pemrograman C++. Menurut saya penguasaan konsep dasar C++ sangat penting krna menjadi fondasi untuk mempelajari C++ dipertemuan selanjutnya.
+
 
 ## Referensi
 [1] I. Holm, Narrator, and J. Fullerton-Smith, Producer, How to Build a Human [DVD]. London: BBC; 2002.

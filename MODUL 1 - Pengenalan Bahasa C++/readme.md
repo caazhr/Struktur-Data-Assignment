@@ -249,7 +249,7 @@ int main() {
 Kode di atas digunakan untuk menghitung penjumlahan, pengurangan, pembagian, dan perkalian. Dengan 2 buah inputan bertipe float
 
 #### Full code Screenshot:
-![240309_10h21m35s_screenshot](https://github.com/suxeno/Struktur-Data-Assignment/assets/111122086/41e9641c-ad4e-4e50-9ca4-a0215e336b04)
+<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/05a0004d-aac1-4679-a50a-df68b23e5c4b" />
 
 ### 2. [Angka]
 
@@ -290,6 +290,15 @@ int main() {
     return 0;
 }
 ```
+#### Output:
+<img width="1156" height="167" alt="Image" src="https://github.com/user-attachments/assets/8b29d765-f55f-4393-941a-fd6a09b42399" />
+
+Kode di atas digunakan untuk menghitung penjumlahan, pengurangan, pembagian, dan perkalian. Dengan 2 buah inputan bertipe float
+
+#### Full code Screenshot:
+<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/05a0004d-aac1-4679-a50a-df68b23e5c4b" />
+
+
 ### 3. [mirror]
 
 ```C++

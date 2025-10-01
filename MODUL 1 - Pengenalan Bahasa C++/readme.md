@@ -252,7 +252,7 @@ Kode di atas digunakan untuk menghitung penjumlahan, pengurangan, pembagian, dan
 #### Full code Screenshot:
 <img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/05a0004d-aac1-4679-a50a-df68b23e5c4b" />
 
-### 2. [Angka]
+### 2. [Buatlah sebuah program yang menerima masukan angka dan mengeluarkan output nilai angka tersebut dalam bentuk tulisan. Angka yang akan di-input-kan user adalah bilangan bulat positif mulai dari 0 s.d 100. Contoh: 79 : tujuh puluh sembilan]
 
 ```C++
 #include <iostream>
@@ -301,7 +301,7 @@ Kode di atas digunakan untuk Mengubah angka bilangan bulat positif (0-100) menja
 <img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/f859e8fb-3598-464b-b97f-74fc7cc55a39" />
 
 
-### 3. [mirror]
+### 3. [Buatlah program yang dapat memberikan input dan output sbb.]
 
 ```C++
 #include <iostream>

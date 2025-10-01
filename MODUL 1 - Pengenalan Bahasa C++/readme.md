@@ -341,7 +341,7 @@ int main() {
 }
 ```
 #### Output:
-<img width="1071" height="77" alt="Image" src="https://github.com/user-attachments/assets/4ca01138-10c6-4302-91bf-fc8ac16c003d" />
+<img width="1106" height="152" alt="Image" src="https://github.com/user-attachments/assets/6ea97fb3-a91e-4610-8bc1-7263438af34b" />
 
 
 Kode di atas digunakan untuk menghasilkan output angka dengan pola simetris berbentuk piramida

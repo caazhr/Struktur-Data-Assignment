@@ -301,7 +301,8 @@ Kode di atas digunakan untuk Mengubah angka bilangan bulat positif (0-100) menja
 <img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/f859e8fb-3598-464b-b97f-74fc7cc55a39" />
 
 
-### 3. [Buatlah program yang dapat memberikan input dan output sbb.]
+### 3. [Buatlah program yang dapat memberikan input dan output sbb.
+<img width="143" height="135" alt="Image" src="https://github.com/user-attachments/assets/d0a1336c-3a10-43fa-8269-d6e101374fe0" />]
 
 ```C++
 #include <iostream>

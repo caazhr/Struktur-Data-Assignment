@@ -102,7 +102,7 @@ int main() {
 
 }
 ```
-Kode diatas digunakan untuk demonstrasi operator aritmatika dan operator logika, dengan menginput dua angka (a dan b), kemudian menghitung dan menampilkan hasil dari operasi aritmatika dan perbandingan logis antara kedua angka tersebut.
+Kode diatas digunakan untuk demonstrasi operator aritmatika dan operator logika, dengan menginput dua angka (angka1 dan angka2), kemudian menghitung dan menampilkan hasil dari operasi aritmatika dan perbandingan logis antara kedua angka tersebut.
 
 ### 4. [Percabangan]
 

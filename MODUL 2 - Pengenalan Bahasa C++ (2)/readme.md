@@ -59,6 +59,97 @@ int main() {
 ```
 Kode di atas digunakan untuk mencetak teks "ini adalah file code guided praktikan" ke layar menggunakan function cout untuk mengeksekusi nya.
 
+### 2. [FunctionProcedure]
+
+```C++
+#include <iostream>
+using namespace std;
+
+void tulis (int x) {
+    for (int i = 0; i < x; i++) {
+        cout << "Baris ke -:" << i+1 << endl;
+    }
+}
+
+int main() {
+    int jum;
+    cout << "Jumlah baris kata: ";
+    cin >> jum;
+    tulis(jum);
+    return 0;
+}
+```
+Kode di atas digunakan untuk mencetak teks "ini adalah file code guided praktikan" ke layar menggunakan function cout untuk mengeksekusi nya.
+
+### 3. [Pointer]
+
+```C++
+#include <iostream>
+using namespace std;
+
+void tukar(int *x, int *y) {
+    int temp;
+    temp = *x;
+    *x = *y;
+    *y = temp;
+} 
+
+int main() {
+    int a =20, b =30;
+    int *ptr;
+
+    ptr = &a;
+
+    cout << "Value of a: " << a << endl;
+    cout << "Address of a: " << &a << endl;
+    cout << "Value stored in ptr (Address of a): " << ptr << endl;
+    cout << "Value pointes to by ptr: " << *ptr << endl;
+
+    tukar(&a, &b);
+    cout << "After swapping, value of a = " << a << " and b = " << b << endl;
+
+    return 0;
+    
+}
+```
+Kode di atas digunakan untuk mencetak teks "ini adalah file code guided praktikan" ke layar menggunakan function cout untuk mengeksekusi nya.
+
+### 4. [Reference]
+
+```C++
+#include <iostream>
+using namespace std;
+
+void tukar (int &x, int &y) {
+    int temp;
+    temp = x;
+    x = y;
+    y = temp;
+}
+
+int main() {
+    int a = 20, b = 30;
+    int& ref = a;
+
+    cout << "Nilai a: " << a << endl;
+    cout << "Alamat a (&a): " << &a << endl;
+    cout << "Nilai ref (alias a): " << ref << endl; 
+    cout << "Alamat ref (&ref): " << &ref << endl; 
+
+    //Mengubah nilai a lewat reference
+    ref = 50;
+    cout << "\nSetelah ref = 50;" << endl;
+    cout << "Nilai a: " << a << endl;
+    cout << "Nilai ref: " << ref << endl;
+
+    tukar(a, b);
+    cout << "After swapping, value of a=" << a << " and b=" << b << endl; 
+
+    return 0;
+}
+```
+Kode di atas digunakan untuk mencetak teks "ini adalah file code guided praktikan" ke layar menggunakan function cout untuk mengeksekusi nya.
+
 ## Unguided 
 
 ### 1. [Soal]

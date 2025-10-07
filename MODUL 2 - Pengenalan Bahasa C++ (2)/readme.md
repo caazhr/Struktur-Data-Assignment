@@ -4,7 +4,10 @@
 
 ## Dasar Teori
 
-Berikan penjelasan teori terkait materi modul ini dengan bahasa anda sendiri serta susunan yang terstruktur per topiknya.
+Pada modul 2 ini melanjutkan pengenalan mengenai C++. Pada modul ini akan membahas mengenai Array, Pointer, Fungsi, Prosedur, Parameter Fungsi.
+
+- Array -> Kumpulan data yg memiliki nama dan tipe data yg sama. Array memiliki beberapa jenis yaitu:
+  1. Array satu dimensi 
 
 ## Guided 
 

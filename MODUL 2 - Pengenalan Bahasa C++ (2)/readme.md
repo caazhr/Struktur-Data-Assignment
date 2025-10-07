@@ -1,6 +1,6 @@
 
 # <h1 align="center">Laporan Praktikum Modul Pengenalan Bahasa C++ (2)</h1>
-<p align="center">Arvinanto Bahtiar</p>
+<p align="center">Neisya Azzahra Rasin</p>
 
 ## Dasar Teori
 

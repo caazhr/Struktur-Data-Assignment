@@ -173,18 +173,207 @@ int main() {
 ```
 Kode di atas digunakan untuk menunjukan penggunaan refrence. Refrence ini berfungsi sebagai alias dari variabel lain, jadi setiap perubahan pada refrence juga akan mengubah nilai var aslinya. Selain itu, fungsi "tukar ()" menggunakan parameter refrence agar dapat menukar nilai dua var secara langsung tanpa pointer.
 
+
 ## Unguided 
 
-### 1. [Soal]
+### 1. [Buatlah program yang dapat melakukan operasi penjumlahan, pengurangan, dan perkalian matriks 3x3]
 
 ```C++
 #include <iostream>
 using namespace std;
 
 int main() {
-    cout << "ini adalah file code unguided praktikan" << endl;
+    int A[3][3], B[3][3], C[3][3];
+
+    cout << "\nMasukkan angka matriks A (3x3):\n";
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            cin >> A[i][j];
+        }
+    }
+
+    cout << "\nMasukkan angka matriks B (3x3):\n";
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            cin >> B[i][j];
+        }
+    }
+
+    cout << "\nHasil Penjumlahan Matriks (A + B):\n";
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            C[i][j] = A[i][j] + B[i][j];
+            cout << C[i][j] << "\t";
+        }
+        cout << endl;
+    }
+
+    cout << "\nHasil Pengurangan Matriks (A - B):\n";
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            C[i][j] = A[i][j] - B[i][j];
+            cout << C[i][j] << "\t";
+        }
+        cout << endl;
+    }
+
+    cout << "\nHasil Perkalian Matriks (A x B):\n";
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            C[i][j] = 0;
+            for (int k = 0; k < 3; k++) {
+                C[i][j] += A[i][k] * B[k][j];
+            }
+            cout << C[i][j] << "\t";
+        }
+        cout << endl;
+    }
+
     return 0;
 }
+
+```
+#### Output:
+![240302_00h00m06s_screenshot](https://github.com/suxeno/Struktur-Data-Assignment/assets/111122086/6d1727a8-fb77-4ecf-81ff-5de9386686b7)
+
+Kode di atas digunakan untuk mencetak teks "ini adalah file code guided praktikan" ke layar menggunakan function cout untuk mengeksekusi nya.
+
+#### Full code Screenshot:
+![240309_10h21m35s_screenshot](https://github.com/suxeno/Struktur-Data-Assignment/assets/111122086/41e9641c-ad4e-4e50-9ca4-a0215e336b04)
+
+### 2. [Berdasarkan guided pointer dan reference sebelumnya, buatlah keduanya dapat menukar nilai dari 3 variabel]
+
+```C++
+#include <iostream>
+using namespace std;
+
+void tukar3_ptr(int *a, int *b, int *c) {
+    int temp = *a;
+    *a = *b;
+    *b = *c;
+    *c = temp;
+}
+
+void tukar3_ref(int &a, int &b, int &c) {
+    int temp = a;
+    a = b;
+    b = c;
+    c = temp;
+}
+
+int main() {
+    int a = 10, b = 20, c = 30;
+
+    cout << "Sebelum Penukaran:" << endl;
+    cout << "a = " << a << ", b = " << b << ", c = " << c << endl;
+
+    tukar3_ptr(&a, &b, &c);
+    cout << "\nSetelah Penukaran (pointer):" << endl;
+    cout << "a = " << a << ", b = " << b << ", c = " << c << endl;
+
+    tukar3_ref(a, b, c);
+    cout << "\nSetelah Penukaran (refrence):" << endl;
+    cout << "a = " << a << ", b = " << b << ", c = " << c << endl;
+
+    return 0;
+}
+
+```
+#### Output:
+![240302_00h00m06s_screenshot](https://github.com/suxeno/Struktur-Data-Assignment/assets/111122086/6d1727a8-fb77-4ecf-81ff-5de9386686b7)
+
+Kode di atas digunakan untuk mencetak teks "ini adalah file code guided praktikan" ke layar menggunakan function cout untuk mengeksekusi nya.
+
+#### Full code Screenshot:
+![240309_10h21m35s_screenshot](https://github.com/suxeno/Struktur-Data-Assignment/assets/111122086/41e9641c-ad4e-4e50-9ca4-a0215e336b04)
+
+### 3. [Diketahui sebuah array 1 dimensi sebagai berikut : arrA = {11, 8, 5, 7, 12, 26, 3, 54, 33, 55}
+Buatlah program yang dapat mencari nilai minimum, maksimum, dan rata – rata dari array tersebut! Gunakan function cariMinimum() untuk mencari nilai minimum dan function cariMaksimum() untuk mencari nilai maksimum, serta gunakan prosedur hitungRataRata() untuk menghitung nilai rata – rata! Buat program menggunakan menu switch-case seperti berikut ini :
+--- Menu Program Array ---
+
+1. Tampilkan isi array
+2. cari nilai maksimum
+3. cari nilai minimum
+4. Hitung nilai rata - rata]
+
+```C++
+#include <iostream>
+using namespace std;
+
+int cariMaksimum(int arr[], int n) {
+    int maks = arr[0];
+    for (int i = 1; i < n; i++) {
+        if (arr[i] > maks)
+            maks = arr[i];
+    }
+    return maks;
+}
+
+int cariMinimum(int arr[], int n) {
+    int min = arr[0];
+    for (int i = 1; i < n; i++) {
+        if (arr[i] < min)
+            min = arr[i];
+    }
+    return min;
+}
+
+void hitungRataRata(int arr[], int n) {
+    float total = 0;
+    for (int i = 0; i < n; i++) {
+        total += arr[i];
+    }
+    float rata = total / n;
+    cout << "Nilai rata-rata = " << rata << endl;
+}
+
+int main() {
+    int arrA[] = {11, 8, 5, 7, 12, 26, 3, 54, 33, 55};
+    int n = sizeof(arrA) / sizeof(arrA[0]);
+    int pilihan;
+
+    do {
+        cout << "\n--- Menu Program Array ---\n";
+        cout << "1. Tampilkan isi array\n";
+        cout << "2. Cari nilai maksimum\n";
+        cout << "3. Cari nilai minimum\n";
+        cout << "4. Hitung nilai rata-rata\n";
+        cout << "5. Keluar\n";
+        cout << "Pilih menu (1-5): ";
+        cin >> pilihan;
+
+        switch (pilihan) {
+            case 1:
+                cout << "Isi array: ";
+                for (int i = 0; i < n; i++)
+                    cout << arrA[i] << " ";
+                cout << endl;
+                break;
+
+            case 2:
+                cout << "Nilai maksimum = " << cariMaksimum(arrA, n) << endl;
+                break;
+
+            case 3:
+                cout << "Nilai minimum = " << cariMinimum(arrA, n) << endl;
+                break;
+
+            case 4:
+                hitungRataRata(arrA, n);
+                break;
+
+            case 5:
+                cout << "Program selesai.\n";
+                break;
+
+            default:
+                cout << "Pilihan tidak valid!\n";
+        }
+    } while (pilihan != 5);
+
+    return 0;
+}
+
 ```
 #### Output:
 ![240302_00h00m06s_screenshot](https://github.com/suxeno/Struktur-Data-Assignment/assets/111122086/6d1727a8-fb77-4ecf-81ff-5de9386686b7)

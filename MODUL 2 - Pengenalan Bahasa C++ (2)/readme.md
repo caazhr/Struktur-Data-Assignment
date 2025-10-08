@@ -377,7 +377,7 @@ int main() {
 
 ```
 #### Output:
-![240302_00h00m06s_screenshot](https://github.com/suxeno/Struktur-Data-Assignment/assets/111122086/6d1727a8-fb77-4ecf-81ff-5de9386686b7)
+<img width="1130" height="815" alt="Image" src="https://github.com/user-attachments/assets/8ad79606-09a2-4149-9f0a-cde2d4ebd060" />
 
 Program ini digunakan untuk mengolah data array 1 dimensi dengan berbagai operasi dasar, yaitu menampilkan isi array, mencari nilai maksimum dan minimum, serta menghitung nilai rata-rata.
 Fungsi cariMaksimum() dan cariMinimum() masing-masing mencari nilai terbesar dan terkecil dengan membandingkan setiap elemen array. Prosedur hitungRataRata() menjumlahkan semua elemen dan membaginya dengan jumlah data.

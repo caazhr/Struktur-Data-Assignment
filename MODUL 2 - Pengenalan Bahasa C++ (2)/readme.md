@@ -236,7 +236,7 @@ int main() {
 #### Output:
 <img width="1098" height="579" alt="Image" src="https://github.com/user-attachments/assets/9df9336d-0089-4d70-ad7d-ef1774cd812f" />
 
-Kode di atas digunakan untuk mencetak teks "ini adalah file code guided praktikan" ke layar menggunakan function cout untuk mengeksekusi nya.
+Kode di atas digunakan untuk menghitung Penjumlahan, pengurangan, dan perkalian dari 2 matriks yang diinput user
 
 #### Full code Screenshot:
 ![240309_10h21m35s_screenshot](https://github.com/suxeno/Struktur-Data-Assignment/assets/111122086/41e9641c-ad4e-4e50-9ca4-a0215e336b04)

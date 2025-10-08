@@ -384,7 +384,7 @@ Fungsi cariMaksimum() dan cariMinimum() masing-masing mencari nilai terbesar dan
 Di dalam main(), program menampilkan menu menggunakan switch-case agar pengguna bisa memilih operasi yang ingin dijalankan, dan perulangan do-while membuat menu terus muncul sampai pengguna memilih keluar.
 
 #### Full code Screenshot:
-![240309_10h21m35s_screenshot](https://github.com/suxeno/Struktur-Data-Assignment/assets/111122086/41e9641c-ad4e-4e50-9ca4-a0215e336b04)
+<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/811cae57-0b22-4777-95ba-e446dde210f6" />
 
 
 ## Kesimpulan

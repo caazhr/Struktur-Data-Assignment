@@ -236,7 +236,7 @@ int main() {
 #### Output:
 <img width="1098" height="579" alt="Image" src="https://github.com/user-attachments/assets/9df9336d-0089-4d70-ad7d-ef1774cd812f" />
 
-Kode di atas digunakan untuk menghitung Penjumlahan, pengurangan, dan perkalian dari 2 matriks yang diinput user
+Kode di atas digunakan untuk menghitung Penjumlahan, pengurangan, dan perkalian dari 2 matriks yang diinput user.
 
 #### Full code Screenshot:
 <img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/5c15915e-54fc-434b-bcba-3c3b383d684e" />

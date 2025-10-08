@@ -286,7 +286,7 @@ Kode di atas digunakan untuk menukar nilai tiga variabel (a, b, c) menggunakan d
 Fungsi tukar3_ptr() menukar nilai melalui alamat memori variabel, sedangkan tukar3_ref() menukar langsung lewat alias variabel.
 
 #### Full code Screenshot:
-![240309_10h21m35s_screenshot](https://github.com/suxeno/Struktur-Data-Assignment/assets/111122086/41e9641c-ad4e-4e50-9ca4-a0215e336b04)
+<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/5a1f30a9-cffd-418f-9715-f9d3e787d013" />
 
 ### 3. [Diketahui sebuah array 1 dimensi sebagai berikut : arrA = {11, 8, 5, 7, 12, 26, 3, 54, 33, 55}
 Buatlah program yang dapat mencari nilai minimum, maksimum, dan rata – rata dari array tersebut! Gunakan function cariMinimum() untuk mencari nilai minimum dan function cariMaksimum() untuk mencari nilai maksimum, serta gunakan prosedur hitungRataRata() untuk menghitung nilai rata – rata! Buat program menggunakan menu switch-case seperti berikut ini :
@@ -379,7 +379,9 @@ int main() {
 #### Output:
 ![240302_00h00m06s_screenshot](https://github.com/suxeno/Struktur-Data-Assignment/assets/111122086/6d1727a8-fb77-4ecf-81ff-5de9386686b7)
 
-Kode di atas digunakan untuk mencetak teks "ini adalah file code guided praktikan" ke layar menggunakan function cout untuk mengeksekusi nya.
+Program ini digunakan untuk mengolah data array 1 dimensi dengan berbagai operasi dasar, yaitu menampilkan isi array, mencari nilai maksimum dan minimum, serta menghitung nilai rata-rata.
+Fungsi cariMaksimum() dan cariMinimum() masing-masing mencari nilai terbesar dan terkecil dengan membandingkan setiap elemen array. Prosedur hitungRataRata() menjumlahkan semua elemen dan membaginya dengan jumlah data.
+Di dalam main(), program menampilkan menu menggunakan switch-case agar pengguna bisa memilih operasi yang ingin dijalankan, dan perulangan do-while membuat menu terus muncul sampai pengguna memilih keluar.
 
 #### Full code Screenshot:
 ![240309_10h21m35s_screenshot](https://github.com/suxeno/Struktur-Data-Assignment/assets/111122086/41e9641c-ad4e-4e50-9ca4-a0215e336b04)

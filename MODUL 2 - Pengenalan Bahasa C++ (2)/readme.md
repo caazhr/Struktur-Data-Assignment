@@ -388,7 +388,7 @@ Di dalam main(), program menampilkan menu menggunakan switch-case agar pengguna 
 
 
 ## Kesimpulan
-Ringkasan dan interpretasi pandangan kalia dari hasil praktikum dan pembelajaran yang didapat[1].
+Dalam Praktikum ini, saya memahami bagaimana data dapat dikelola dan diolah secara efisien dalam program. Saya juga dapat menambah pemahaman mengenai array, pointer, fungsi, prosedur, dan parameter dari praktikum ini. Secara keseluruhan, praktikum ini meningkatkan kemampuan saya dalam menulis program yang modular, efisien, dan mudah dikelola, serta memperkuat pemahaman logika dasar pemrograman dalam bahasa C++.
 
 ## Referensi
 [1] I. Holm, Narrator, and J. Fullerton-Smith, Producer, How to Build a Human [DVD]. London: BBC; 2002.

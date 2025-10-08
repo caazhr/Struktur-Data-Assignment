@@ -239,7 +239,7 @@ int main() {
 Kode di atas digunakan untuk menghitung Penjumlahan, pengurangan, dan perkalian dari 2 matriks yang diinput user
 
 #### Full code Screenshot:
-![240309_10h21m35s_screenshot](https://github.com/suxeno/Struktur-Data-Assignment/assets/111122086/41e9641c-ad4e-4e50-9ca4-a0215e336b04)
+<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/5c15915e-54fc-434b-bcba-3c3b383d684e" />
 
 ### 2. [Berdasarkan guided pointer dan reference sebelumnya, buatlah keduanya dapat menukar nilai dari 3 variabel]
 

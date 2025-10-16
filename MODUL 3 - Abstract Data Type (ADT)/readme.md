@@ -57,9 +57,9 @@ Program untuk menghitung rata-rata nilai mahasiswa ini terdiri dari tiga file, y
 
 ## Unguided 
 
-### 1.[Buat program yang dapat menyimpan data mahasiswa (max. 10) ke dalam sebuah array
+### 1. Buat program yang dapat menyimpan data mahasiswa (max. 10) ke dalam sebuah array
 dengan field nama, nim, uts, uas, tugas, dan nilai akhir. Nilai akhir diperoleh dari FUNGSI
-dengan rumus 0.3*uts+0.4*uas+0.3*tugas.]
+dengan rumus 0.3*uts+0.4*uas+0.3*tugas.
 
 mahasiswa.h
 ```C++
@@ -208,11 +208,11 @@ Program diatas terdiri dari tiga file dan berfungsi untuk menampilkan data mata 
 <img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/d387614e-fca8-4182-92b6-092982c8b27d" />
 
 
-### 3. [Buatlah program dengan ketentuan: 
--) 2 buah array 2D integer berukuran 3x3 dan 2 buah pointer integer
--) fungsi/prosedur yang menampilkan isi sebuah array integer 2D
--) fungsi/prosedur yang akan menukarkan isi dari 2 array integer 2D pada posisi tertentu
--) fungsi/prosedur yang akan menukarkan isi dari variabel yang ditunjuk oleh 2 buah pointer]
+### 3. Buatlah program dengan ketentuan :
+- 2 buah array 2D integer berukuran 3x3 dan 2 buah pointer integer
+- fungsi/prosedur yang menampilkan isi sebuah array integer 2D
+- fungsi/prosedur yang akan menukarkan isi dari 2 array integer 2D pada posisi tertentu
+- fungsi/prosedur yang akan menukarkan isi dari variabel yang ditunjuk oleh 2 buah pointer 
 
 array2d.h
 ```C++

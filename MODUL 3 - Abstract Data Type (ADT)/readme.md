@@ -134,8 +134,7 @@ int main() {
 }
 ```
 #### Output:
-<img width="1156" height="167" alt="Image" src="https://github.com/user-attachments/assets/8b29d765-f55f-4393-941a-fd6a09b42399" />
-
+<img width="647" height="642" alt="Image" src="https://github.com/user-attachments/assets/f5689ea1-2996-4257-ae19-c2e8ca3f3819" />
 
 Kode di atas digunakan untuk menghitung penjumlahan, pengurangan, pembagian, dan perkalian. Dengan 2 buah inputan bertipe float
 

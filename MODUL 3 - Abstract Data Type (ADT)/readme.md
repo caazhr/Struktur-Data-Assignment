@@ -4,7 +4,7 @@
 
 ## Dasar Teori
 
-(blm diisi)
+pada modul tiga ini 
 
 ## Guided 
 

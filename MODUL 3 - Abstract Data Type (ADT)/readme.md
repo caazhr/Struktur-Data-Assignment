@@ -205,7 +205,7 @@ int main() {
 Program diatas terdiri dari tiga file dan berfungsi untuk menampilkan data mata pelajaran. Program secara otomatis membuat data berupa nama mata pelajaran dan kode mata pelajaran, kemudian menyimpannya dalam struktur Pelajaran. Setelah data dibuat, program menampilkan hasil berupa nama mata pelajaran dan kode pelajaran sebagai output.
 
 #### Full code Screenshot:
-<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/f859e8fb-3598-464b-b97f-74fc7cc55a39" />
+<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/d387614e-fca8-4182-92b6-092982c8b27d" />
 
 
 ### 3. [Buatlah program yang dapat memberikan input dan output sbb.

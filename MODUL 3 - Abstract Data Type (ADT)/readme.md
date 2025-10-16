@@ -4,220 +4,56 @@
 
 ## Dasar Teori
 
-Pada Modul 1 ini berisi panduan untuk menginstal dan menggunakan code blocks dan mempelajari dasar-dasar dan pengenalan mengenai bahasa pemrograman C++.
-
-Dimulai dengan pengenalan code bloks, instalasi code bloks, cara menggunakannya.
-selanjutnya membahas sekilas mengenai C++
-jadi C++ diciptakan oleh Bjarne Stroustrup di AT&T Bell Laboratories awal tahun 1980-an didasarkan pada C ANSI,.
-
-Pada modul 1 ini membahas mengenai struktur program C++.
-Selanjutnya membahas pengenal(identifier) -> nama yang digunakan untuk variabel, konstanta, fungsi, atau objek lain. Dalam modul ini membahas juga mengenai tipe dasar, dari yang saya pelajari dalam modul ini data berdasarkan jenisnya dibagi ke dalam 5 kelompok, yaitu: 
-1. Bil bulat(integer),
-2. Bil real [resisi-tunggal,
-3. Bil real presisi-ganda,
-4. Karakterr,
-5. Tak bertipe.
-Adapun daftar tipe data, yaitu: char, int, long, float, double.
-
-lalu membahas variabel, jadi variabel merupakan program yang digunakan untuk menyimpan nilai. 
-lalu membahas konstanta -> menyatakan nilai yang selalu tetap dan mempunyai tipe. 
-input/output -> merupakan masukan dan keluaran. 
-operator -> simbol yang digunakan untuk melakukan suatu operasi atau manipulasi.
-Bahasa C++ merupakan bahasa yang kaya dengan operator yaitu:
-1. operator Aritmatika
-2. Operator Pengerjaan (Assigment)
-3. Operator Logika
-4. Operator Unary
-5. Operator Sizeof
-6. Operator Increment dan Decrement
-
-Kondisional -> (if, if-else, switch)
-Perulangan (Looping) -> Perulangan digunakan untuk menjalankan satu pernyataan berulang kali selama kondisi terpenuhi
-Struct -> merupakan tipe data bentukan yang isinya kumpulan dari variabel yang dinyatakan sebuah nama, variabelnya bisa memiliki tipe yang berbeda-beda. Jadi struct digunakan untuk mengelompokan informasi yang saling berkaitan.
+(blm diisi)
 
 ## Guided 
 
-### 1. [Hello Word]
-
+### 1. [program menghitung rata-rata nilai mahasiswa]
+mahasiswa.cpp
 ```C++
 #include <iostream>
 using namespace std;
-
-int main() {
-    // Write C++ code here
-   cout << "Hello world!";
-    return 0;
+#include "mahasiswa.h"
+void inputMhs (mahasiswa &m) {
+cout << "input nim = ";
+cin >> (m).nim;
+cout << "input nilai = ";
+cin >> (m).nilail;
+cout << "input nilai2 = ";
+cin >> (m).nilai2;
+}
+float rata2(mahasiswa m){
+return (m.nilail + m.nilai2) / 2.0;
 }
 ```
-Kode di atas digunakan untuk menamplkan teks ke layar dengan output "Hello World!"
 
-### 2. [inputOutput]
-
+mahasiswa.h
 ```C++
-#include <iostream> 
-using namespace std; 
-int main() {
-    int n;
-    const float phi = 3.14;
-
-    cout << "Masukkan Angka: ";
-    cin >> n;
-
-    cout << "Angka Dikeluarkan: " << n << endl;
-    cout << "Nilai Konstanta Phi: " << phi << endl;
-    return 0;
-}
-```
-Kode diatas digunakan dengan cara memasukkan input angka dari user, menyimpannya dalam variabel, dan kemudian menampilkan angka bersama dengan nilai phi. 
-
-### 3. [Operator]
-
-```C++
-#include <iostream>
-using namespace std;
-
-int main() {
-   int a;
-   int b;
-
-   cout << "Masukkan Angka1: ";
-    cin >> a;
-    cout << "Masukkan Angka2: ";
-    cin >> b;
-
-    //operator aritmatika
-    cout << "a + b = " << (a + b) << endl;
-    cout << "a - b = " << (a - b) << endl;
-    cout << "a * b = " << (a * b) << endl;
-    cout << "a / b = " << (a / b) << endl;
-    cout << "a % b = " << (a % b) << endl;
-
-    // Operator Logika
-    cout << "a > b = " << (a > b) << endl;
-    cout << "a < b = " << (a < b) << endl;
-    cout << "a >= b = " << (a >= b) << endl;
-    cout << "a <= b = " << (a <= b) << endl;
-    cout << "a == b = " << (a == b) << endl;
-    cout << "a != b = " << (a != b) << endl;
-    return 0;
-
-}
-```
-Kode diatas digunakan untuk demonstrasi operator aritmatika dan operator logika, dengan menginput dua angka (angka1 dan angka2), kemudian menghitung dan menampilkan hasil dari operasi aritmatika dan perbandingan logis antara kedua angka tersebut.
-
-### 4. [Percabangan]
-
-```C++
-#include <iostream>
-using namespace std;
-int main() {
-    int angka1 = 10;
-    int angka2 = 20;
-
-    if (angka1 > angka2) {
-        cout << "Angka 1 lebih besar dari Angka 2" << endl;
-    } else if (angka1 < angka2) {
-        cout << "Angka 1 lebih kecil dari Angka 2" << endl;
-    } else {
-        cout << "Angka 1 sama dengan Angka 2" << endl; 
-    }
-    return 0;
-}
-
-```
-Kode diatas digunakan untuk menguji, memandingkan dua nilai yang telah ditetapkan(angka1=10 dan angka2=20), menggunakan if-else if-else.
-
-### 5. [Perulangan Do While]
-
-```C++
-#include <iostream>
-using namespace std;
-
-int main() {
-   int i = 0;
-   int j = 20;
-
-   while (i <= 10) {
-         cout << i <<  "-";
-         i++;
-      }
-      cout << endl;
-
-    do {
-        cout << j << "-";
-        j++;
-    } while (j <= 10);
-
-    return 0;
-   }
-```
-kode diatas digunakan untuk mendemostrasikan dua jenis perulangan yaitu while dan do-while. Untuk output pada baris pertama berisi angka 0-10 dengan tanda (-) ditengah tengah angka, kemudian untuk baris kedua berisi nilai 20
-
-### 6. [Perulangan For Do while]
-
-```C++
-#include <iostream>
-using namespace std;
-int main() {
-   int i ;
-   int j = 0;
-
-   for (int i = 0; i < 10; i++) {
-         cout << i <<  "-";
-      }
-      cout << endl;
-
-    do {
-        cout << j << "-";
-        j++;
-    } while (j < 10);
-
-    return 0;
-   }
-
-```
-Kode diatas digunakan untuk menampilkan deretan angka 0-9, dengan tanda (-) diantara angka, kode ini menggunakan dua jenis perulangan yaitu perulangan for, dan do while. jadi outputnya akan menampilkan deretan angka 0-9 sebanyak 2 kali.
-
-### 7. [Struktur]
-
-```C++
-#include <iostream>
-using namespace std;
-
-struct Mahasiswa {
-    string nama;
-    int umur;
-    
+#ifndef MAHASISWA H INCLUDED
+#define MAHASISWA_H_INCLUDED
+struct mahasiswa{
+char nim[10];
+int nilail, nilai2;
 };
+void inputMhs (mahasiswa &m);
+float rata2(mahasiswa m);
+#endif 
+```
 
+main.cpp
+```C++
+#include <iostream>
+#include "mahasiswa.h"
+using namespace std;
 int main() {
-  int jumlah;
-
-  cout << "Masukkan jumlah mahasiswa: ";
-    cin >> jumlah;
-
-    Mahasiswa mhs[jumlah];
-
-    //input data  menggunakan loop
-    for (int i = 0; i < jumlah; i++) {
-        cout << "\nMahasiswa ke-" << i + 1 << endl;
-        cout << "Masukkan Nama: ";
-        cin >> mhs[i].nama;
-        cout << "Masukkan Umur: ";
-        cin >> mhs[i].umur;
-    }
-    //Tampilkan data
-    cout << "\n=== Data Mahasiswa ===\n";
-    for (int i = 0; i < jumlah; i++) {
-        cout << "Mahasiswa ke-" << i + 1 
-             << " | Nama: " << mhs[i].nama 
-             << " | Umur: " << mhs[i].umur << endl;
-    }
-
-    return 0;
+mahasiswa mhs;
+inputMhs (mhs);
+cout << "rata-rata = " << rata2(mhs);
+return 0;
 }
 ```
-kode diatas digunakan untuk mencatat nama dan umur mahasiswa yang jumlahnya ditentukan oleh user
+Program untuk menghitung rata-rata nilai mahasiswa ini terdiri dari tiga file, yaitu : mahasiswa.h, mahasiswa.cpp, dan main.cpp.  program ini dibuat untuk mengolah data mahasiswa secara sederhana. Pengguna diminta memasukkan NIM serta dua nilai mahasiswa sebagai input. Program kemudian menghitung rata-rata dari kedua nilai tersebut dan menampilkan hasilnya sebagai output.
+
 
 ## Unguided 
 

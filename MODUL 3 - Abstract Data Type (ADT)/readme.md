@@ -144,43 +144,61 @@ Program diatas terdiri atas tiga file dan berfungsi untuk mengolah data beberapa
 ### 2. [
 <img width="947" height="577" alt="Image" src="https://github.com/user-attachments/assets/63ec5a45-4d0f-4112-9134-6fb73b8eeb05" />]
 
+pelajaran.h
 ```C++
-#include <iostream>
+#ifndef PELAJARAN_H_INCLUDED
+#define PELAJARAN_H_INCLUDED
+#include <string>
 using namespace std;
 
-string satuan[] = {"nol", "satu", "dua", "tiga", "empat", "lima", 
-                   "enam", "tujuh", "delapan", "sembilan"};
+struct Pelajaran {
+    string namaMapel;
+    string kodeMapel;
+};
 
-string terbilang(int n) {
-    if (n == 0) return "nol";
-    else if (n == 10) return "sepuluh";
-    else if (n == 11) return "sebelas";
-    else if (n < 10) return satuan[n];
-    else if (n < 20) return satuan[n % 10] + " belas";
-    else if (n < 100) {
-        int puluh = n / 10;
-        int sisa = n % 10;
-        string hasil = satuan[puluh] + " puluh";
-        if (sisa > 0) hasil += " " + satuan[sisa];
-        return hasil;
-    } 
-    else if (n == 100) return "seratus";
-    return "";
+Pelajaran create_pelajaran(string namapel, string kodepel);
+void tampil_pelajaran(Pelajaran pel);
+
+#endif
+```
+
+pelajaran.cpp
+```C++
+#include <iostream>
+#include "pelajaran.h"
+using namespace std;
+
+Pelajaran create_pelajaran(string namapel, string kodepel) {
+    Pelajaran p;
+    p.namaMapel = namapel;
+    p.kodeMapel = kodepel;
+    return p;
 }
 
-int main() {
-    int angka;
-    cout << "Masukkan angka (0 - 100): ";
-    cin >> angka;
-
-    if (angka < 0 || angka > 100) {
-        cout << "Masukkan bilangan bulat positif!";
-    } else {
-        cout << angka << " : " << terbilang(angka) << endl;
-    }
-    return 0;
+void tampil_pelajaran(Pelajaran pel) {
+    cout << "Nama Mata Pelajaran : " << pel.namaMapel << endl;
+    cout << "Kode Mata Pelajaran : " << pel.kodeMapel << endl;
 }
 ```
+
+main.cpp
+```C++
+#include <iostream>
+#include "pelajaran.h"
+using namespace std;
+
+int main() {
+    string namapel = "Struktur Data";
+    string kodepel = "STD";
+
+    Pelajaran pel = create_pelajaran(namapel, kodepel);
+    tampil_pelajaran(pel);
+
+    return 0;
+}
+
+```
+
 #### Output:
 <img width="822" height="162" alt="Image" src="https://github.com/user-attachments/assets/90578e96-e989-4a3d-84f3-0b03a3dc2353" />
 

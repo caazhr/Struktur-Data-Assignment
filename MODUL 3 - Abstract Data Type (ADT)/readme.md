@@ -57,26 +57,79 @@ Program untuk menghitung rata-rata nilai mahasiswa ini terdiri dari tiga file, y
 
 ## Unguided 
 
-### 1. [Buatlah program yang menerima input-an dua buah bilangan betipe float, kemudian memberikan output-an hasil penjumlahan, pengurangan, perkalian, dan pembagian dari dua bilangan tersebut.]
+### 1. [Buat program yang dapat menyimpan data mahasiswa (max. 10) ke dalam sebuah array
+dengan field nama, nim, uts, uas, tugas, dan nilai akhir. Nilai akhir diperoleh dari FUNGSI
+dengan rumus 0.3*uts+0.4*uas+0.3*tugas.]
 
+mahasiswa.h
+```C++
+#ifndef MAHASISWA_H_INCLUDED
+#define MAHASISWA_H_INCLUDED
+#include <string>
+using namespace std;
+
+struct Mahasiswa {
+    string nama;
+    string nim;
+    float uts, uas, tugas, nilaiAkhir;
+};
+
+void inputMahasiswa(Mahasiswa &m);
+float hitungNilaiAkhir(Mahasiswa m);
+void tampilMahasiswa(Mahasiswa m);
+
+#endif
+```
+
+mahasiswa.cpp
 ```C++
 #include <iostream>
+#include "mahasiswa.h"
+using namespace std;
+
+void inputMahasiswa(Mahasiswa &m) {
+    cout << "Nama   : "; getline(cin, m.nama);
+    cout << "NIM    : "; getline(cin, m.nim);
+    cout << "UTS    : "; cin >> m.uts;
+    cout << "UAS    : "; cin >> m.uas;
+    cout << "Tugas  : "; cin >> m.tugas;
+    cin.ignore();
+    m.nilaiAkhir = hitungNilaiAkhir(m);
+}
+
+float hitungNilaiAkhir(Mahasiswa m) {
+    return 0.3 * m.uts + 0.4 * m.uas + 0.3 * m.tugas;
+}
+
+void tampilMahasiswa(Mahasiswa m) {
+    cout << "\nNama: " << m.nama
+         << "\nNIM: " << m.nim
+         << "\nNilai Akhir: " << m.nilaiAkhir << endl;
+}
+```
+
+main.cpp
+```C++
+#include <iostream>
+#include "mahasiswa.h"
 using namespace std;
 
 int main() {
-   float a, b;
+    Mahasiswa data[10];
+    int n;
+    cout << "Masukkan jumlah mahasiswa (max 10): ";
+    cin >> n;
+    cin.ignore();
 
-   cout << "Masukkan Angka1: ";
-    cin >> a;
-    cout << "Masukkan Angka2: ";
-    cin >> b;
+    for (int i = 0; i < n; i++) {
+        cout << "\nData mahasiswa ke-" << i + 1 << endl;
+        inputMahasiswa(data[i]);
+    }
 
-    cout << "Hasil Penjumlahan = " << (a + b) << endl;
-    cout << "Hasil Pengurangan = " << (a - b) << endl;
-    cout << "Hasil Perkalian = " << (a * b) << endl;
-    cout << "Hasil Pembagian = " << (a / b) << endl;
-   
-
+    cout << "\n---- Data Mahasiswa ----" << endl;
+    for (int i = 0; i < n; i++) {
+        tampilMahasiswa(data[i]);
+    }
     return 0;
 }
 ```

@@ -57,10 +57,10 @@ Program untuk menghitung rata-rata nilai mahasiswa ini terdiri dari tiga file, y
 
 ## Unguided 
 
-### 1. [Buat program yang dapat menyimpan data mahasiswa (max. 10) ke dalam sebuah array
+### 1.** [Buat program yang dapat menyimpan data mahasiswa (max. 10) ke dalam sebuah array
 dengan field nama, nim, uts, uas, tugas, dan nilai akhir. Nilai akhir diperoleh dari FUNGSI
 dengan rumus 0.3*uts+0.4*uas+0.3*tugas.]
-
+**
 mahasiswa.h
 ```C++
 #ifndef MAHASISWA_H_INCLUDED
@@ -136,7 +136,7 @@ int main() {
 #### Output:
 <img width="647" height="642" alt="Image" src="https://github.com/user-attachments/assets/f5689ea1-2996-4257-ae19-c2e8ca3f3819" />
 
-Kode di atas digunakan untuk menghitung penjumlahan, pengurangan, pembagian, dan perkalian. Dengan 2 buah inputan bertipe float
+Program diatas terdiri atas tiga file dan berfungsi untuk mengolah data beberapa mahasiswa. user akan diminta memasukkan jumlah mahasiswa dengan max 10, lalu mengisi nama, NIM, serta nilai UTS, UAS, dan tugas untuk masing-masing mahasiswa sebagai input. Program akan menghitung nilai akhir berdasarkan bobot tertentu, kemudian menampilkan hasil berupa nama, NIM, dan nilai akhir setiap mahasiswa sebagai output.
 
 #### Full code Screenshot:
 <img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/05a0004d-aac1-4679-a50a-df68b23e5c4b" />

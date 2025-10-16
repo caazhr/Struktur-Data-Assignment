@@ -141,7 +141,8 @@ Program diatas terdiri atas tiga file dan berfungsi untuk mengolah data beberapa
 #### Full code Screenshot:
 <img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/159e28e8-78ff-4613-8783-300fe1c7e259" />
 
-### 2. [<img width="947" height="577" alt="Image" src="https://github.com/user-attachments/assets/63ec5a45-4d0f-4112-9134-6fb73b8eeb05" />]
+### 2. [
+<img width="947" height="577" alt="Image" src="https://github.com/user-attachments/assets/63ec5a45-4d0f-4112-9134-6fb73b8eeb05" />]
 
 ```C++
 #include <iostream>
@@ -181,8 +182,7 @@ int main() {
 }
 ```
 #### Output:
-<img width="1071" height="77" alt="Image" src="https://github.com/user-attachments/assets/4ca01138-10c6-4302-91bf-fc8ac16c003d" />
-
+<img width="822" height="162" alt="Image" src="https://github.com/user-attachments/assets/90578e96-e989-4a3d-84f3-0b03a3dc2353" />
 
 Kode di atas digunakan untuk Mengubah angka bilangan bulat positif (0-100) menjadi bentuk text menggunakan bahasa indonesia.
 

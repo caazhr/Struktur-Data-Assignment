@@ -202,7 +202,7 @@ int main() {
 #### Output:
 <img width="822" height="162" alt="Image" src="https://github.com/user-attachments/assets/90578e96-e989-4a3d-84f3-0b03a3dc2353" />
 
-Kode di atas digunakan untuk Mengubah angka bilangan bulat positif (0-100) menjadi bentuk text menggunakan bahasa indonesia.
+Program diatas terdiri dari tiga file dan berfungsi untuk menampilkan data mata pelajaran. Program secara otomatis membuat data berupa nama mata pelajaran dan kode mata pelajaran, kemudian menyimpannya dalam struktur Pelajaran. Setelah data dibuat, program menampilkan hasil berupa nama mata pelajaran dan kode pelajaran sebagai output.
 
 #### Full code Screenshot:
 <img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/f859e8fb-3598-464b-b97f-74fc7cc55a39" />

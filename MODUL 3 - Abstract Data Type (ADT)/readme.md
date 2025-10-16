@@ -4,7 +4,27 @@
 
 ## Dasar Teori
 
-pada modul tiga ini 
+pada modul 3 pada praktikum struktur data ini membahas tentang Abstract Data Type (ADT) 
+jadi di modul ini menjelaskan apa itu ADT, ADT yaitu tipe data yg punya struktur dan operasi dasar sendiri.
+Dalam ADT ada beberapa jenis fungsi atau operasi dasar yg bisa dibuat:
+- konstruktor : buat membentuk nilai awal suatu type
+- selector : untuk mengakses bagian dari tipe data
+- mulator/modifier : mengubah nilai bagian tertentu dari tipe.
+- validator : memastikan nilai yg dimasukkan valid sesuai aturan.
+- destruktor : untuk menghapus atau melepaskan memori dari objek.
+- input/output : membaca dan menampilkan data
+- operator dan konversi : mendefinisikan operasi logika, aritmatika, atau ubah tipe.
+
+Struktur program ADT dlm c++
+- file header (.h) : berisi definisi tipe data dan deklarasi fungsi/prosedur.
+- File implementasi (.cpp) : berisi isi atau logika dari fungsi/prosedur.
+- File main.cpp : program utama untuk menjalankan semuanya.
+
+ciri-ciri ADT
+- Menyembunyikan detail implementasi (konsep data abstraction).
+- Operasi terhadap data didefinisikan dengan jelas melalui fungsi/prosedur.
+- Fokus pada “apa yang bisa dilakukan” daripada “bagaimana dilakukan”.
+- Dapat digunakan kembali (reusable) dan mudah dipelihara karena strukturnya terpisah.
 
 ## Guided 
 
@@ -302,9 +322,7 @@ Program diatas terdiri dari tiga file dan digunakan untuk menampilkan serta menu
 
 
 ## Kesimpulan
-Ringkasan dan interpretasi pandangan saya adalah setelah mempelajari modul ini saya makin memahami bahwa codingan itu kuncinya ada di logika, bukan hanya menghafal sintaks.
-
-saya juga jadi belajar mengenai struktur dasar pemrograman C++. Menurut saya penguasaan konsep dasar C++ sangat penting krna menjadi fondasi untuk mempelajari C++ dipertemuan selanjutnya.
+Ringkasan dan interpretasi pandangan saya adalah setelah mempelajari modul ini saya belajar menulis kode lebih terstruktur, dan efisien.
 
 
 ## Referensi

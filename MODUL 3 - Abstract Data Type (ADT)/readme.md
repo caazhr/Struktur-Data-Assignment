@@ -298,9 +298,7 @@ int main() {
 Program diatas terdiri dari tiga file dan digunakan untuk menampilkan serta menukar data pada dua array berukuran 3x3. Pertama, program menampilkan isi dari masing-masing array. Lalu, program menukar elemen pada posisi tertentu di antara kedua array tersebut(program di atas posisi penukarannya ada di [1][1]). Selain itu, program juga menukar nilai dua variabel menggunakan pointer. Di akhir, hasil penukaran pada array dan variabel ditampilkan ke layar.
 
 #### Full code Screenshot:
-<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/f2885f52-e5d2-47f6-83d3-0e3942608387" />
-
-
+<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/77ee0673-4ac9-4046-acaa-35c55fe5d744" />
 
 
 ## Kesimpulan

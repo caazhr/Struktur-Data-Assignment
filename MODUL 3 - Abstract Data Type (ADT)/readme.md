@@ -139,7 +139,7 @@ int main() {
 Program diatas terdiri atas tiga file dan berfungsi untuk mengolah data beberapa mahasiswa. user akan diminta memasukkan jumlah mahasiswa dengan max 10, lalu mengisi nama, NIM, serta nilai UTS, UAS, dan tugas untuk masing-masing mahasiswa sebagai input. Program akan menghitung nilai akhir berdasarkan bobot tertentu, kemudian menampilkan hasil berupa nama, NIM, dan nilai akhir setiap mahasiswa sebagai output.
 
 #### Full code Screenshot:
-<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/05a0004d-aac1-4679-a50a-df68b23e5c4b" />
+<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/159e28e8-78ff-4613-8783-300fe1c7e259" />
 
 ### 2. [Buatlah sebuah program yang menerima masukan angka dan mengeluarkan output nilai angka tersebut dalam bentuk tulisan. Angka yang akan di-input-kan user adalah bilangan bulat positif mulai dari 0 s.d 100. Contoh: 79 : tujuh puluh sembilan]
 

@@ -295,7 +295,7 @@ int main() {
 <img width="637" height="706" alt="Image" src="https://github.com/user-attachments/assets/0ed1c79e-b4b1-40f9-bf4d-e777c849f23c" />
 
 
-Kode di atas digunakan untuk menghasilkan output angka dengan pola simetris berbentuk piramida
+Program diatas terdiri dari tiga file dan digunakan untuk menampilkan serta menukar data pada dua array berukuran 3x3. Pertama, program menampilkan isi dari masing-masing array. Lalu, program menukar elemen pada posisi tertentu di antara kedua array tersebut(program di atas posisi penukarannya ada di [1][1]). Selain itu, program juga menukar nilai dua variabel menggunakan pointer. Di akhir, hasil penukaran pada array dan variabel ditampilkan ke layar.
 
 #### Full code Screenshot:
 <img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/f2885f52-e5d2-47f6-83d3-0e3942608387" />

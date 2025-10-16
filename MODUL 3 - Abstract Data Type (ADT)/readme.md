@@ -292,7 +292,7 @@ int main() {
 }
 ```
 #### Output:
-<img width="1106" height="152" alt="Image" src="https://github.com/user-attachments/assets/6ea97fb3-a91e-4610-8bc1-7263438af34b" />
+<img width="637" height="706" alt="Image" src="https://github.com/user-attachments/assets/0ed1c79e-b4b1-40f9-bf4d-e777c849f23c" />
 
 
 Kode di atas digunakan untuk menghasilkan output angka dengan pola simetris berbentuk piramida

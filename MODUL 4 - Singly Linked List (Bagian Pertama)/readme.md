@@ -788,9 +788,9 @@ int main() {
 ```
 
 #### Output:
-[<img width="822" height="162" alt="Image" src="https://github.com/user-attachments/assets/90578e96-e989-4a3d-84f3-0b03a3dc2353" />](https://github.com/caazhr/Struktur-Data-Assignment/issues/28#issue-3541037093)
+<img width="598" height="207" alt="Image" src="https://github.com/user-attachments/assets/c15e54d0-daec-4327-a634-af97317d0aed" />
 
-Program diatas terdiri dari tiga file dan berfungsi untuk menampilkan data mata pelajaran. Program secara otomatis membuat data berupa nama mata pelajaran dan kode mata pelajaran, kemudian menyimpannya dalam struktur Pelajaran. Setelah data dibuat, program menampilkan hasil berupa nama mata pelajaran dan kode pelajaran sebagai output.
+Program diatas menunjukkan cara kerja Singly Linked List dalam mengelola data bertipe integer secara dinamis. Melalui operasi seperti penambahan, penghapusan, dan penampilan elemen list. 
 
 #### Full code Screenshot:
 <img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/d387614e-fca8-4182-92b6-092982c8b27d" />

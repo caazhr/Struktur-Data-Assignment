@@ -486,7 +486,9 @@ program diatas sama seperti program sebelumnya tapi yang membedakan keduanya ada
 ## Unguided 
 
 ### 1. Buatlah ADT Singly Linked list sebagai berikut di dalam file “Singlylist.h”
-
+<img width="664" height="246" alt="Image" src="https://github.com/user-attachments/assets/54250c85-abdc-4423-97eb-6fc7090c9ac4" />
+Kemudian buatlah implementasi dari procedure-procedure yang digunakan didalam file “Singlylist.cpp”
+Kemudian buat program utama didalam file “main.cpp” dengan implementasi sebagai berikut :
 mahasiswa.h
 ```C++
 #ifndef MAHASISWA_H_INCLUDED

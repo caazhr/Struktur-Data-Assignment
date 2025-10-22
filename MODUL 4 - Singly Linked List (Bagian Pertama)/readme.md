@@ -610,61 +610,181 @@ Program di atas terdiri dari tiga file dan berfungsi untuk mengelola data berben
 <img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/904d33bb-6d48-44fc-8d08-abfda5eb1bcb" />
 
 ### 2. 
-<img width="947" height="577" alt="Image" src="https://github.com/user-attachments/assets/63ec5a45-4d0f-4112-9134-6fb73b8eeb05" />
+<img width="687" height="243" alt="Image" src="https://github.com/user-attachments/assets/4f21dbdd-ed38-48c4-ae02-3c2f551a4cc0" />
 
-pelajaran.h
+Singlylist.h
 ```C++
-#ifndef PELAJARAN_H_INCLUDED
-#define PELAJARAN_H_INCLUDED
-#include <string>
+#ifndef SINGLYLIST_H
+#define SINGLYLIST_H
+#define Nil NULL
+
+#include <iostream>
 using namespace std;
 
-struct Pelajaran {
-    string namaMapel;
-    string kodeMapel;
+typedef int infotype;
+typedef struct ElmtList *address;
+
+struct ElmtList {
+    infotype info;
+    address next;
 };
 
-Pelajaran create_pelajaran(string namapel, string kodepel);
-void tampil_pelajaran(Pelajaran pel);
+struct List {
+    address First;
+};
+
+void CreateList(List &L);
+address alokasi(infotype x);
+void dealokasi(address &P);
+void printInfo(List L);
+void insertFirst(List &L, address P);
+
+void deleteFirst(List &L);
+void deleteLast(List &L);
+void deleteAfter(List &L, address Prec);
+int nbList(List L);
+void deleteList(List &L);
 
 #endif
+
 ```
 
-pelajaran.cpp
+Singlylist.cpp
 ```C++
+#include "Singlylist.h"
 #include <iostream>
-#include "pelajaran.h"
 using namespace std;
 
-Pelajaran create_pelajaran(string namapel, string kodepel) {
-    Pelajaran p;
-    p.namaMapel = namapel;
-    p.kodeMapel = kodepel;
-    return p;
+void CreateList(List &L) {
+    L.First = Nil;
 }
 
-void tampil_pelajaran(Pelajaran pel) {
-    cout << "Nama Mata Pelajaran : " << pel.namaMapel << endl;
-    cout << "Kode Mata Pelajaran : " << pel.kodeMapel << endl;
+address alokasi(infotype x) {
+    address P = new ElmtList;
+    if (P != Nil) {
+        P->info = x;
+        P->next = Nil;
+    }
+    return P;
+}
+
+void dealokasi(address &P) {
+    delete P;
+    P = Nil;
+}
+
+void printInfo(List L) {
+    if (L.First == Nil) {
+        cout << "List kosong." << endl;
+    } else {
+        address P = L.First;
+        while (P != Nil) {
+            cout << P->info << " ";
+            P = P->next;
+        }
+        cout << endl;
+    }
+}
+
+void insertFirst(List &L, address P) {
+    P->next = L.First;
+    L.First = P;
+}
+
+void deleteFirst(List &L) {
+    if (L.First != Nil) {
+        address P = L.First;
+        L.First = L.First->next;
+        dealokasi(P);
+    }
+}
+void deleteLast(List &L) {
+    if (L.First != Nil) {
+        if (L.First->next == Nil) {
+            dealokasi(L.First);
+            L.First = Nil;
+        } else {
+            address prec = Nil;
+            address last = L.First;
+            while (last->next != Nil) {
+                prec = last;
+                last = last->next;
+            }
+            prec->next = Nil;
+            dealokasi(last);
+        }
+    }
+}
+
+void deleteAfter(List &L, address Prec) {
+    if (Prec != Nil && Prec->next != Nil) {
+        address P = Prec->next;
+        Prec->next = P->next;
+        dealokasi(P);
+    }
+}
+
+int nbList(List L) {
+    int count = 0;
+    address P = L.First;
+    while (P != Nil) {
+        count++;
+        P = P->next;
+    }
+    return count;
+}
+
+void deleteList(List &L) {
+    address P = L.First;
+    while (P != Nil) {
+        address temp = P;
+        P = P->next;
+        dealokasi(temp);
+    }
+    L.First = Nil;
 }
 ```
 
 main.cpp
 ```C++
+#include "Singlylist.h"
 #include <iostream>
-#include "pelajaran.h"
 using namespace std;
 
 int main() {
-    string namapel = "Struktur Data";
-    string kodepel = "STD";
+    List L;
+    address F1, F2, F3, F4, F5 = Nil;
 
-    Pelajaran pel = create_pelajaran(namapel, kodepel);
-    tampil_pelajaran(pel);
+    CreateList(L);
+
+    F1 = alokasi(2);
+    insertFirst(L, F1);
+
+    F2 = alokasi(0);
+    insertFirst(L, F2);
+
+    F3 = alokasi(8);
+    insertFirst(L, F3);
+
+    F4 = alokasi(12);
+    insertFirst(L, F4);
+
+    F5 = alokasi(9);
+    insertFirst(L, F5);
+
+    deleteFirst(L);            
+    deleteLast(L);              
+    deleteAfter(L, L.First);    
+
+    printInfo(L);             
+    cout << "Jumlah node : " << nbList(L) << endl;
+
+    deleteList(L);              
+    cout << endl << "- List Berhasil Terhapus -" << endl;
+    cout << "Jumlah node : " << nbList(L) << endl;
 
     return 0;
 }
-
 ```
 
 #### Output:

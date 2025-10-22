@@ -793,14 +793,14 @@ int main() {
 Program diatas menunjukkan cara kerja Singly Linked List dalam mengelola data bertipe integer secara dinamis. Melalui operasi seperti penambahan, penghapusan, dan penampilan elemen list. 
 
 #### Full code Screenshot:
-<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/d387614e-fca8-4182-92b6-092982c8b27d" />
+<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/0256e151-aa96-4576-94a9-3cc5f9d08c53" />
 
 
 
 
 
 ## Kesimpulan
-Ringkasan dan interpretasi pandangan saya adalah setelah mempelajari modul ini saya belajar menulis kode lebih terstruktur, dan efisien.
+Ringkasan dan interpretasi pandangan saya adalah Praktikum ini menunjukkan bagaimana Singly Linked List memungkinkan pengelolaan data secara dinamis menggunakan pointer. Saya menyadari pentingnya manajemen memori saat menambah atau menghapus elemen, serta fleksibilitas list dibanding array. Praktikum ini memberikan pemahaman dasar yang berguna untuk struktur data yang lebih kompleks di program nyata.
 
 
 ## Referensi

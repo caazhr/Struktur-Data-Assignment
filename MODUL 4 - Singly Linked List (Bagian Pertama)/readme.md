@@ -4,27 +4,28 @@
 
 ## Dasar Teori
 
-pada modul 3 pada praktikum struktur data ini membahas tentang Abstract Data Type (ADT) 
-jadi di modul ini menjelaskan apa itu ADT, ADT yaitu tipe data yg punya struktur dan operasi dasar sendiri.
-Dalam ADT ada beberapa jenis fungsi atau operasi dasar yg bisa dibuat:
-- konstruktor : buat membentuk nilai awal suatu type
-- selector : untuk mengakses bagian dari tipe data
-- mulator/modifier : mengubah nilai bagian tertentu dari tipe.
-- validator : memastikan nilai yg dimasukkan valid sesuai aturan.
-- destruktor : untuk menghapus atau melepaskan memori dari objek.
-- input/output : membaca dan menampilkan data
-- operator dan konversi : mendefinisikan operasi logika, aritmatika, atau ubah tipe.
+pada modul 4 pada praktikum struktur data ini membahas tentang Singly Linked List (bagian pertama).
+Singly Linked List adalah salah satu bentuk struktur data dinamis, dimana elemen-elemennya disebut node, dan setiap node berisi data(info) serta penunjuk(pointer) ke node berikutnya.
+Beda dengan array yang memiliki ukuran tetap, linked list dapat bertambah atau berkurang selama program dijalankan.
+Elemen-elemen dalam linked list tidak disimpan secara berurutan di memori, tetapi saling terhubung menggunakan pointer.
 
-Struktur program ADT dlm c++
-- file header (.h) : berisi definisi tipe data dan deklarasi fungsi/prosedur.
-- File implementasi (.cpp) : berisi isi atau logika dari fungsi/prosedur.
-- File main.cpp : program utama untuk menjalankan semuanya.
+Struktur Dasar Singly Linked List 
+umumnya terdiri dari tiga komponen :
+- Node (ElmList) -> isinya data dan penunjuk ke node berikutnya.
+- Address -> tipe data pointer yg menunjuk ke node.
+- List -> nyimpen alamat node pertama dalam linked list.
 
-ciri-ciri ADT
-- Menyembunyikan detail implementasi (konsep data abstraction).
-- Operasi terhadap data didefinisikan dengan jelas melalui fungsi/prosedur.
-- Fokus pada “apa yang bisa dilakukan” daripada “bagaimana dilakukan”.
-- Dapat digunakan kembali (reusable) dan mudah dipelihara karena strukturnya terpisah.
+beberapa operasi utama yg dipelajari di modul 4 ini :
+- createList() -> dipakai untuk membuat list kosong dengan mengatur pointer first -> null, sehingga list siap digunakan.
+- alokasi() -> untuk membuat node baru di memori dengan menggunakan new.
+- dealokasi() -> menghapus node dari memori menggunakan delete, agar ruang yg digunakan node dapat dikembvalikan ke sistem.
+- insertFirst() -> menambah node baru di bagian depan list.
+- printInfo() -> menelusuri seluruh node mulai dri node pertama-mode trakhir, lalu menampilkan isi datanya ke layar.
+
+intinya itu Singly Linked List adalah struktur data dinamis yang memungkinkan penyimpanan data secara efisien tanpa batasan ukuran tetap.
+Setiap node hanya mengetahui alamat node setelahnya, sehingga penelusuran bersifat satu arah.
+Meskipun tidak bisa diakses secara langsung seperti array, linked list unggul dalam fleksibilitas dan efisiensi saat melakukan penambahan serta penghapusan data. 
+
 
 ## Guided 
 

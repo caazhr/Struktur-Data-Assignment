@@ -489,6 +489,7 @@ program diatas sama seperti program sebelumnya tapi yang membedakan keduanya ada
 <img width="664" height="246" alt="Image" src="https://github.com/user-attachments/assets/54250c85-abdc-4423-97eb-6fc7090c9ac4" />
 Kemudian buatlah implementasi dari procedure-procedure yang digunakan didalam file “Singlylist.cpp”
 Kemudian buat program utama didalam file “main.cpp” dengan implementasi sebagai berikut :
+<img width="333" height="372" alt="Image" src="https://github.com/user-attachments/assets/28d8eae4-4161-4728-9e84-e236a0c99aac" />
 mahasiswa.h
 ```C++
 #ifndef MAHASISWA_H_INCLUDED

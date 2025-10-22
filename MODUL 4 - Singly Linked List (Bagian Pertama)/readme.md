@@ -602,9 +602,9 @@ int main() {
 
 ```
 #### Output:
-<img width="647" height="642" alt="Image" src="https://github.com/user-attachments/assets/f5689ea1-2996-4257-ae19-c2e8ca3f3819" />
+<img width="662" height="160" alt="Image" src="https://github.com/user-attachments/assets/12bf0241-131d-4bad-a218-d872eb577a17" />
 
-Program diatas terdiri atas tiga file dan berfungsi untuk mengolah data beberapa mahasiswa. user akan diminta memasukkan jumlah mahasiswa dengan max 10, lalu mengisi nama, NIM, serta nilai UTS, UAS, dan tugas untuk masing-masing mahasiswa sebagai input. Program akan menghitung nilai akhir berdasarkan bobot tertentu, kemudian menampilkan hasil berupa nama, NIM, dan nilai akhir setiap mahasiswa sebagai output.
+Program di atas terdiri dari tiga file dan berfungsi untuk mengelola data berbentuk bilangan integer menggunakan konsep Singly Linked List. Pengguna tidak perlu menentukan jumlah data terlebih dahulu karena setiap elemen dapat ditambahkan secara dinamis ke dalam list. Program membuat list kosong terlebih dahulu, lalu menambahkan beberapa data ke bagian awal list, dan akhirnya menampilkan seluruh isi list secara berurutan. Melalui proses ini, program menunjukkan cara kerja penyimpanan data dinamis menggunakan pointer yang saling terhubung antar node. Dan hasil output sesuai dengan yang di minta pada soal.
 
 #### Full code Screenshot:
 <img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/159e28e8-78ff-4613-8783-300fe1c7e259" />

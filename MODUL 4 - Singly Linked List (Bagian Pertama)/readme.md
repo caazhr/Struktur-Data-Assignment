@@ -1,5 +1,5 @@
 
-# <h1 align="center">Laporan Praktikum Modul Abstract Data Type (ADT)</h1>
+# <h1 align="center">Laporan Praktikum Modul Singly Linked List(bagian pertama)</h1>
 <p align="center">Neisya Azzahra Rasin</p>
 
 ## Dasar Teori

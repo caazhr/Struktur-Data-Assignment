@@ -490,77 +490,116 @@ program diatas sama seperti program sebelumnya tapi yang membedakan keduanya ada
 Kemudian buatlah implementasi dari procedure-procedure yang digunakan didalam file “Singlylist.cpp”
 Kemudian buat program utama didalam file “main.cpp” dengan implementasi sebagai berikut :
 <img width="333" height="372" alt="Image" src="https://github.com/user-attachments/assets/28d8eae4-4161-4728-9e84-e236a0c99aac" />
-mahasiswa.h
+<img width="706" height="316" alt="Image" src="https://github.com/user-attachments/assets/1bdc3640-36ba-46fc-8969-2522f2463286" />
+
+singlylist.h
 ```C++
-#ifndef MAHASISWA_H_INCLUDED
-#define MAHASISWA_H_INCLUDED
-#include <string>
+
+
+#ifndef SINGLYLIST_H
+#define SINGLYLIST_H
+#define Nil NULL
+
+#include <iostream>
 using namespace std;
 
-struct Mahasiswa {
-    string nama;
-    string nim;
-    float uts, uas, tugas, nilaiAkhir;
+typedef int infotype;         
+typedef struct ElmtList *address; 
+
+struct ElmtList {
+    infotype info;  
+    address next;   
 };
 
-void inputMahasiswa(Mahasiswa &m);
-float hitungNilaiAkhir(Mahasiswa m);
-void tampilMahasiswa(Mahasiswa m);
+struct List {
+    address First;
+};
+
+void CreateList(List &L);
+address alokasi(infotype x);
+void dealokasi(address &P);
+void printInfo(List L);
+void insertFirst(List &L, address P);
 
 #endif
 ```
 
-mahasiswa.cpp
+singlylist.cpp
 ```C++
+#include "Singlylist.h"
 #include <iostream>
-#include "mahasiswa.h"
 using namespace std;
 
-void inputMahasiswa(Mahasiswa &m) {
-    cout << "Nama   : "; getline(cin, m.nama);
-    cout << "NIM    : "; getline(cin, m.nim);
-    cout << "UTS    : "; cin >> m.uts;
-    cout << "UAS    : "; cin >> m.uas;
-    cout << "Tugas  : "; cin >> m.tugas;
-    cin.ignore();
-    m.nilaiAkhir = hitungNilaiAkhir(m);
+void CreateList(List &L) {
+    L.First = Nil;
 }
 
-float hitungNilaiAkhir(Mahasiswa m) {
-    return 0.3 * m.uts + 0.4 * m.uas + 0.3 * m.tugas;
+address alokasi(infotype x) {
+    address P = new ElmtList;
+    if (P != Nil) {
+        P->info = x;
+        P->next = Nil;
+    }
+    return P;
 }
 
-void tampilMahasiswa(Mahasiswa m) {
-    cout << "\nNama: " << m.nama
-         << "\nNIM: " << m.nim
-         << "\nNilai Akhir: " << m.nilaiAkhir << endl;
+void dealokasi(address &P) {
+    delete P;
+    P = Nil;
 }
+
+void printInfo(List L) {
+    if (L.First == Nil) {
+        cout << "List kosong." << endl;
+    } else {
+        address P = L.First;
+        while (P != Nil) {
+            cout << P->info << " ";
+            P = P->next;
+        }
+        cout << endl;
+    }
+}
+
+void insertFirst(List &L, address P) {
+    P->next = L.First;
+    L.First = P;
+}
+
 ```
 
 main.cpp
 ```C++
+#include "Singlylist.h"
 #include <iostream>
-#include "mahasiswa.h"
 using namespace std;
 
 int main() {
-    Mahasiswa data[10];
-    int n;
-    cout << "Masukkan jumlah mahasiswa (max 10): ";
-    cin >> n;
-    cin.ignore();
+    List L;
+    address F1, F2, F3, F4, F5 = Nil;
 
-    for (int i = 0; i < n; i++) {
-        cout << "\nData mahasiswa ke-" << i + 1 << endl;
-        inputMahasiswa(data[i]);
-    }
+    CreateList(L);
 
-    cout << "\n---- Data Mahasiswa ----" << endl;
-    for (int i = 0; i < n; i++) {
-        tampilMahasiswa(data[i]);
-    }
+    F1 = alokasi(2);
+    insertFirst(L, F1);
+
+    F2 = alokasi(0);
+    insertFirst(L, F2);
+
+    F3 = alokasi(8);
+    insertFirst(L, F3);
+
+    F4 = alokasi(12);
+    insertFirst(L, F4);
+
+    F5 = alokasi(9);
+    insertFirst(L, F5);
+
+    printInfo(L);
+
     return 0;
 }
+
 ```
 #### Output:
 <img width="647" height="642" alt="Image" src="https://github.com/user-attachments/assets/f5689ea1-2996-4257-ae19-c2e8ca3f3819" />

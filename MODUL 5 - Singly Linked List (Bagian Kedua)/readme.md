@@ -846,42 +846,38 @@ Program ini memungkinkan user untuk melakukan berbagai operasi terhadap kumpulan
 
 ### 2. Latihan 5.2 Modul
 <img width="609" height="742" alt="Image" src="https://github.com/user-attachments/assets/6b975bf3-2534-4138-8a59-8baba3a14d10" />
+<img width="549" height="271" alt="Image" src="https://github.com/user-attachments/assets/8349ae9d-add6-47f2-9ca2-3d3ecfb1918b" />
 
 Singlylist.h
 ```C++
 #ifndef SINGLYLIST_H
 #define SINGLYLIST_H
-#define Nil NULL
+#define Nil NULL 
 
 #include <iostream>
 using namespace std;
 
 typedef int infotype;
-typedef struct ElmtList *address;
+typedef struct ElmList *address; 
 
-struct ElmtList {
-    infotype info;
-    address next;
+struct ElmList{
+   infotype info;
+   address next;
 };
 
-struct List {
-    address First;
+struct List{
+    address first;
 };
 
-void CreateList(List &L);
+void createList(List &L);
 address alokasi(infotype x);
 void dealokasi(address &P);
-void printInfo(List L);
 void insertFirst(List &L, address P);
+void printInfo(List L);
 
-void deleteFirst(List &L);
-void deleteLast(List &L);
-void deleteAfter(List &L, address Prec);
-int nbList(List L);
-void deleteList(List &L);
-
+address findElm(List L, infotype x);
+int totalInfo(List L);
 #endif
-
 ```
 
 Singlylist.cpp
@@ -890,12 +886,21 @@ Singlylist.cpp
 #include <iostream>
 using namespace std;
 
-void CreateList(List &L) {
-    L.First = Nil;
+bool isEmpty(List L) {
+    if(L.first == Nil){
+        return true; 
+    } else {
+        return false;
+    }
 }
 
+void createList(List &L) {
+    L.first = Nil;
+}
+
+
 address alokasi(infotype x) {
-    address P = new ElmtList;
+    address P = new ElmList;
     if (P != Nil) {
         P->info = x;
         P->next = Nil;
@@ -908,11 +913,20 @@ void dealokasi(address &P) {
     P = Nil;
 }
 
-void printInfo(List L) {
-    if (L.First == Nil) {
-        cout << "List kosong." << endl;
+void insertFirst(List &L, address P) {
+    if (L.first == Nil) {
+        L.first = P;
     } else {
-        address P = L.First;
+        P->next = L.first;
+        L.first = P;
+    }
+}
+
+void printInfo(List L) {
+    if (L.first == Nil) {
+        cout << "List kosong" << endl;
+    } else {
+        address P = L.first;
         while (P != Nil) {
             cout << P->info << " ";
             P = P->next;
@@ -921,102 +935,54 @@ void printInfo(List L) {
     }
 }
 
-void insertFirst(List &L, address P) {
-    P->next = L.First;
-    L.First = P;
-}
-
-void deleteFirst(List &L) {
-    if (L.First != Nil) {
-        address P = L.First;
-        L.First = L.First->next;
-        dealokasi(P);
-    }
-}
-void deleteLast(List &L) {
-    if (L.First != Nil) {
-        if (L.First->next == Nil) {
-            dealokasi(L.First);
-            L.First = Nil;
-        } else {
-            address prec = Nil;
-            address last = L.First;
-            while (last->next != Nil) {
-                prec = last;
-                last = last->next;
-            }
-            prec->next = Nil;
-            dealokasi(last);
+address findElm(List L, infotype x) {
+    address P = L.first;
+    while (P != Nil) {
+        if (P->info == x) {
+            return P;
         }
-    }
-}
-
-void deleteAfter(List &L, address Prec) {
-    if (Prec != Nil && Prec->next != Nil) {
-        address P = Prec->next;
-        Prec->next = P->next;
-        dealokasi(P);
-    }
-}
-
-int nbList(List L) {
-    int count = 0;
-    address P = L.First;
-    while (P != Nil) {
-        count++;
         P = P->next;
     }
-    return count;
+    return Nil; 
 }
 
-void deleteList(List &L) {
-    address P = L.First;
+int totalInfo(List L) {
+    int total = 0;
+    address P = L.first;
     while (P != Nil) {
-        address temp = P;
+        total += P->info;
         P = P->next;
-        dealokasi(temp);
     }
-    L.First = Nil;
+    return total;
 }
 ```
 
 main.cpp
 ```C++
 #include "Singlylist.h"
-#include <iostream>
+
+#include<iostream>
 using namespace std;
 
 int main() {
     List L;
-    address F1, F2, F3, F4, F5 = Nil;
+    address P1, P2, P3, P4, P5 = Nil;
+    createList(L);
 
-    CreateList(L);
+    P1 = alokasi(2);  insertFirst(L, P1);
+    P2 = alokasi(0);  insertFirst(L, P2);
+    P3 = alokasi(8);  insertFirst(L, P3);
+    P4 = alokasi(12); insertFirst(L, P4);
+    P5 = alokasi(9);  insertFirst(L, P5);
 
-    F1 = alokasi(2);
-    insertFirst(L, F1);
+    printInfo(L); 
+   address found = findElm(L, 8);
+    if (found != Nil)
+        cout << "8 ditemukan dalam list" << endl;
+    else
+        cout << "8 tidak ditemukan dalam list" << endl;
 
-    F2 = alokasi(0);
-    insertFirst(L, F2);
-
-    F3 = alokasi(8);
-    insertFirst(L, F3);
-
-    F4 = alokasi(12);
-    insertFirst(L, F4);
-
-    F5 = alokasi(9);
-    insertFirst(L, F5);
-
-    deleteFirst(L);            
-    deleteLast(L);              
-    deleteAfter(L, L.First);    
-
-    printInfo(L);             
-    cout << "Jumlah node : " << nbList(L) << endl;
-
-    deleteList(L);              
-    cout << endl << "- List Berhasil Terhapus -" << endl;
-    cout << "Jumlah node : " << nbList(L) << endl;
+    cout << "Total info dari kelima elemen adalah " << totalInfo(L) << endl;
 
     return 0;
 }

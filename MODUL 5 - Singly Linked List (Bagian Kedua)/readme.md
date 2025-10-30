@@ -840,7 +840,7 @@ int main() {
 <img width="691" height="824" alt="Image" src="https://github.com/user-attachments/assets/53ae9367-a47d-44d5-a6cf-12aaebaa9a5c" />
 <img width="559" height="715" alt="Image" src="https://github.com/user-attachments/assets/d9cf9514-31be-4d36-8c37-25293f460996" />
 
-Program di atas terdiri dari tiga file dan berfungsi untuk mengelola data berbentuk bilangan integer menggunakan konsep Singly Linked List. Pengguna tidak perlu menentukan jumlah data terlebih dahulu karena setiap elemen dapat ditambahkan secara dinamis ke dalam list. Program membuat list kosong terlebih dahulu, lalu menambahkan beberapa data ke bagian awal list, dan akhirnya menampilkan seluruh isi list secara berurutan. Melalui proses ini, program menunjukkan cara kerja penyimpanan data dinamis menggunakan pointer yang saling terhubung antar node. Dan hasil output sesuai dengan yang di minta pada soal.
+Program ini memungkinkan user untuk melakukan berbagai operasi terhadap kumpulan data film, seperti menambahkan, memperbarui, mencari, dan menghapus data film secara dinamis. Setiap elemen dalam list menyimpan informasi tentang judul film, genre, dan rating. User dapat menambahkan data di awal, tengah, atau akhir list, memperbarui isi data tertentu, mencari film berdasarkan judul, alamat node, atau rentang rating; serta menghapus satu atau seluruh data dalam list.
 
 #### Full code Screenshot:
 <img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/a89f08e4-1a03-4d4b-bf26-2a599dd2b2be" />

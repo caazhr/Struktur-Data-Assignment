@@ -994,7 +994,7 @@ int main() {
 Program diatas menunjukkan cara kerja Singly Linked List dalam mengelola data bertipe integer secara dinamis. Melalui operasi seperti penambahan, penghapusan, dan penampilan elemen list. 
 
 #### Full code Screenshot:
-<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/0256e151-aa96-4576-94a9-3cc5f9d08c53" />
+<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/f9f1b8b2-12b4-449b-ab96-14e41f799565" />
 
 
 

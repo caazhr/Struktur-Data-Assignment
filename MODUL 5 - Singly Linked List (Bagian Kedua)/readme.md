@@ -1,4 +1,3 @@
-
 # <h1 align="center">Laporan Praktikum Modul Singly Linked List(bagian dua)</h1>
 <p align="center">Neisya Azzahra Rasin</p>
 
@@ -845,8 +844,8 @@ Program ini memungkinkan user untuk melakukan berbagai operasi terhadap kumpulan
 #### Full code Screenshot:
 <img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/a89f08e4-1a03-4d4b-bf26-2a599dd2b2be" />
 
-### 2. 
-<img width="687" height="243" alt="Image" src="https://github.com/user-attachments/assets/4f21dbdd-ed38-48c4-ae02-3c2f551a4cc0" />
+### 2. Latihan 5.2 Modul
+<img width="609" height="742" alt="Image" src="https://github.com/user-attachments/assets/6b975bf3-2534-4138-8a59-8baba3a14d10" />
 
 Singlylist.h
 ```C++

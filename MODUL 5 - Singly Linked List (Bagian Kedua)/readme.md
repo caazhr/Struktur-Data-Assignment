@@ -843,7 +843,7 @@ int main() {
 Program di atas terdiri dari tiga file dan berfungsi untuk mengelola data berbentuk bilangan integer menggunakan konsep Singly Linked List. Pengguna tidak perlu menentukan jumlah data terlebih dahulu karena setiap elemen dapat ditambahkan secara dinamis ke dalam list. Program membuat list kosong terlebih dahulu, lalu menambahkan beberapa data ke bagian awal list, dan akhirnya menampilkan seluruh isi list secara berurutan. Melalui proses ini, program menunjukkan cara kerja penyimpanan data dinamis menggunakan pointer yang saling terhubung antar node. Dan hasil output sesuai dengan yang di minta pada soal.
 
 #### Full code Screenshot:
-<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/904d33bb-6d48-44fc-8d08-abfda5eb1bcb" />
+<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/a89f08e4-1a03-4d4b-bf26-2a599dd2b2be" />
 
 ### 2. 
 <img width="687" height="243" alt="Image" src="https://github.com/user-attachments/assets/4f21dbdd-ed38-48c4-ae02-3c2f551a4cc0" />

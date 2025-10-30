@@ -991,8 +991,8 @@ int main() {
 #### Output:
 <img width="577" height="93" alt="Image" src="https://github.com/user-attachments/assets/bf2de8ef-ad99-48ad-bc6e-df28d628a746" />
 
-Program diatas menunjukkan cara kerja Singly Linked List dalam mengelola data bertipe integer secara dinamis. Melalui operasi seperti penambahan, penghapusan, dan penampilan elemen list. 
-
+Program ini bertujuan untuk mengelola sekumpulan data dengan menggunakan struktur data Singly Linked List.
+program membuat list yang berisi lima elemen angka, menampilkan seluruh isinya, mencari elemen tertentu melalui fungsi findElm, serta menghitung total nilai seluruh elemen menggunakan totalInfo.
 #### Full code Screenshot:
 <img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/f9f1b8b2-12b4-449b-ab96-14e41f799565" />
 
@@ -1001,7 +1001,7 @@ Program diatas menunjukkan cara kerja Singly Linked List dalam mengelola data be
 
 
 ## Kesimpulan
-Ringkasan dan interpretasi pandangan saya adalah Praktikum ini menunjukkan bagaimana Singly Linked List memungkinkan pengelolaan data secara dinamis menggunakan pointer. Saya menyadari pentingnya manajemen memori saat menambah atau menghapus elemen, serta fleksibilitas list dibanding array. Praktikum ini memberikan pemahaman dasar yang berguna untuk struktur data yang lebih kompleks di program nyata.
+Ringkasan dan interpretasi pandangan saya adalah melalui Praktikum ini, saya memahami bagaimana data dapat diatur menggunakan pointer yang saling terhubung antar node, sehingga memungkinkan pengelolaan data tanpa batasan ukuran tetap seperti pada array. Proses seperti penambahan, pencarian, penelusuran, dan penghitungan nilai dalam list memberikan gambaran nyata mengenai pentingnya efisiensi memori dan logika hubungan antar elemen. Selain itu, praktikum ini juga memperkuat pemahaman saya terhadap manajemen memori melalui penggunaan alokasi dan dealokasi secara eksplisit. Secara keseluruhan, praktikum ini menegaskan peran linked list sebagai pondasi penting dalam pembelajaran struktur data dan pemrograman dinamis.
 
 
 ## Referensi

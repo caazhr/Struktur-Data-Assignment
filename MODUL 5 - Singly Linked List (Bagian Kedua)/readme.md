@@ -989,7 +989,7 @@ int main() {
 ```
 
 #### Output:
-<img width="598" height="207" alt="Image" src="https://github.com/user-attachments/assets/c15e54d0-daec-4327-a634-af97317d0aed" />
+<img width="577" height="93" alt="Image" src="https://github.com/user-attachments/assets/bf2de8ef-ad99-48ad-bc6e-df28d628a746" />
 
 Program diatas menunjukkan cara kerja Singly Linked List dalam mengelola data bertipe integer secara dinamis. Melalui operasi seperti penambahan, penghapusan, dan penampilan elemen list. 
 

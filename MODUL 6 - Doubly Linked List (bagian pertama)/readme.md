@@ -445,14 +445,14 @@ int main() {
 <img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/58e2faab-57f3-431b-bf9e-ab6024bae203" />
 <img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/f197d9f1-40ab-483c-b143-1f9e507b5910" />
 
-Kode di atas digunakan untuk mencetak teks "ini adalah file code guided praktikan" ke layar menggunakan function cout untuk mengeksekusi nya.
+Kode tersebut digunakan untuk memproses dan menampilkan data kendaraan dengan memanfaatkan struktur Doubly Linked List. Program ini mencakup pembuatan node dan list, penambahan data baru, pencarian berdasarkan nomor polisi, penghapusan elemen tertentu, serta penampilan hasilnya ke layar. Setiap output ditampilkan menggunakan fungsi cout, sehingga pengguna dapat melihat perubahan data yang terjadi selama program berjalan.
 
 #### Full code Screenshot:
 <img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/d620412e-fe02-4523-9c0d-b755b7ccc893" />
 
 
 ## Kesimpulan
-Ringkasan dan interpretasi pandangan kalia dari hasil praktikum dan pembelajaran yang didapat[1].
+Pada praktikum ini saya belajar cara menambah, mencari, dan menghapus data dalam Doubly Linked List. Saya jadi lebih paham bagaimana pointer bekerja dan bagaimana menjaga list tetap benar saat data berubah.
 
 ## Referensi
 [1] I. Holm, Narrator, and J. Fullerton-Smith, Producer, How to Build a Human [DVD]. London: BBC; 2002.

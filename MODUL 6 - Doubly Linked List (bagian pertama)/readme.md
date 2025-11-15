@@ -9,19 +9,19 @@ Komponen-komponen dalam doubly linked list:
 - Next    : Pointer pada elemen sebagai succesor yg menunjuk pada elemen didepannya
 - Prev    : pointer pada elemen sebagai successor yg menunjuk pada elemen dibelakangnya.
   
-**Operasi Insert**<br>
+**Operasi Insert**
 - insert first -> menyisipkan node baru di depan list
 - insert last -> menyisipkan node baru di akhir list
 - insert after -> menyisipkan node baru setelah node tertentu 
 - insert before -> kebalikan dari insert after. perbedaan dari insert after dan before terletak pada pencarian elemennya
 
-**Operasi Delete**<br>
+**Operasi Delete**
 - delete first -> menghapus node pertama 
 - delete last -> menghapus node terakhir 
 - delete after -> menghapus node yg berada setelah node tertentu
 - delete before -> kebalikan dari delete after. perbedaan delete after dan before terletak pada pencarian elemennya. 
 
-**Update, View, dan Searching**<br>
+**Update, View, dan Searching**
 Proses pencarian, update data dan view data pada dasarnya sama dengan proses pada Singly linked
 list. Hanya saja pada Doubly linked list lebih mudah dalam melakukan proses akses elemen, karena
 bisa melakukan iterasi maju dan mundur.

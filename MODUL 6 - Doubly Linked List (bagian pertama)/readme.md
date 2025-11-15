@@ -192,7 +192,8 @@ Kode di atas digunakan untuk menyisipan elemen pada struktur data Doubly Linked 
 
 ## Unguided 
 
-### 1. [Soal]
+### <img width="879" height="513" alt="Image" src="https://github.com/user-attachments/assets/edc8c89f-8313-4973-9746-d73ea20fd5be" />
+
 
 ```C++
 #include <iostream>

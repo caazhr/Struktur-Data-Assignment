@@ -100,7 +100,7 @@ int main() {
     return 0; 
 }
 ```
-Kode di atas digunakan untuk mencetak teks "ini adalah file code guided praktikan" ke layar menggunakan function cout untuk mengeksekusi nya.
+Kode di atas digunakan untuk untuk menghapus elemen pada struktur data Doubly Linked List. Program ini menyisipkan beberapa elemen ke dalam list, kemudian menghapus elemen pertama dan elemen setelahnya menggunakan fungsi deleteFirst dan deleteAfter. Hasil perubahan list ditampilkan ke layar menggunakan fungsi cout.
 
 ### 2. [Operasi Insert]
 
@@ -187,7 +187,7 @@ int main() {
     return 0; 
 }
 ```
-Kode di atas digunakan untuk mencetak teks "ini adalah file code guided praktikan" ke layar menggunakan function cout untuk mengeksekusi nya.
+Kode di atas digunakan untuk menyisipan elemen pada struktur data Doubly Linked List. Program ini menambahkan elemen di awal list, di akhir list, dan setelah elemen tertentu menggunakan fungsi insertFirst, insertLast, dan insertAfter. Hasil akhir dari penyisipan elemen ditampilkan ke layar menggunakan fungsi cout melalui prosedur printInfo.
 
 
 ## Unguided 

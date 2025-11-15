@@ -196,6 +196,7 @@ Kode di atas digunakan untuk menyisipan elemen pada struktur data Doubly Linked 
 <img width="753" height="218" alt="Image" src="https://github.com/user-attachments/assets/e0d780ce-d594-486f-8aca-05f3f6d685bd" />
 <img width="689" height="409" alt="Image" src="https://github.com/user-attachments/assets/02cd8684-d758-4f1a-be47-8551d072eb37" />
 
+
 doublylist.h
 ```C++
 #ifndef DOUBLYLIST_H
@@ -237,6 +238,7 @@ void printInfo(List L);
 
 #endif
 ```
+
 
 doublylist.cpp
 ```C++
@@ -355,6 +357,7 @@ void printInfo(List L) {
 
 ```
 
+
 main.cpp
 ```C++
 
@@ -445,7 +448,7 @@ int main() {
 Kode di atas digunakan untuk mencetak teks "ini adalah file code guided praktikan" ke layar menggunakan function cout untuk mengeksekusi nya.
 
 #### Full code Screenshot:
-![240309_10h21m35s_screenshot](https://github.com/suxeno/Struktur-Data-Assignment/assets/111122086/41e9641c-ad4e-4e50-9ca4-a0215e336b04)
+<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/d620412e-fe02-4523-9c0d-b755b7ccc893" />
 
 
 ## Kesimpulan

@@ -28,7 +28,7 @@ bisa melakukan iterasi maju dan mundur.
 Seperti halnya Singly linked list, Doubly linked list juga mempunyai ADT yang pada dasarnya sama
 dengan ADT yang ada pada Singly linked list.
 
-Keunggulan Doubly Linked List 
+**Keunggulan Doubly Linked List **
 - mendukung traversal dua arah
 - penghapusan dan penyisipan lebih efisien karena pointer ke node sebelumnya tersedia
 - lebih fleksibel dibanding singly linked list 

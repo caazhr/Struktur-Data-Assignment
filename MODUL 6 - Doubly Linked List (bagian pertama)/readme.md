@@ -2,8 +2,37 @@
 <p align="center">Neisya Azzahra Rasin</p>
 
 ## Dasar Teori
+Doubly Linked List adalah linked list yang masing-masing elemennya memiliki 2 successor, yaitu successor yg menunjuk pada elemen sebelumnya (prev) dan successor yg menunjuk pada elemen sesudahnya (next).
+Komponen-komponen dalam doubly linked list:
+- First    : pointer pada list yg menunjuk pada elemen pertama list
+- Last    : Pointer pada list yg menunjuk pada element terakhir list
+- Next    : Pointer pada elemen sebagai succesor yg menunjuk pada elemen didepannya
+- Prev    : pointer pada elemen sebagai successor yg menunjuk pada elemen dibelakangnya.
+  
+**Operasi Insert**
+a. insert first -> menyisipkan node baru di depan list
+b. insert last -> menyisipkan node baru di akhir list
+c. insert after -> menyisipkan node baru setelah node tertentu 
+d. insert before -> kebalikan dari insert after. perbedaan dari insert after dan before terletak pada pencarian elemennya
 
-Berikan penjelasan teori terkait materi modul ini dengan bahasa anda sendiri serta susunan yang terstruktur per topiknya.
+**Operasi Delete**
+a. delete first -> menghapus node pertama 
+b. delete last -> menghapus node terakhir 
+c. delete after -> menghapus node yg berada setelah node tertentu
+d. delete before -> kebalikan dari delete after. perbedaan delete after dan before terletak pada pencarian elemennya. 
+
+**Update, View, dan Searching **
+Proses pencarian, update data dan view data pada dasarnya sama dengan proses pada Singly linked
+list. Hanya saja pada Doubly linked list lebih mudah dalam melakukan proses akses elemen, karena
+bisa melakukan iterasi maju dan mundur.
+Seperti halnya Singly linked list, Doubly linked list juga mempunyai ADT yang pada dasarnya sama
+dengan ADT yang ada pada Singly linked list.
+
+Keunggulan Doubly Linked List 
+- mendukung traversal dua arah
+- penghapusan dan penyisipan lebih efisien karena pointer ke node sebelumnya tersedia
+- lebih fleksibel dibanding singly linked list 
+   
 
 ## Guided 
 

@@ -21,7 +21,7 @@ Komponen-komponen dalam doubly linked list:
 - delete after -> menghapus node yg berada setelah node tertentu
 - delete before -> kebalikan dari delete after. perbedaan delete after dan before terletak pada pencarian elemennya. 
 
-**Update, View, dan Searching**
+**Update, View, dan Searching**<br>
 Proses pencarian, update data dan view data pada dasarnya sama dengan proses pada Singly linked
 list. Hanya saja pada Doubly linked list lebih mudah dalam melakukan proses akses elemen, karena
 bisa melakukan iterasi maju dan mundur.

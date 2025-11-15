@@ -194,15 +194,249 @@ Kode di atas digunakan untuk menyisipan elemen pada struktur data Doubly Linked 
 
 ### <img width="879" height="513" alt="Image" src="https://github.com/user-attachments/assets/edc8c89f-8313-4973-9746-d73ea20fd5be" />
 <img width="753" height="218" alt="Image" src="https://github.com/user-attachments/assets/e0d780ce-d594-486f-8aca-05f3f6d685bd" />
+<img width="689" height="409" alt="Image" src="https://github.com/user-attachments/assets/02cd8684-d758-4f1a-be47-8551d072eb37" />
 
+doublylist.h
+```C++
+#ifndef DOUBLYLIST_H
+#define DOUBLYLIST_H
+
+#include <string>
+#define Nil NULL
+using namespace std;
+
+struct kendaraan {
+    string nopol;
+    string warna;
+    int   thnBuat;
+};
+
+typedef kendaraan infotype;
+typedef struct elmlist *address;
+
+struct elmlist {
+    infotype info;
+    address next;
+    address prev;
+};
+
+struct List {
+    address first;
+    address last;
+};
+
+void createList(List &L);
+address alokasi(infotype x);
+void dealokasi(address &P);
+void insertFirst(List &L, address P);
+void deleteFirst(List &L, address &P);
+void deleteLast(List &L, address &P);
+void deleteAfter(List &L, address &P, address Prec);
+address findElm(List L, infotype x);
+void printInfo(List L);
+
+#endif
+```
+
+doublylist.cpp
 ```C++
 #include <iostream>
+#include "Doublylist.h"
+using namespace std;
+
+void createList(List &L) {
+    L.first = Nil;
+    L.last  = Nil;
+}
+
+address alokasi(infotype x) {
+    address P = new elmlist;
+    P->info = x;
+    P->next = Nil;
+    P->prev = Nil;
+    return P;
+}
+
+void dealokasi(address &P) {
+    delete P;
+    P = Nil;
+}
+
+void insertFirst(List &L, address P) {
+    P->next = L.first;
+    P->prev = Nil;
+
+    if (L.first != Nil) {
+        L.first->prev = P;
+    } else {
+        L.last = P;
+    }
+    L.first = P;
+}
+
+void deleteFirst(List &L, address &P) {
+    if (L.first == Nil) {
+        P = Nil;
+        return;
+    }
+
+    P = L.first;
+    L.first = P->next;
+
+    if (L.first != Nil) {
+        L.first->prev = Nil;
+    } else {
+        L.last = Nil;
+    }
+
+    P->next = Nil;
+    P->prev = Nil;
+}
+
+void deleteLast(List &L, address &P) {
+    if (L.last == Nil) {
+        P = Nil;
+        return;
+    }
+
+    P = L.last;
+    L.last = P->prev;
+
+    if (L.last != Nil) {
+        L.last->next = Nil;
+    } else {
+        L.first = Nil;
+    }
+
+    P->next = Nil;
+    P->prev = Nil;
+}
+
+void deleteAfter(List &L, address &P, address Prec) {
+    if (Prec == Nil || Prec->next == Nil) {
+        P = Nil;       
+        return;
+    }
+
+    P = Prec->next;          
+    Prec->next = P->next;
+
+    if (P->next != Nil) {
+        P->next->prev = Prec;
+    } else {
+         L.last = Prec;
+    }
+
+    P->next = Nil;
+    P->prev = Nil;
+}
+
+address findElm(List L, infotype x) {
+    address P = L.first;
+    while (P != Nil && P->info.nopol != x.nopol) {
+        P = P->next;
+    }
+    return P;   
+}
+
+void printInfo(List L) {
+    address P = L.first;
+
+    cout << endl;
+    cout << "DATA LIST 1" << endl << endl;
+
+    while (P != Nil) {
+        cout << "Nomor Polisi : " << P->info.nopol << endl;
+        cout << "Warna        : " << P->info.warna << endl;
+        cout << "Tahun        : " << P->info.thnBuat << endl;
+        P = P->next;
+    }
+}
+
+```
+
+main.cpp
+```C++
+
+#include <iostream>
+#include "Doublylist.h"
+
 using namespace std;
 
 int main() {
-    cout << "ini adalah file code unguided praktikan" << endl;
+    List L;
+    createList(L);
+
+    for (int i = 0; i < 4; i++) {
+        infotype x;
+
+        cout << "masukkan nomor polisi: ";
+        cin  >> x.nopol;
+        cout << "masukkan warna kendaraan: ";
+        cin  >> x.warna;
+        cout << "masukkan tahun kendaraan: ";
+        cin  >> x.thnBuat;
+
+        infotype kunci;
+        kunci.nopol = x.nopol;
+        address q = findElm(L, kunci);
+
+        if (q != Nil) {
+            cout << "nomor polisi sudah terdaftar" << endl;
+        } else {
+            address P = alokasi(x);
+            insertFirst(L, P); 
+        }
+
+        cout << endl;
+    }
+
+    printInfo(L);
+    
+    infotype cari;
+    cout << "Masukkan Nomor Polisi yang dicari : ";
+    cin  >> cari.nopol;
+
+    address Q = findElm(L, cari);
+    cout << endl;
+
+    if (Q != Nil) {
+        cout << "Nomor Polisi : " << Q->info.nopol << endl;
+        cout << "Warna        : " << Q->info.warna << endl;
+        cout << "Tahun        : " << Q->info.thnBuat << endl;
+    } else {
+        cout << "Data tidak ditemukan" << endl;
+    }
+
+    infotype hapusKey;
+    cout << endl;
+    cout << "Masukkan Nomor Polisi yang akan dihapus : ";
+    cin  >> hapusKey.nopol;
+
+    address target = findElm(L, hapusKey);
+    address Pdel;
+
+    if (target == Nil) {
+        cout << "Data dengan nomor polisi " << hapusKey.nopol
+             << " tidak ditemukan." << endl;
+    } else {
+        if (target == L.first) {
+            deleteFirst(L, Pdel);
+        } else if (target == L.last) {
+            deleteLast(L, Pdel);
+        } else {
+            deleteAfter(L, Pdel, target->prev);
+        }
+        cout << "Data dengan nomor polisi " << hapusKey.nopol
+             << " berhasil dihapus." << endl;
+        dealokasi(Pdel);
+    }
+
+    printInfo(L);
+
     return 0;
 }
+
 ```
 #### Output:
 ![240302_00h00m06s_screenshot](https://github.com/suxeno/Struktur-Data-Assignment/assets/111122086/6d1727a8-fb77-4ecf-81ff-5de9386686b7)

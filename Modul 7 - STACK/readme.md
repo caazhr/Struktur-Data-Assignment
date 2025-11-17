@@ -541,7 +541,7 @@ int main() {
 Program di atas bekerja dengan cara memasukkan beberapa data ke dalam stack menggunakan push, lalu menghapus beberapa data teratas dengan pop. Setelah itu, program menampilkan isi stack dari elemen paling atas hingga paling bawah melalui printInfo. Selanjutnya, program membalik urutan elemen dengan memindahkan seluruh isi stack ke stack lain menggunakan fungsi balikStack, kemudian menampilkan kembali hasil akhirnya. Setiap operasi yang dijalankan akan mengubah posisi elemen, dan hasilnya langsung ditampilkan ke layar menggunakan cout.
 
 #### Full code Screenshot:
-![240309_10h21m35s_screenshot](https://github.com/suxeno/Struktur-Data-Assignment/assets/111122086/41e9641c-ad4e-4e50-9ca4-a0215e336b04)
+<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/e8dd8c6a-ba79-4a3d-8b38-e887f538c18e" />
 
 ### 2. -
 stack.h

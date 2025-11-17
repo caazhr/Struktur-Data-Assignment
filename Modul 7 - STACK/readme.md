@@ -407,8 +407,205 @@ Program ini adalah contoh penggunaan stack yang dibuat menggunakan array. Di dal
 
 ## Unguided 
 
-### 1. [Soal]
+### 1. <img width="819" height="777" alt="Image" src="https://github.com/user-attachments/assets/c23ff45e-9321-41f4-921a-6c2fe42fa13b" />
 
+stack.h
+```C++
+#ifndef STACK_H_INCLUDED
+#define STACK_H_INCLUDED
+
+#include <string>
+using namespace std;
+
+const int MAX = 20;
+
+struct infotype {
+    int value;      
+    string label;   
+};
+
+struct Stack {
+    infotype info[MAX]; 
+    int top;            
+};
+
+void createStack(Stack &S);
+bool isEmpty(Stack S);
+bool isFull(Stack S);
+void push(Stack &S, infotype x);
+infotype pop(Stack &S);
+void printInfo(Stack S);
+void balikStack(Stack &S);
+
+#endif
+
+```
+
+stack.cpp 
+```C++
+#include "stack.h"
+#include <iostream>
+using namespace std;
+
+void createStack(Stack &S) {
+    S.top = -1;
+}
+
+bool isEmpty(Stack S) {
+    return (S.top == -1);
+}
+
+bool isFull(Stack S) {
+    return (S.top == MAX - 1);
+}
+
+void push(Stack &S, infotype x) {
+    if (isFull(S)) {
+        cout << "Stack penuh!" << endl;
+        return;
+    }
+    S.top++;
+    S.info[S.top] = x;
+}
+
+infotype pop(Stack &S) {
+    infotype dummy;
+    dummy.value = 0;
+    dummy.label = "";
+
+    if (isEmpty(S)) {
+        cout << "Stack kosong!" << endl;
+        return dummy;
+    }
+
+    infotype x = S.info[S.top];
+    S.top--;
+    return x;
+}
+
+void printInfo(Stack S) {
+    cout << "[TOP] ";
+    for (int i = S.top; i >= 0; --i) {
+        cout << S.info[i].value << " ";
+    }
+    cout << endl;
+}
+
+void balikStack(Stack &S) {
+    Stack T;
+    createStack(T);
+
+    while (!isEmpty(S)) {
+        infotype x = pop(S);
+        push(T, x);
+    }
+    S = T;
+}
+```
+main.cpp
+```C++
+#include <iostream>
+#include "stack.h"
+using namespace std;
+
+int main() {
+    cout << "Hello world!" << endl;
+
+    Stack S;
+    createStack(S);
+
+    infotype x;
+
+    x.value = 3; x.label = "tiga";      push(S, x);
+    x.value = 4; x.label = "empat";     push(S, x);
+    x.value = 8; x.label = "delapan";   push(S, x);
+    pop(S);                           
+    x.value = 2; x.label = "dua";       push(S, x);
+    x.value = 3; x.label = "tiga";      push(S, x);
+    pop(S);                           
+    x.value = 9; x.label = "sembilan";  push(S, x);
+
+    printInfo(S);                      
+
+    cout << "balik stack" << endl;
+    balikStack(S);
+    printInfo(S);                      
+
+    return 0;
+}
+
+```
+#### Output:
+![240302_00h00m06s_screenshot](https://github.com/suxeno/Struktur-Data-Assignment/assets/111122086/6d1727a8-fb77-4ecf-81ff-5de9386686b7)
+
+Kode di atas digunakan untuk mencetak teks "ini adalah file code guided praktikan" ke layar menggunakan function cout untuk mengeksekusi nya.
+
+#### Full code Screenshot:
+![240309_10h21m35s_screenshot](https://github.com/suxeno/Struktur-Data-Assignment/assets/111122086/41e9641c-ad4e-4e50-9ca4-a0215e336b04)
+
+### 2. -
+stack.h
+```C++
+#include <iostream>
+using namespace std;
+
+int main() {
+    cout << "ini adalah file code unguided praktikan" << endl;
+    return 0;
+}
+```
+
+stack.cpp 
+```C++
+#include <iostream>
+using namespace std;
+
+int main() {
+    cout << "ini adalah file code unguided praktikan" << endl;
+    return 0;
+}
+```
+main.cpp
+```C++
+#include <iostream>
+using namespace std;
+
+int main() {
+    cout << "ini adalah file code unguided praktikan" << endl;
+    return 0;
+}
+```
+#### Output:
+![240302_00h00m06s_screenshot](https://github.com/suxeno/Struktur-Data-Assignment/assets/111122086/6d1727a8-fb77-4ecf-81ff-5de9386686b7)
+
+Kode di atas digunakan untuk mencetak teks "ini adalah file code guided praktikan" ke layar menggunakan function cout untuk mengeksekusi nya.
+
+#### Full code Screenshot:
+![240309_10h21m35s_screenshot](https://github.com/suxeno/Struktur-Data-Assignment/assets/111122086/41e9641c-ad4e-4e50-9ca4-a0215e336b04)
+
+### 3. -
+stack.h
+```C++
+#include <iostream>
+using namespace std;
+
+int main() {
+    cout << "ini adalah file code unguided praktikan" << endl;
+    return 0;
+}
+```
+
+stack.cpp 
+```C++
+#include <iostream>
+using namespace std;
+
+int main() {
+    cout << "ini adalah file code unguided praktikan" << endl;
+    return 0;
+}
+```
+main.cpp
 ```C++
 #include <iostream>
 using namespace std;

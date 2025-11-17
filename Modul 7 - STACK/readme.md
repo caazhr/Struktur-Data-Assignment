@@ -838,14 +838,14 @@ int main() {
 #### Output:
 <img width="700" height="219" alt="Image" src="https://github.com/user-attachments/assets/dcdecf45-c871-4d53-912d-07beb9402d3e" />
 
-Kode di atas digunakan untuk mencetak teks "ini adalah file code guided praktikan" ke layar menggunakan function cout untuk mengeksekusi nya.
+Program ini bekerja dengan cara mengambil deret digit yang diberikan pengguna dan memasukkannya ke dalam stack. Setelah semua data masuk, program menampilkan isi stack dari elemen teratas hingga terbawah. Program kemudian membalik urutan stack menggunakan fungsi balikStack dan menampilkan hasil akhirnya, sehingga terlihat perubahan urutan sebelum dan sesudah pembalikan.
 
 #### Full code Screenshot:
 <img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/e4331350-42ba-48df-bbbc-90aadf10081f" />
 
 
 ## Kesimpulan
-Ringkasan dan interpretasi pandangan kalia dari hasil praktikum dan pembelajaran yang didapat[1].
+Dari praktikum ini saya semakin memahami bagaimana stack bekerja dengan prinsip LIFO dan bagaimana operasi seperti push, pop, dan pembalikan urutan dijalankan dalam program. Praktikum ini membuat saya lebih mengerti cara menggunakan stack dalam berbagai situasi dan bagaimana penerapannya dapat membantu mengatur data secara efektif.
 
 ## Referensi
 [1] I. Holm, Narrator, and J. Fullerton-Smith, Producer, How to Build a Human [DVD]. London: BBC; 2002.

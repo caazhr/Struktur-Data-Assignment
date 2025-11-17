@@ -697,37 +697,143 @@ Program ini bekerja dengan cara memasukkan beberapa data ke dalam stack mengguna
 #### Full code Screenshot:
 <img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/f4328c33-1b12-42bd-aba8-22f0d04c6d97" />
 
-### 3. -
+### 3.
+<img width="831" height="407" alt="Image" src="https://github.com/user-attachments/assets/6fa40eb0-b85d-4767-aa17-c77f031deded" />
+
 stack.h
 ```C++
-#include <iostream>
+#ifndef STACK_H_INCLUDED
+#define STACK_H_INCLUDED
+
+#include <string>
 using namespace std;
 
-int main() {
-    cout << "ini adalah file code unguided praktikan" << endl;
-    return 0;
-}
+const int MAX = 20;
+
+struct infotype {
+    int value;
+    string label;
+};
+
+struct Stack {
+    infotype info[MAX];
+    int top;
+};
+
+void createStack(Stack &S);
+bool isEmpty(Stack S);
+bool isFull(Stack S);
+
+void push(Stack &S, infotype x);
+infotype pop(Stack &S);
+void printInfo(Stack S);
+void balikStack(Stack &S);
+void getInputStream(Stack &S);
+
+#endif
 ```
 
 stack.cpp 
 ```C++
+#include "stack.h"
 #include <iostream>
 using namespace std;
 
-int main() {
-    cout << "ini adalah file code unguided praktikan" << endl;
-    return 0;
+void createStack(Stack &S) {
+    S.top = -1;
 }
+
+bool isEmpty(Stack S) {
+    return (S.top == -1);
+}
+
+bool isFull(Stack S) {
+    return (S.top == MAX - 1);
+}
+
+void push(Stack &S, infotype x) {
+    if (isFull(S)) {
+        cout << "Stack penuh!" << endl;
+        return;
+    }
+    S.top++;
+    S.info[S.top] = x;
+}
+
+infotype pop(Stack &S) {
+    infotype dummy;
+    dummy.value = 0;
+    dummy.label = "";
+
+    if (isEmpty(S)) {
+        cout << "Stack kosong!" << endl;
+        return dummy;
+    }
+
+    infotype x = S.info[S.top];
+    S.top--;
+    return x;
+}
+
+void printInfo(Stack S) {
+    cout << "[TOP] ";
+    for (int i = S.top; i >= 0; --i) {
+        cout << S.info[i].value << " ";
+    }
+    cout << endl;
+}
+
+void balikStack(Stack &S) {
+    Stack T;
+    createStack(T);
+
+    while (!isEmpty(S)) {
+        infotype x = pop(S);
+        push(T, x);
+    }
+    S = T;
+}
+
+void getInputStream(Stack &S) {
+    createStack(S);  
+    char c;
+    while (true) {
+        c = cin.get();         
+        if (c == '\n') break;   
+
+        if (c >= '0' && c <= '9') {
+            infotype x;
+            x.value = c - '0';         
+            x.label = string(1, c);    
+            push(S, x);
+        }
+    }
+}
+
 ```
+
 main.cpp
 ```C++
 #include <iostream>
+#include "stack.h"
 using namespace std;
 
 int main() {
-    cout << "ini adalah file code unguided praktikan" << endl;
+    cout << "Hello world!" << endl;
+
+    Stack S;
+    createStack(S);
+
+    getInputStream(S);
+
+    printInfo(S);         
+    cout << "balik stack" << endl;
+    balikStack(S);
+    printInfo(S);   
+          
     return 0;
 }
+
 ```
 #### Output:
 ![240302_00h00m06s_screenshot](https://github.com/suxeno/Struktur-Data-Assignment/assets/111122086/6d1727a8-fb77-4ecf-81ff-5de9386686b7)

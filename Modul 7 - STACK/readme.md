@@ -692,7 +692,7 @@ int main() {
 #### Output:
 <img width="608" height="185" alt="Image" src="https://github.com/user-attachments/assets/9d3af5e0-537c-4228-ba20-06d777950841" />
 
-Kode di atas digunakan untuk mencetak teks "ini adalah file code guided praktikan" ke layar menggunakan function cout untuk mengeksekusi nya.
+Program ini bekerja dengan cara memasukkan beberapa data ke dalam stack menggunakan fungsi pushAscending, yaitu proses push yang otomatis menempatkan data pada posisi yang sesuai sehingga urutan nilai di dalam stack menjadi tersusun menaik dari bawah ke atas. Setelah semua data dimasukkan, program menampilkan isi stack dari elemen paling atas hingga terbawah menggunakan printInfo. Selanjutnya, program membalik urutan isi stack menggunakan balikStack dan menampilkan hasil akhirnya ke layar. Seluruh perubahan isi stack ditampilkan dengan cout sehingga bisa langsung melihat perbedaan sebelum dan sesudah proses pembalikan.
 
 #### Full code Screenshot:
 <img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/f4328c33-1b12-42bd-aba8-22f0d04c6d97" />

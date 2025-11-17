@@ -536,9 +536,9 @@ int main() {
 
 ```
 #### Output:
-![240302_00h00m06s_screenshot](https://github.com/suxeno/Struktur-Data-Assignment/assets/111122086/6d1727a8-fb77-4ecf-81ff-5de9386686b7)
+<img width="612" height="202" alt="Image" src="https://github.com/user-attachments/assets/43df6448-5573-4070-afa2-2fdb2c699112" />
 
-Kode di atas digunakan untuk mencetak teks "ini adalah file code guided praktikan" ke layar menggunakan function cout untuk mengeksekusi nya.
+Program di atas bekerja dengan cara memasukkan beberapa data ke dalam stack menggunakan push, lalu menghapus beberapa data teratas dengan pop. Setelah itu, program menampilkan isi stack dari elemen paling atas hingga paling bawah melalui printInfo. Selanjutnya, program membalik urutan elemen dengan memindahkan seluruh isi stack ke stack lain menggunakan fungsi balikStack, kemudian menampilkan kembali hasil akhirnya. Setiap operasi yang dijalankan akan mengubah posisi elemen, dan hasilnya langsung ditampilkan ke layar menggunakan cout.
 
 #### Full code Screenshot:
 ![240309_10h21m35s_screenshot](https://github.com/suxeno/Struktur-Data-Assignment/assets/111122086/41e9641c-ad4e-4e50-9ca4-a0215e336b04)

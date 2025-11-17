@@ -1,4 +1,3 @@
-
 # <h1 align="center">Laporan Praktikum Modul STACK</h1>
 <p align="center">Neisya Azzahra Rasin</p>
 
@@ -407,7 +406,8 @@ Program ini adalah contoh penggunaan stack yang dibuat menggunakan array. Di dal
 
 ## Unguided 
 
-### 1. <img width="819" height="777" alt="Image" src="https://github.com/user-attachments/assets/c23ff45e-9321-41f4-921a-6c2fe42fa13b" />
+### 1. 
+<img width="819" height="777" alt="Image" src="https://github.com/user-attachments/assets/c23ff45e-9321-41f4-921a-6c2fe42fa13b" />
 
 stack.h
 ```C++
@@ -543,35 +543,149 @@ Program di atas bekerja dengan cara memasukkan beberapa data ke dalam stack meng
 #### Full code Screenshot:
 <img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/e8dd8c6a-ba79-4a3d-8b38-e887f538c18e" />
 
-### 2. -
+### 2. 
+<img width="855" height="703" alt="Image" src="https://github.com/user-attachments/assets/73b9ebcd-110a-469a-8716-ca0d1a9ecd0c" />
+
 stack.h
 ```C++
-#include <iostream>
+#ifndef STACK_H_INCLUDED
+#define STACK_H_INCLUDED
+
+#include <string>
 using namespace std;
 
-int main() {
-    cout << "ini adalah file code unguided praktikan" << endl;
-    return 0;
-}
+const int MAX = 20;
+
+struct infotype {
+    int value;
+    string label;
+};
+
+struct Stack {
+    infotype info[MAX];
+    int top;
+};
+
+void createStack(Stack &S);
+bool isEmpty(Stack S);
+bool isFull(Stack S);
+void push(Stack &S, infotype x);
+infotype pop(Stack &S);
+void printInfo(Stack S);
+void balikStack(Stack &S);
+void pushAscending(Stack &S, infotype x);
+
+#endif
 ```
 
 stack.cpp 
 ```C++
+#include "stack.h"
 #include <iostream>
 using namespace std;
 
-int main() {
-    cout << "ini adalah file code unguided praktikan" << endl;
-    return 0;
+void createStack(Stack &S) {
+    S.top = -1;
+}
+
+bool isEmpty(Stack S) {
+    return (S.top == -1);
+}
+
+bool isFull(Stack S) {
+    return (S.top == MAX - 1);
+}
+
+void push(Stack &S, infotype x) {
+    if (isFull(S)) {
+        cout << "Stack penuh!" << endl;
+        return;
+    }
+    S.top++;
+    S.info[S.top] = x;
+}
+
+infotype pop(Stack &S) {
+    infotype dummy;
+    dummy.value = 0;
+    dummy.label = "";
+
+    if (isEmpty(S)) {
+        cout << "Stack kosong!" << endl;
+        return dummy;
+    }
+
+    infotype x = S.info[S.top];
+    S.top--;
+    return x;
+}
+
+void printInfo(Stack S) {
+    cout << "[TOP] ";
+    for (int i = S.top; i >= 0; --i) {
+        cout << S.info[i].value << " ";
+    }
+    cout << endl;
+}
+
+void balikStack(Stack &S) {
+    Stack T;
+    createStack(T);
+
+    while (!isEmpty(S)) {
+        infotype x = pop(S);
+        push(T, x);
+    }
+    S = T;
+}
+
+void pushAscending(Stack &S, infotype x) {
+    if (isFull(S)) {
+        cout << "Stack penuh!" << endl;
+        return;
+    }
+
+    Stack T;
+    createStack(T);
+
+    while (!isEmpty(S) && S.info[S.top].value > x.value) {
+        push(T, pop(S));
+    }
+
+    push(S, x);
+
+    while (!isEmpty(T)) {
+        push(S, pop(T));
+    }
 }
 ```
 main.cpp
 ```C++
 #include <iostream>
+#include "stack.h"
 using namespace std;
 
 int main() {
-    cout << "ini adalah file code unguided praktikan" << endl;
+    cout << "Hello world!" << endl;
+
+    Stack S;
+    createStack(S);
+
+    infotype x;
+
+    pushAscending(S, {3, "tiga"});
+    pushAscending(S, {4, "empat"});
+    pushAscending(S, {8, "delapan"});
+    pushAscending(S, {2, "dua"});
+    pushAscending(S, {3, "tiga(2)"});
+    pushAscending(S, {9, "sembilan"});
+
+    printInfo(S);                 
+
+    cout << "balik stack" << endl;
+    balikStack(S);
+    printInfo(S);                
+
     return 0;
 }
 ```

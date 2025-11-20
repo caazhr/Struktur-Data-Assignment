@@ -984,3 +984,5 @@ int main(){
     return 0;
 }
 ```
+Output 
+<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/4baee42b-dc90-4bfc-b73c-daeb6f098722" />

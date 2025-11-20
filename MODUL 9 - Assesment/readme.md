@@ -797,4 +797,6 @@ int main(){
     return 0;
 }
 ```
+output 
+<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/57575c79-e13d-4ca4-b09b-c5b7ded11e71" />
 

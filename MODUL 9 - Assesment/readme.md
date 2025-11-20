@@ -922,46 +922,32 @@ int main(){
     QueueEkspedisi Q;
     createQueue(Q);
 
-    int menu;
-    do {
-        cout << "\n--- Komanitya Ekspress ---\n";
-        cout << "1. Input Data Paket\n";
-        cout << "2. Tampil Data Paket\n";
-        cout << "3. Hapus Data Paket (deQueue)\n";
-        cout << "4. Hitung Total Biaya Pengiriman\n";
-        cout << "5. Keluar\n";
-        cout << "Pilih menu: ";
-        cin >> menu;
+    Paket P1 = {"123456", "Hutao", 14, "Sumeru"};
+    Paket P2 = {"234567", "Ayaka", 10, "Fontaine"};
+    Paket P3 = {"345678", "Bennet", 7, "Natlan"};
+    Paket P4 = {"456789", "Furina", 16, "Liyue"};
+    Paket P5 = {"567890", "Nefer", 6, "Inazuma"};
 
-        if(menu == 1){
-            Paket P;
+    enQueue(Q, P1);
+    enQueue(Q, P2);
+    enQueue(Q, P3);
+    enQueue(Q, P4);
+    enQueue(Q, P5);
 
-            cout << "\nMasukkan Data Paket:\n";
-            cout << "Kode Resi: ";
-            cin >> P.KodeResi;
-            cout << "Nama Pengirim: ";
-            cin >> P.NamaPengirim;
-            cout << "Berat Barang (kg): ";
-            cin >> P.BeratBarang;
-            cout << "Tujuan: ";
-            cin >> P.Tujuan;
+    cout << "\n--- Queue Setelah Input 5 Paket ---\n";
+    viewQueue(Q);
 
-            enQueue(Q, P);
+    Paket removed;
+    deQueue(Q, removed);
+    cout << "\nPaket dengan resi " << removed.KodeResi
+         << " telah dikeluarkan dari antrian.\n";
 
-        } else if(menu == 2){
-            viewQueue(Q);
+    cout << "\n--- Queue Setelah deQueue 1x ---\n";
+    viewQueue(Q);
 
-        } else if(menu == 3){
-            Paket removed;
-            deQueue(Q, removed);
-            cout << "Data paket dengan resi " << removed.KodeResi << " telah dihapus.\n";
-
-        } else if(menu == 4){
-            int total = TotalBiayaPengiriman(Q);
-            cout << "Total biaya pengiriman semua paket: Rp " << total << endl;
-        }
-
-    } while(menu != 5);
+    int total = TotalBiayaPengiriman(Q);
+    cout << "\n--- Total Biaya Pengiriman Semua Paket ---\n";
+    cout << "Total Biaya : Rp " << total << endl;
 
     return 0;
 }

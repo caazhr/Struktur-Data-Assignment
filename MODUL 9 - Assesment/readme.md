@@ -574,5 +574,227 @@ Output
 <img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/50384595-23cb-4839-8926-4a79885c8b0c" />
 <img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/0676828d-438c-4201-90df-7e0d195d39e7" />
 <img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/412f5f87-8109-44ec-a058-5aacddae39ac" />
+<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/897d68f9-fbca-45b1-8c76-fd7a12516962" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/55d55243-6dc9-4ace-ac3c-5e3a7d19d906" />
 
+### 3. 
+
+StackMahasiswa.h
+```C++
+#ifndef STACKMAHASISWA_H
+#define STACKMAHASISWA_H
+
+#include <string>
+using namespace std;
+
+struct Mahasiswa {
+    string Nama;
+    string NIM;
+    float NilaiTugas;
+    float NilaiUTS;
+    float NilaiUAS;
+};
+
+const int MAX = 6;
+
+struct StackMahasiswa {
+    Mahasiswa dataMahasiswa[MAX];
+    int Top;
+};
+
+bool isEmpty(StackMahasiswa S);
+bool isFull(StackMahasiswa S);
+void createStack(StackMahasiswa &S);
+void Push(StackMahasiswa &S, Mahasiswa M);
+void Pop(StackMahasiswa &S, Mahasiswa &M);
+void Update(StackMahasiswa &S, int posisi, Mahasiswa M);
+void View(StackMahasiswa S);
+void SearchNilaiAkhir(StackMahasiswa S, float NilaiAkhirMin, float NilaiAkhirMax);
+void MaxNilaiAkhir(StackMahasiswa S); 
+
+#endif
+
+```
+
+StackMahasiswa.cpp
+```C++
+#include <iostream>
+#include "StackMahasiswa.h"
+using namespace std;
+
+bool isEmpty(StackMahasiswa S){
+    return S.Top == -1;
+}
+
+bool isFull(StackMahasiswa S){
+    return S.Top == MAX - 1;
+}
+
+void createStack(StackMahasiswa &S){
+    S.Top = -1;
+}
+
+void Push(StackMahasiswa &S, Mahasiswa M){
+    if(isFull(S)){
+        cout << "Stack penuh!\n";
+    } else {
+        S.Top++;
+        S.dataMahasiswa[S.Top] = M;
+    }
+}
+
+void Pop(StackMahasiswa &S, Mahasiswa &M){
+    if(isEmpty(S)){
+        cout << "Stack kosong!\n";
+    } else {
+        M = S.dataMahasiswa[S.Top];
+        S.Top--;
+    }
+}
+
+void Update(StackMahasiswa &S, int posisi, Mahasiswa M){
+    int index = S.Top - posisi + 1;
+
+    if(index >= 0 && index <= S.Top){
+        S.dataMahasiswa[index] = M;
+    } else {
+        cout << "Posisi tidak valid!\n";
+    }
+}
+
+void View(StackMahasiswa S){
+    if(isEmpty(S)){
+        cout << "Stack kosong.\n";
+        return;
+    }
+
+    cout << "--- Stack TOP → BOTTOM ---\n";
+
+    for(int i = S.Top; i >= 0; i--){
+        float NilaiAkhir =
+            0.2 * S.dataMahasiswa[i].NilaiTugas +
+            0.4 * S.dataMahasiswa[i].NilaiUTS +
+            0.4 * S.dataMahasiswa[i].NilaiUAS;
+
+        cout << "Posisi: " << (S.Top - i + 1) << endl;
+        cout << "Nama: " << S.dataMahasiswa[i].Nama << endl;
+        cout << "NIM: " << S.dataMahasiswa[i].NIM << endl;
+        cout << "Nilai Tugas: " << S.dataMahasiswa[i].NilaiTugas << endl;
+        cout << "Nilai UTS: " << S.dataMahasiswa[i].NilaiUTS << endl;
+        cout << "Nilai UAS: " << S.dataMahasiswa[i].NilaiUAS << endl;
+        cout << "Nilai Akhir: " << NilaiAkhir << endl;
+        cout << "---------------------------\n";
+    }
+}
+
+void SearchNilaiAkhir(StackMahasiswa S, float NilaiAkhirMin, float NilaiAkhirMax){
+    bool found = false;
+
+    cout << "\n--- Searching NilaiAkhir --- " 
+         << NilaiAkhirMin << " - " << NilaiAkhirMax << " ===\n";
+
+    for(int i = S.Top; i >= 0; i--){
+        float NA =
+            0.2 * S.dataMahasiswa[i].NilaiTugas +
+            0.4 * S.dataMahasiswa[i].NilaiUTS +
+            0.4 * S.dataMahasiswa[i].NilaiUAS;
+
+        if(NA >= NilaiAkhirMin && NA <= NilaiAkhirMax){
+            found = true;
+            cout << "Posisi: " << (S.Top - i + 1) << endl;
+            cout << "Nama: " << S.dataMahasiswa[i].Nama << endl;
+            cout << "Nilai Akhir: " << NA << endl;
+            cout << "----------------------\n";
+        }
+    }
+
+    if(!found){
+        cout << "Tidak ada mahasiswa pada rentang tersebut.\n";
+    }
+}
+
+void MaxNilaiAkhir(StackMahasiswa S){
+    if(isEmpty(S)){
+        cout << "Stack kosong.\n";
+        return;
+    }
+
+    float maxNA = 0;
+
+    for(int i = S.Top; i >= 0; i--){
+        float NA =
+            0.2 * S.dataMahasiswa[i].NilaiTugas +
+            0.4 * S.dataMahasiswa[i].NilaiUTS +
+            0.4 * S.dataMahasiswa[i].NilaiUAS;
+
+        if(NA > maxNA){
+            maxNA = NA;
+        }
+    }
+
+    
+    cout << "\n--- Mahasiswa dengan NilaiAkhir Tertinggi ---\n";
+    for(int i = S.Top; i >= 0; i--){
+        float NA =
+            0.2 * S.dataMahasiswa[i].NilaiTugas +
+            0.4 * S.dataMahasiswa[i].NilaiUTS +
+            0.4 * S.dataMahasiswa[i].NilaiUAS;
+
+        if(NA == maxNA){
+            cout << "Posisi: " << (S.Top - i + 1) << endl;
+            cout << "Nama: " << S.dataMahasiswa[i].Nama << endl;
+            cout << "Nilai Akhir: " << NA << endl;
+            cout << "----------------------\n";
+        }
+    }
+}
+
+```
+main.cpp
+```C++
+#include "StackMahasiswa.h"
+#include <iostream>
+using namespace std;
+
+int main(){
+    StackMahasiswa S;
+    createStack(S);
+
+    Mahasiswa M1 = {"Venti", "11111", 75.7, 82.1, 65.5};
+    Mahasiswa M2 = {"Xiao", "22222", 87.4, 88.9, 81.9};
+    Mahasiswa M3 = {"Kazuha", "33333", 92.3, 88.8, 82.4};
+    Mahasiswa M4 = {"Wanderer", "44444", 95.5, 85.5, 90.5};
+    Mahasiswa M5 = {"Lynette", "55555", 77.7, 65.4, 79.9};
+    Mahasiswa M6 = {"Chasca", "66666", 99.9, 93.6, 87.3};
+
+    Push(S, M1);
+    Push(S, M2);
+    Push(S, M3);
+    Push(S, M4);
+    Push(S, M5);
+    Push(S, M6);
+
+    cout << "\n--- Stack Setelah Input ---\n";
+    View(S);
+
+    Mahasiswa removed;
+    Pop(S, removed);
+    cout << "\nPop 1x: " << removed.Nama << " dihapus.\n";
+
+    cout << "\n--- Stack Setelah Pop ---\n";
+    View(S);
+
+    Mahasiswa M7 = {"Heizou", "77777", 99.9, 88.8, 77.7};
+    Update(S, 3, M7);
+
+    cout << "\n--- Stack Setelah Update Posisi ke-3 ---\n";
+    View(S);
+
+    SearchNilaiAkhir(S, 85.5, 95.5);
+
+    MaxNilaiAkhir(S);
+
+    return 0;
+}
+```
 

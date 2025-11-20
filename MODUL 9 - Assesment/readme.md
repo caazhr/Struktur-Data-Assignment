@@ -800,4 +800,169 @@ int main(){
 output 
 <img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/57575c79-e13d-4ca4-b09b-c5b7ded11e71" />
 <img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/d3a1bcbd-4122-4919-b9f4-d53e42829db3" />
+<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/ccbafd05-23f4-48d3-a5bb-6b22fde25ac5" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/22cc9ae6-9c53-4cb2-89cd-659af2dcb414" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/e08d5747-7b43-4593-863c-ef38cc5321eb" />
 
+### 4. 
+
+QueuePengiriman.h
+```C++
+#ifndef QUEUEPENGIRIMAN_H
+#define QUEUEPENGIRIMAN_H
+
+#include <string>
+using namespace std;
+
+struct Paket {
+    string KodeResi;
+    string NamaPengirim;
+    int BeratBarang;
+    string Tujuan;
+};
+
+const int MAX = 5;
+
+struct QueueEkspedisi {
+    Paket dataPaket[MAX];
+    int Head;
+    int Tail;
+};
+
+bool isEmpty(QueueEkspedisi Q);
+bool isFull(QueueEkspedisi Q);
+void createQueue(QueueEkspedisi &Q);
+void enQueue(QueueEkspedisi &Q, Paket P);
+void deQueue(QueueEkspedisi &Q, Paket &P);
+void viewQueue(QueueEkspedisi Q);
+int TotalBiayaPengiriman(QueueEkspedisi Q);
+
+#endif
+```
+
+QueuePengiriman.cpp
+```C++
+#include "QueuePengiriman.h"
+#include <iostream>
+using namespace std;
+
+bool isEmpty(QueueEkspedisi Q){
+    return Q.Tail == -1;
+}
+
+bool isFull(QueueEkspedisi Q){
+    return Q.Tail == MAX - 1;
+}
+
+void createQueue(QueueEkspedisi &Q){
+    Q.Head = 0;
+    Q.Tail = -1;
+}
+
+void enQueue(QueueEkspedisi &Q, Paket P){
+    if(isFull(Q)){
+        cout << "Queue penuh! Tidak bisa menambah data.\n";
+    } else {
+        Q.Tail++;
+        Q.dataPaket[Q.Tail] = P;
+    }
+}
+
+void deQueue(QueueEkspedisi &Q, Paket &P){
+    if(isEmpty(Q)){
+        cout << "Queue kosong! Tidak bisa mengambil data.\n";
+        return;
+    }
+
+    P = Q.dataPaket[Q.Head]; 
+
+    for(int i = Q.Head; i < Q.Tail; i++){
+        Q.dataPaket[i] = Q.dataPaket[i + 1];
+    }
+
+    Q.Tail--; 
+}
+
+void viewQueue(QueueEkspedisi Q){
+    if(isEmpty(Q)){
+        cout << "Queue kosong.\n";
+        return;
+    }
+
+    cout << "\n--- Daftar Paket dalam Queue ---\n";
+    for(int i = Q.Head; i <= Q.Tail; i++){
+        cout << "Posisi Antrian: " << i - Q.Head + 1 << endl;
+        cout << "Kode Resi   : " << Q.dataPaket[i].KodeResi << endl;
+        cout << "Pengirim    : " << Q.dataPaket[i].NamaPengirim << endl;
+        cout << "Berat Barang: " << Q.dataPaket[i].BeratBarang << " kg\n";
+        cout << "Tujuan      : " << Q.dataPaket[i].Tujuan << endl;
+        cout << "----------------------------------\n";
+    }
+}
+
+int TotalBiayaPengiriman(QueueEkspedisi Q){
+    const int biayaPerKg = 8250;
+    int total = 0;
+
+    for(int i = Q.Head; i <= Q.Tail; i++){
+        total += Q.dataPaket[i].BeratBarang * biayaPerKg;
+    }
+
+    return total;
+}
+
+```
+main.cpp
+```C++
+#include "QueuePengiriman.h"
+#include <iostream>
+using namespace std;
+
+int main(){
+    QueueEkspedisi Q;
+    createQueue(Q);
+
+    int menu;
+    do {
+        cout << "\n--- Komanitya Ekspress ---\n";
+        cout << "1. Input Data Paket\n";
+        cout << "2. Tampil Data Paket\n";
+        cout << "3. Hapus Data Paket (deQueue)\n";
+        cout << "4. Hitung Total Biaya Pengiriman\n";
+        cout << "5. Keluar\n";
+        cout << "Pilih menu: ";
+        cin >> menu;
+
+        if(menu == 1){
+            Paket P;
+
+            cout << "\nMasukkan Data Paket:\n";
+            cout << "Kode Resi: ";
+            cin >> P.KodeResi;
+            cout << "Nama Pengirim: ";
+            cin >> P.NamaPengirim;
+            cout << "Berat Barang (kg): ";
+            cin >> P.BeratBarang;
+            cout << "Tujuan: ";
+            cin >> P.Tujuan;
+
+            enQueue(Q, P);
+
+        } else if(menu == 2){
+            viewQueue(Q);
+
+        } else if(menu == 3){
+            Paket removed;
+            deQueue(Q, removed);
+            cout << "Data paket dengan resi " << removed.KodeResi << " telah dihapus.\n";
+
+        } else if(menu == 4){
+            int total = TotalBiayaPengiriman(Q);
+            cout << "Total biaya pengiriman semua paket: Rp " << total << endl;
+        }
+
+    } while(menu != 5);
+
+    return 0;
+}
+```

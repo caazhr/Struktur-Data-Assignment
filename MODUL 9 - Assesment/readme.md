@@ -259,5 +259,7 @@ int main(){
     return 0;
 }
 ```
+Output 
+<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/11a7b547-5230-49d6-a883-9167aa7961d5" />
 
 

@@ -572,5 +572,6 @@ int main(){
 ```
 Output 
 <img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/50384595-23cb-4839-8926-4a79885c8b0c" />
+<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/0676828d-438c-4201-90df-7e0d195d39e7" />
 
 

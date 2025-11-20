@@ -922,32 +922,64 @@ int main(){
     QueueEkspedisi Q;
     createQueue(Q);
 
-    Paket P1 = {"123456", "Hutao", 14, "Sumeru"};
-    Paket P2 = {"234567", "Ayaka", 10, "Fontaine"};
-    Paket P3 = {"345678", "Bennet", 7, "Natlan"};
-    Paket P4 = {"456789", "Furina", 16, "Liyue"};
-    Paket P5 = {"567890", "Nefer", 6, "Inazuma"};
+    int pilih;
 
-    enQueue(Q, P1);
-    enQueue(Q, P2);
-    enQueue(Q, P3);
-    enQueue(Q, P4);
-    enQueue(Q, P5);
+    do {
+        cout << "\n--- Komanitya Ekspress ---\n";
+        cout << "1. Input Data Paket\n";
+        cout << "2. Tampil Data Paket\n";
+        cout << "3. Hapus Data Paket (deQueue)\n";
+        cout << "4. Hitung Total Biaya Pengiriman\n";
+        cout << "5. Keluar\n";
+        cout << "Pilih menu: ";
+        cin >> pilih;
 
-    cout << "\n--- Queue Setelah Input 5 Paket ---\n";
-    viewQueue(Q);
+        switch(pilih){
+        case 1: {
+            cout << "\nMenginput 5 paket otomatis...\n";
 
-    Paket removed;
-    deQueue(Q, removed);
-    cout << "\nPaket dengan resi " << removed.KodeResi
-         << " telah dikeluarkan dari antrian.\n";
+            Paket P1 = {"123456", "Hutao", 14, "Sumeru"};
+            Paket P2 = {"234567", "Ayaka", 10, "Fontaine"};
+            Paket P3 = {"345678", "Bennet", 7, "Natlan"};
+            Paket P4 = {"456789", "Furina", 16, "Liyue"};
+            Paket P5 = {"567890", "Nefer", 6, "Inazuma"};
 
-    cout << "\n--- Queue Setelah deQueue 1x ---\n";
-    viewQueue(Q);
+            enQueue(Q, P1);
+            enQueue(Q, P2);
+            enQueue(Q, P3);
+            enQueue(Q, P4);
+            enQueue(Q, P5);
 
-    int total = TotalBiayaPengiriman(Q);
-    cout << "\n--- Total Biaya Pengiriman Semua Paket ---\n";
-    cout << "Total Biaya : Rp " << total << endl;
+            cout << "Data paket berhasil dimasukkan!\n";
+            break;
+        }
+
+        case 2:
+            viewQueue(Q);
+            break;
+
+        case 3: {
+            Paket removed;
+            deQueue(Q, removed);
+            cout << "Menghapus paket dengan resi: " << removed.KodeResi << endl;
+            break;
+        }
+
+        case 4: {
+            int total = TotalBiayaPengiriman(Q);
+            cout << "\nTotal biaya pengiriman: Rp " << total << endl;
+            break;
+        }
+
+        case 5:
+            cout << "Keluar program.\n";
+            break;
+
+        default:
+            cout << "Menu tidak valid!\n";
+        }
+
+    } while(pilih != 5);
 
     return 0;
 }

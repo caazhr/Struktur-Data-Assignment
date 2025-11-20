@@ -570,4 +570,7 @@ int main(){
     return 0;
 }
 ```
+Output 
+<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/50384595-23cb-4839-8926-4a79885c8b0c" />
+
 

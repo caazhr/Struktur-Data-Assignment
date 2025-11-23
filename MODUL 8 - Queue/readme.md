@@ -505,7 +505,7 @@ int main() {
 Kode ini dipakai untuk membuat queue sederhana pakai array sesuai aturan Alternatif 1. Pada cara ini, posisi head nggak pernah pindah dari indeks awal, sementara tail terus maju setiap kali ada data baru yang dimasukkan. Waktu melakukan dequeue, semua elemen di dalam array digeser ke kiri supaya head tetap ada di depan. Programnya sendiri melakukan beberapa operasi seperti menambah data (enqueue), mengambil data dari depan (dequeue), dan menampilkan isi antrian lewat printInfo. Dengan urutan operasi pada fungsi main, kita bisa lihat jelas gimana queue bekerja dengan konsep FIFO—data yang masuk duluan bakal keluar duluan juga.
 
 #### Full code Screenshot:
-![240309_10h21m35s_screenshot](https://github.com/suxeno/Struktur-Data-Assignment/assets/111122086/41e9641c-ad4e-4e50-9ca4-a0215e336b04)
+<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/afe741a8-d17c-423b-a2fa-e23a771cbff8" />
 
 ### 2. [Buatlah implementasi ADT Queue pada file “queue.cpp” dengan menerapkan mekanisme
 queue Alternatif 2 (head bergerak, tail bergerak)]

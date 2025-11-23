@@ -641,7 +641,7 @@ int main() {
 
 kode ini masih membuat queue yang sama seperti sebelumnya, tapi ada perubahan di bagian file .cpp. kalau sebelumnya queue memakai cara Alternatif 1 yang harus menggeser elemen saat dequeue, sekarang sudah pakai Alternatif 2. di versi ini head cukup maju tanpa shifting, jadi proses dequeue jadi lebih simpel dan lebih cepat, tapi aturan FIFO tetap sama.
 #### Full code Screenshot:
-![240309_10h21m35s_screenshot](https://github.com/suxeno/Struktur-Data-Assignment/assets/111122086/41e9641c-ad4e-4e50-9ca4-a0215e336b04)
+<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/68447362-336c-4b23-9386-1d29939fc70f" />
 
 ### 3. [Buatlah implementasi ADT Queue pada file “queue.cpp” dengan menerapkan mekanisme
 queue Alternatif 3 (head dan tail berputar).]

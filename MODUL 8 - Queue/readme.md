@@ -637,7 +637,7 @@ int main() {
 }
 ```
 #### Output:
-![240302_00h00m06s_screenshot](https://github.com/suxeno/Struktur-Data-Assignment/assets/111122086/6d1727a8-fb77-4ecf-81ff-5de9386686b7)
+<img width="596" height="358" alt="Image" src="https://github.com/user-attachments/assets/d7eae317-9c00-4a02-9e76-5df97919e077" />
 
 kode ini masih membuat queue yang sama seperti sebelumnya, tapi ada perubahan di bagian file .cpp. kalau sebelumnya queue memakai cara Alternatif 1 yang harus menggeser elemen saat dequeue, sekarang sudah pakai Alternatif 2. di versi ini head cukup maju tanpa shifting, jadi proses dequeue jadi lebih simpel dan lebih cepat, tapi aturan FIFO tetap sama.
 #### Full code Screenshot:

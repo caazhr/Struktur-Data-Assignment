@@ -781,10 +781,11 @@ int main() {
 Kode ini masih bikin queue yang sama kaya sebelumnya, tapi yang sekarang bedanya pakai sistem circular queue. Di versi ini, head dan tail bisa muter balik ke indeks awal kalau sudah sampai ujung array. Dengan cara ini, ruang penyimpanan jadi lebih kepakai dan nggak perlu shifting sama sekali. Saat enqueue, data ditaruh di posisi tail yang sudah berputar, dan saat dequeue, head tinggal maju satu langkah secara melingkar. Aturannya tetap sama data yang masuk pertama tetap keluar lebih dulu (FIFO).
 
 #### Full code Screenshot:
-![240309_10h21m35s_screenshot](https://github.com/suxeno/Struktur-Data-Assignment/assets/111122086/41e9641c-ad4e-4e50-9ca4-a0215e336b04)
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/ac1cfd02-7162-4e97-aa8c-68d46ac361a2" />
+
 
 ## Kesimpulan
-Ringkasan dan interpretasi pandangan kalia dari hasil praktikum dan pembelajaran yang didapat[1].
+Dari praktikum ini, saya menjadi memahami cara kerja queue, termasuk bagaimana data dimasukkan, diambil, dan bagaimana peran head serta tail dalam prosesnya. Praktikum ini membantu memperkuat pemahaman saya terhadap konsep FIFO dan cara penerapannya dalam program.
 
 ## Referensi
 [1] I. Holm, Narrator, and J. Fullerton-Smith, Producer, How to Build a Human [DVD]. London: BBC; 2002.

@@ -365,25 +365,422 @@ int main(){
 Program ini menunjukkan cara kerja Circular Queue yang dibuat menggunakan array dengan ukuran tetap. Setiap data disimpan di dalam array, lalu posisi head dan tail bisa “muter” kembali ke awal menggunakan operasi modulo. Program ini punya fungsi dasar antrian seperti menambah data ke bagian belakang lewat enQueue, menghapus data dari bagian depan dengan deQueue, mengecek apakah antrian penuh atau kosong, dan menampilkan seluruh isi antrian dengan viewQueue. Di bagian utama program, beberapa nama dimasukkan sampai queue penuh, lalu beberapa data dihapus, dan hasilnya ditampilkan lagi. Dari alur tersebut terlihat bagaimana konsep FIFO (First In First Out) berjalan, dan bagaimana circular queue bisa memakai ruang array secara lebih efisien tanpa perlu menggeser elemen.
 ## Unguided 
 
-### 1. [Soal]
+### 1. 
+<img width="920" height="769" alt="Image" src="https://github.com/user-attachments/assets/c321aaf1-ad3f-4cef-b5cf-1e5d32edc72b" />
 
+queue.h
 ```C++
+#ifndef QUEUE_H_INCLUDED
+#define QUEUE_H_INCLUDED
+
 #include <iostream>
 using namespace std;
 
+const int MAX = 5;          
+typedef int infotype;
+
+struct Queue {
+    infotype info[MAX];
+    int head;
+    int tail;
+};
+
+void createQueue(Queue &Q);
+bool isEmptyQueue(Queue Q);
+bool isFullQueue(Queue Q);
+void enqueue(Queue &Q, infotype x);
+infotype dequeue(Queue &Q);
+void printInfo(Queue Q);
+
+#endif
+```
+
+queue.cpp
+```C++
+#include "queue.h"
+#include <iostream>
+using namespace std;
+
+void createQueue(Queue &Q) {
+    Q.head = -1;
+    Q.tail = -1;
+}
+
+bool isEmptyQueue(Queue Q) {
+    return (Q.head == -1 && Q.tail == -1);
+}
+
+bool isFullQueue(Queue Q) {
+    return (Q.tail == MAX - 1);
+}
+
+void enqueue(Queue &Q, infotype x) {
+    if (isFullQueue(Q)) {
+        cout << "Queue penuh!" << endl;
+        return;
+    }
+
+    if (isEmptyQueue(Q)) {
+        Q.head = 0;
+        Q.tail = 0;
+    } else {
+        Q.tail++;
+    }
+    Q.info[Q.tail] = x;
+}
+
+infotype dequeue(Queue &Q) {
+    infotype dummy = 0;
+
+    if (isEmptyQueue(Q)) {
+        cout << "Queue kosong!" << endl;
+        return dummy;
+    }
+
+    infotype val = Q.info[Q.head];
+
+    if (Q.head == Q.tail) {
+        createQueue(Q);
+    } else {
+        for (int i = Q.head; i < Q.tail; i++) {
+            Q.info[i] = Q.info[i + 1];
+        }
+        Q.tail--;
+    }
+
+    return val;
+}
+
+void printInfo(Queue Q) {
+    if (isEmptyQueue(Q)) {
+        cout << Q.head << "  -  " << Q.tail << "  | empty queue" << endl;
+        return;
+    }
+
+    cout << Q.head << "  -  " << Q.tail << "    | ";
+
+    for (int i = Q.head; i <= Q.tail; i++) {
+        cout << Q.info[i];
+        if (i < Q.tail) cout << " ";
+    }
+
+    cout << endl;
+}
+```
+
+main.cpp
+```C++
+#include <iostream>
+#include "queue.h"
+using namespace std;
+
 int main() {
-    cout << "ini adalah file code unguided praktikan" << endl;
+    cout << "Hello World!" << endl;
+
+    Queue Q;
+    createQueue(Q);
+
+    cout << "----------------------------" << endl;
+    cout << "H  -  T    | Queue Info" << endl;
+    cout << "----------------------------" << endl;
+
+    printInfo(Q);
+
+    enqueue(Q, 5); printInfo(Q);
+    enqueue(Q, 2); printInfo(Q);
+    enqueue(Q, 7); printInfo(Q);
+    dequeue(Q); printInfo(Q);   
+    dequeue(Q); printInfo(Q);   
+    enqueue(Q, 4); printInfo(Q); 
+    dequeue(Q); printInfo(Q);   
+    dequeue(Q); printInfo(Q);   
+
+    return 0;
+}
+
+```
+#### Output:
+![240302_00h00m06s_screenshot](https://github.com/suxeno/Struktur-Data-Assignment/assets/111122086/6d1727a8-fb77-4ecf-81ff-5de9386686b7)
+
+Kode ini dipakai untuk membuat queue sederhana pakai array sesuai aturan Alternatif 1. Pada cara ini, posisi head nggak pernah pindah dari indeks awal, sementara tail terus maju setiap kali ada data baru yang dimasukkan. Waktu melakukan dequeue, semua elemen di dalam array digeser ke kiri supaya head tetap ada di depan. Programnya sendiri melakukan beberapa operasi seperti menambah data (enqueue), mengambil data dari depan (dequeue), dan menampilkan isi antrian lewat printInfo. Dengan urutan operasi pada fungsi main, kita bisa lihat jelas gimana queue bekerja dengan konsep FIFO—data yang masuk duluan bakal keluar duluan juga.
+
+#### Full code Screenshot:
+![240309_10h21m35s_screenshot](https://github.com/suxeno/Struktur-Data-Assignment/assets/111122086/41e9641c-ad4e-4e50-9ca4-a0215e336b04)
+
+### 2. [Buatlah implementasi ADT Queue pada file “queue.cpp” dengan menerapkan mekanisme
+queue Alternatif 2 (head bergerak, tail bergerak)]
+
+queue.h
+```C++
+#ifndef QUEUE_H_INCLUDED
+#define QUEUE_H_INCLUDED
+
+#include <iostream>
+using namespace std;
+
+const int MAX = 5;          
+typedef int infotype;
+
+struct Queue {
+    infotype info[MAX];
+    int head;
+    int tail;
+};
+
+void createQueue(Queue &Q);
+bool isEmptyQueue(Queue Q);
+bool isFullQueue(Queue Q);
+void enqueue(Queue &Q, infotype x);
+infotype dequeue(Queue &Q);
+void printInfo(Queue Q);
+
+#endif
+```
+
+queue.cpp
+```C++
+#include "queue.h"
+#include <iostream>
+using namespace std;
+
+void createQueue(Queue &Q) {
+    Q.head = -1;
+    Q.tail = -1;
+}
+
+bool isEmptyQueue(Queue Q) {
+    return (Q.head == -1);
+}
+
+bool isFullQueue(Queue Q) {
+    return (Q.tail == MAX - 1);
+}
+
+void enqueue(Queue &Q, infotype x) {
+    if (isFullQueue(Q)) {
+        cout << "Queue penuh!" << endl;
+        return;
+    }
+
+    if (isEmptyQueue(Q)) {
+        Q.head = 0;
+        Q.tail = 0;
+    } else {
+        Q.tail++;
+    }
+
+    Q.info[Q.tail] = x;
+}
+
+infotype dequeue(Queue &Q) {
+    if (isEmptyQueue(Q)) {
+        cout << "Queue kosong!" << endl;
+        return 0;
+    }
+
+    infotype val = Q.info[Q.head];
+
+    if (Q.head == Q.tail) {
+        createQueue(Q);
+    } else {
+        Q.head++;  
+    }
+
+    return val;
+}
+
+void printInfo(Queue Q) {
+    if (isEmptyQueue(Q)) {
+        cout << Q.head << "  -  " << Q.tail << "  | empty queue" << endl;
+        return;
+    }
+
+    cout << Q.head << "  -  " << Q.tail << "    | ";
+
+    for (int i = Q.head; i <= Q.tail; i++) {
+        cout << Q.info[i];
+        if (i < Q.tail) cout << " ";
+    }
+
+    cout << endl;
+}
+```
+
+main.cpp
+```C++
+#include <iostream>
+#include "queue.h"
+using namespace std;
+
+int main() {
+    cout << "Hello World!" << endl;
+
+    Queue Q;
+    createQueue(Q);
+
+    cout << "----------------------------" << endl;
+    cout << "H  -  T    | Queue Info" << endl;
+    cout << "----------------------------" << endl;
+
+    printInfo(Q);
+
+    enqueue(Q, 5); printInfo(Q);
+    enqueue(Q, 2); printInfo(Q);
+    enqueue(Q, 7); printInfo(Q);
+    dequeue(Q); printInfo(Q);   
+    dequeue(Q); printInfo(Q);   
+    enqueue(Q, 4); printInfo(Q); 
+    dequeue(Q); printInfo(Q);   
+    dequeue(Q); printInfo(Q);   
+
     return 0;
 }
 ```
 #### Output:
 ![240302_00h00m06s_screenshot](https://github.com/suxeno/Struktur-Data-Assignment/assets/111122086/6d1727a8-fb77-4ecf-81ff-5de9386686b7)
 
-Kode di atas digunakan untuk mencetak teks "ini adalah file code guided praktikan" ke layar menggunakan function cout untuk mengeksekusi nya.
-
+kode ini masih membuat queue yang sama seperti sebelumnya, tapi ada perubahan di bagian file .cpp. kalau sebelumnya queue memakai cara Alternatif 1 yang harus menggeser elemen saat dequeue, sekarang sudah pakai Alternatif 2. di versi ini head cukup maju tanpa shifting, jadi proses dequeue jadi lebih simpel dan lebih cepat, tapi aturan FIFO tetap sama.
 #### Full code Screenshot:
 ![240309_10h21m35s_screenshot](https://github.com/suxeno/Struktur-Data-Assignment/assets/111122086/41e9641c-ad4e-4e50-9ca4-a0215e336b04)
 
+### 3. [Buatlah implementasi ADT Queue pada file “queue.cpp” dengan menerapkan mekanisme
+queue Alternatif 3 (head dan tail berputar).]
+
+queue.h
+```C++
+#ifndef QUEUE_H_INCLUDED
+#define QUEUE_H_INCLUDED
+
+#include <iostream>
+using namespace std;
+
+const int MAX = 5;          
+typedef int infotype;
+
+struct Queue {
+    infotype info[MAX];
+    int head;
+    int tail;
+};
+
+void createQueue(Queue &Q);
+bool isEmptyQueue(Queue Q);
+bool isFullQueue(Queue Q);
+void enqueue(Queue &Q, infotype x);
+infotype dequeue(Queue &Q);
+void printInfo(Queue Q);
+
+#endif
+```
+
+queue.cpp
+```C++
+#include "queue.h"
+#include <iostream>
+using namespace std;
+
+void createQueue(Queue &Q) {
+    Q.head = -1;
+    Q.tail = -1;
+}
+
+bool isEmptyQueue(Queue Q) {
+    return (Q.head == -1);
+}
+
+bool isFullQueue(Queue Q) {
+    return ((Q.tail + 1) % MAX == Q.head);
+}
+
+void enqueue(Queue &Q, infotype x) {
+    if (isFullQueue(Q)) {
+        cout << "Queue penuh!" << endl;
+        return;
+    }
+
+    if (isEmptyQueue(Q)) {
+        Q.head = 0;
+        Q.tail = 0;
+    } else {
+        Q.tail = (Q.tail + 1) % MAX;
+    }
+
+    Q.info[Q.tail] = x;
+}
+
+infotype dequeue(Queue &Q) {
+    if (isEmptyQueue(Q)) {
+        cout << "Queue kosong!" << endl;
+        return 0;
+    }
+
+    infotype val = Q.info[Q.head];
+
+    if (Q.head == Q.tail) {
+        createQueue(Q);
+    } else {
+        Q.head = (Q.head + 1) % MAX;
+    }
+
+    return val;
+}
+
+void printInfo(Queue Q) {
+    if (isEmptyQueue(Q)) {
+        cout << Q.head << "  -  " << Q.tail << "  | empty queue" << endl;
+        return;
+    }
+
+    cout << Q.head << "  -  " << Q.tail << "    | ";
+
+    int i = Q.head;
+    while (true) {
+        cout << Q.info[i];
+        if (i == Q.tail) break;
+        cout << " ";
+        i = (i + 1) % MAX;
+    }
+
+    cout << endl;
+}
+```
+
+main.cpp
+```C++
+#include <iostream>
+#include "queue.h"
+using namespace std;
+
+int main() {
+    cout << "Hello World!" << endl;
+
+    Queue Q;
+    createQueue(Q);
+
+    cout << "----------------------------" << endl;
+    cout << "H  -  T    | Queue Info" << endl;
+    cout << "----------------------------" << endl;
+
+    printInfo(Q);
+
+    enqueue(Q, 5); printInfo(Q);
+    enqueue(Q, 2); printInfo(Q);
+    enqueue(Q, 7); printInfo(Q);
+    dequeue(Q); printInfo(Q);   
+    dequeue(Q); printInfo(Q);   
+    enqueue(Q, 4); printInfo(Q); 
+    dequeue(Q); printInfo(Q);   
+    dequeue(Q); printInfo(Q);   
+
+    return 0;
+}
+```
+#### Output:
+![240302_00h00m06s_screenshot](https://github.com/suxeno/Struktur-Data-Assignment/assets/111122086/6d1727a8-fb77-4ecf-81ff-5de9386686b7)
+Kode ini masih bikin queue yang sama kaya sebelumnya, tapi yang sekarang bedanya pakai sistem circular queue. Di versi ini, head dan tail bisa muter balik ke indeks awal kalau sudah sampai ujung array. Dengan cara ini, ruang penyimpanan jadi lebih kepakai dan nggak perlu shifting sama sekali. Saat enqueue, data ditaruh di posisi tail yang sudah berputar, dan saat dequeue, head tinggal maju satu langkah secara melingkar. Aturannya tetap sama data yang masuk pertama tetap keluar lebih dulu (FIFO).
+
+#### Full code Screenshot:
+![240309_10h21m35s_screenshot](https://github.com/suxeno/Struktur-Data-Assignment/assets/111122086/41e9641c-ad4e-4e50-9ca4-a0215e336b04)
 
 ## Kesimpulan
 Ringkasan dan interpretasi pandangan kalia dari hasil praktikum dan pembelajaran yang didapat[1].

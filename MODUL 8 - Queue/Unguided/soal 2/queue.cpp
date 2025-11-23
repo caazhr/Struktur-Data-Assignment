@@ -42,7 +42,7 @@ infotype dequeue(Queue &Q) {
     if (Q.head == Q.tail) {
         createQueue(Q);
     } else {
-        Q.head++;   // TIDAK SHIFTING
+        Q.head++;  
     }
 
     return val;

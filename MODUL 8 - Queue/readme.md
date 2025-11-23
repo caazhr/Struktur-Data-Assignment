@@ -500,7 +500,7 @@ int main() {
 
 ```
 #### Output:
-![240302_00h00m06s_screenshot](https://github.com/suxeno/Struktur-Data-Assignment/assets/111122086/6d1727a8-fb77-4ecf-81ff-5de9386686b7)
+<img width="646" height="365" alt="Image" src="https://github.com/user-attachments/assets/f89ae572-acff-4cb6-926e-ad59d89376da" />
 
 Kode ini dipakai untuk membuat queue sederhana pakai array sesuai aturan Alternatif 1. Pada cara ini, posisi head nggak pernah pindah dari indeks awal, sementara tail terus maju setiap kali ada data baru yang dimasukkan. Waktu melakukan dequeue, semua elemen di dalam array digeser ke kiri supaya head tetap ada di depan. Programnya sendiri melakukan beberapa operasi seperti menambah data (enqueue), mengambil data dari depan (dequeue), dan menampilkan isi antrian lewat printInfo. Dengan urutan operasi pada fungsi main, kita bisa lihat jelas gimana queue bekerja dengan konsep FIFO—data yang masuk duluan bakal keluar duluan juga.
 

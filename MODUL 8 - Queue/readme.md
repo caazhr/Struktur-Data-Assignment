@@ -776,7 +776,8 @@ int main() {
 }
 ```
 #### Output:
-![240302_00h00m06s_screenshot](https://github.com/suxeno/Struktur-Data-Assignment/assets/111122086/6d1727a8-fb77-4ecf-81ff-5de9386686b7)
+<img width="592" height="370" alt="Image" src="https://github.com/user-attachments/assets/598549b8-60c4-4cf7-a4f8-27662b05eef6" />
+
 Kode ini masih bikin queue yang sama kaya sebelumnya, tapi yang sekarang bedanya pakai sistem circular queue. Di versi ini, head dan tail bisa muter balik ke indeks awal kalau sudah sampai ujung array. Dengan cara ini, ruang penyimpanan jadi lebih kepakai dan nggak perlu shifting sama sekali. Saat enqueue, data ditaruh di posisi tail yang sudah berputar, dan saat dequeue, head tinggal maju satu langkah secara melingkar. Aturannya tetap sama data yang masuk pertama tetap keluar lebih dulu (FIFO).
 
 #### Full code Screenshot:

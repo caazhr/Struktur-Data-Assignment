@@ -781,7 +781,7 @@ int main() {
 }
 ```
 #### Output:
-![240302_00h00m06s_screenshot](https://github.com/suxeno/Struktur-Data-Assignment/assets/111122086/6d1727a8-fb77-4ecf-81ff-5de9386686b7)
+<img width="599" height="88" alt="Image" src="https://github.com/user-attachments/assets/46ada2d9-a1a2-4710-8a7f-b84e1afd5b82" />
 
 Program pada soal nomor 3 digunakan untuk menampilkan urutan data dari sebuah tree yang sudah ditentukan pada modul dengan menggunakan dua jenis traversal, yaitu preorder dan postorder. Jadi, program ini hanya bertujuan untuk membaca dan mencetak isi tree sesuai aturan kedua traversal tersebut.
 

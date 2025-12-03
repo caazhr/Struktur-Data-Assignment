@@ -699,42 +699,91 @@ Pada soal nomor 2, program BST dari soal sebelumnya ditambah tiga fungsi baru, y
 
 ### 3. 
 
-bst.h
+bstree.h
 ```C++
-#include <iostream>
-using namespace std;
+#ifndef BSTREE_H
+#define BSTREE_H
 
-int main() {
-    cout << "ini adalah file code guided praktikan" << endl;
-    return 0;
-}
+#define Nil NULL
+
+typedef int infotype;
+typedef struct Node *address;
+
+struct Node {
+    infotype info;
+    address left;
+    address right;
+};
+
+address alokasi(infotype x);
+
+void PreOrder(address root);
+void PostOrder(address root);
+
+#endif
 ```
 
-bst.cpp
+bstree.cpp
 ```C++
+#include "bstree.h"
 #include <iostream>
 using namespace std;
 
-int main() {
-    cout << "ini adalah file code guided praktikan" << endl;
-    return 0;
+address alokasi(infotype x) {
+    address p = new Node;
+    p->info = x;
+    p->left = Nil;
+    p->right = Nil;
+    return p;
+}
+void PreOrder(address root) {
+    if (root == Nil) return;
+    cout << root->info << " - ";
+    PreOrder(root->left);
+    PreOrder(root->right);
+}
+
+void PostOrder(address root) {
+    if (root == Nil) return;
+    PostOrder(root->left);
+    PostOrder(root->right);
+    cout << root->info << " - ";
 }
 ```
 
 main.cpp
 ```C++
 #include <iostream>
+#include "bstree.h"
 using namespace std;
 
 int main() {
-    cout << "ini adalah file code guided praktikan" << endl;
+
+    address root = alokasi(6);
+    root->left = alokasi(4);
+    root->right = alokasi(7);
+
+    root->left->left = alokasi(2);
+    root->left->right = alokasi(5);
+
+    root->left->left->left = alokasi(1);
+    root->left->left->right = alokasi(3);
+
+    cout << "pre-order  : ";
+    PreOrder(root);
+    cout << endl;
+
+    cout << "post-order : ";
+    PostOrder(root);
+    cout << endl;
+
     return 0;
 }
 ```
 #### Output:
 ![240302_00h00m06s_screenshot](https://github.com/suxeno/Struktur-Data-Assignment/assets/111122086/6d1727a8-fb77-4ecf-81ff-5de9386686b7)
 
-Kode di atas digunakan untuk mencetak teks "ini adalah file code guided praktikan" ke layar menggunakan function cout untuk mengeksekusi nya.
+Program pada soal nomor 3 digunakan untuk menampilkan urutan data dari sebuah tree yang sudah ditentukan pada modul dengan menggunakan dua jenis traversal, yaitu preorder dan postorder. Jadi, program ini hanya bertujuan untuk membaca dan mencetak isi tree sesuai aturan kedua traversal tersebut.
 
 #### Full code Screenshot:
 ![240309_10h21m35s_screenshot](https://github.com/suxeno/Struktur-Data-Assignment/assets/111122086/41e9641c-ad4e-4e50-9ca4-a0215e336b04)
@@ -742,7 +791,7 @@ Kode di atas digunakan untuk mencetak teks "ini adalah file code guided praktika
 
 
 ## Kesimpulan
-Ringkasan dan interpretasi pandangan kalia dari hasil praktikum dan pembelajaran yang didapat[1].
+Praktikum ini memberikan pemahaman tentang cara kerja struktur data tree, khususnya Binary Search Tree, melalui penerapan operasi dasar seperti insert, pencarian, dan traversal untuk membaca isi tree.
 
 ## Referensi
 [1] I. Holm, Narrator, and J. Fullerton-Smith, Producer, How to Build a Human [DVD]. London: BBC; 2002.

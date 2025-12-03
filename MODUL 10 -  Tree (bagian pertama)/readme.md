@@ -544,9 +544,9 @@ int main() {
 }
 ```
 #### Output:
-![240302_00h00m06s_screenshot](https://github.com/suxeno/Struktur-Data-Assignment/assets/111122086/6d1727a8-fb77-4ecf-81ff-5de9386686b7)
+<img width="549" height="69" alt="Image" src="https://github.com/user-attachments/assets/dca4faef-2b48-4538-b4e5-ef8332f8a7a4" />
 
-Kode di atas digunakan untuk mencetak teks "ini adalah file code guided praktikan" ke layar menggunakan function cout untuk mengeksekusi nya.
+Pada soal nomor 1 ini, program dibuat untuk membangun sebuah Binary Search Tree (BST) dan menampilkannya dalam urutan yang benar. Strukturnya dibuat menggunakan pointer, dan ada beberapa fungsi dasar seperti alokasi, insertNode, findNode, dan printInorder. Fungsi insertNode digunakan untuk memasukkan angka ke dalam tree sesuai aturan BST, yaitu jika angkanya lebih kecil maka masuk ke kiri, dan kalau lebih besar masuk ke kanan. Di bagian main.cpp, kita memasukkan beberapa data ke tree, yaitu 1, 2, 6, 4, 5, 3, 6, dan 7. Angka 6 muncul dua kali, namun karena BST tidak menyimpan data yang duplikat, angka 6 yang kedua otomatis tidak dimasukkan. Setelah semua data dimasukkan, fungsi printInorder dipanggil untuk menampilkan isi tree secara terurut. Hasil akhirnya muncul sebagai “1 - 2 - 3 - 4 - 5 - 6 - 7 -”, yang menunjukkan bahwa proses insert dan traversal pada BST sudah berjalan dengan benar.
 
 #### Full code Screenshot:
 ![240309_10h21m35s_screenshot](https://github.com/suxeno/Struktur-Data-Assignment/assets/111122086/41e9641c-ad4e-4e50-9ca4-a0215e336b04)

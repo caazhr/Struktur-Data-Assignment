@@ -551,7 +551,7 @@ Pada soal nomor 1 ini, program dibuat untuk membangun sebuah Binary Search Tree 
 #### Full code Screenshot:
 ![240309_10h21m35s_screenshot](https://github.com/suxeno/Struktur-Data-Assignment/assets/111122086/41e9641c-ad4e-4e50-9ca4-a0215e336b04)
 
-### 2. 
+### 2. <img width="748" height="782" alt="Image" src="https://github.com/user-attachments/assets/cacb830b-a93f-4217-8600-eea2138df9ec" />
 
 bstree.h
 ```C++

@@ -553,42 +553,146 @@ Pada soal nomor 1 ini, program dibuat untuk membangun sebuah Binary Search Tree 
 
 ### 2. 
 
-bst.h
+bstree.h
 ```C++
-#include <iostream>
-using namespace std;
+#ifndef BSTREE_H
+#define BSTREE_H
 
-int main() {
-    cout << "ini adalah file code guided praktikan" << endl;
-    return 0;
-}
+#define Nil NULL
+
+typedef int infotype;
+typedef struct Node *address;
+
+struct Node {
+    infotype info;
+    address left;
+    address right;
+};
+
+address alokasi(infotype x);
+void insertNode(address &root, infotype x);
+address findNode(infotype x, address root);
+void printInorder(address root);
+int hitungJumlahNode(address root);
+int hitungTotalInfo(address root);
+int hitungKedalaman(address root, int start);
+
+
+#endif
 ```
 
-bst.cpp
+bstree.cpp
 ```C++
+#include "bstree.h"
 #include <iostream>
 using namespace std;
 
-int main() {
-    cout << "ini adalah file code guided praktikan" << endl;
-    return 0;
+address alokasi(infotype x) {
+    address p = new Node;
+    if (p != Nil) {
+        p->info = x;
+        p->left = Nil;
+        p->right = Nil;
+    }
+    return p;
+}
+
+void insertNode(address &root, infotype x) {
+    if (root == Nil) {
+        root = alokasi(x);
+    }
+    else if (x < root->info) {
+        insertNode(root->left, x);
+    }
+    else if (x > root->info) {
+        insertNode(root->right, x);
+    }
+}
+
+address findNode(infotype x, address root) {
+    if (root == Nil) {
+        return Nil;
+    }
+    else if (x == root->info) {
+        return root;
+    }
+    else if (x < root->info) {
+        return findNode(x, root->left);
+    }
+    else {
+        return findNode(x, root->right);
+    }
+}
+
+void printInorder(address root) {
+    if (root == Nil) return;
+
+    printInorder(root->left);
+    cout << root->info << " - ";
+    printInorder(root->right);
+}
+
+int hitungJumlahNode(address root) {
+    if (root == Nil) return 0;
+
+    return 1 + 
+           hitungJumlahNode(root->left) + 
+           hitungJumlahNode(root->right);
+}
+
+int hitungTotalInfo(address root) {
+    if (root == Nil) return 0;
+
+    return root->info + 
+           hitungTotalInfo(root->left) + 
+           hitungTotalInfo(root->right);
+}
+
+int hitungKedalaman(address root, int start) {
+    if (root == Nil) return start;
+
+    int kiri  = hitungKedalaman(root->left,  start + 1);
+    int kanan = hitungKedalaman(root->right, start + 1);
+
+    return (kiri > kanan ? kiri : kanan);
 }
 ```
 
 main.cpp
 ```C++
 #include <iostream>
+#include "bstree.h"
 using namespace std;
 
 int main() {
-    cout << "ini adalah file code guided praktikan" << endl;
+
+    cout << "Hello World!" << endl;
+
+    address root = Nil;
+
+    insertNode(root, 1);
+    insertNode(root, 2);
+    insertNode(root, 6);
+    insertNode(root, 4);
+    insertNode(root, 5);
+    insertNode(root, 3);
+    insertNode(root, 6);
+    insertNode(root, 7);
+
+    printInorder(root);
+    cout << endl;
+
+    cout << "kedalaman : " << hitungKedalaman(root, 0) << endl;
+    cout << "jumlah node : " << hitungJumlahNode(root) << endl;
+    cout << "total : " << hitungTotalInfo(root) << endl;
+
     return 0;
 }
 ```
 #### Output:
-![240302_00h00m06s_screenshot](https://github.com/suxeno/Struktur-Data-Assignment/assets/111122086/6d1727a8-fb77-4ecf-81ff-5de9386686b7)
+<img width="553" height="141" alt="Image" src="https://github.com/user-attachments/assets/7ebe1266-9c21-4f35-b9e8-6ef98f431b1c" />
 
-Kode di atas digunakan untuk mencetak teks "ini adalah file code guided praktikan" ke layar menggunakan function cout untuk mengeksekusi nya.
+Pada soal nomor 2, program BST dari soal sebelumnya ditambah tiga fungsi baru, yaitu hitungJumlahNode, hitungTotalInfo, dan hitungKedalaman. Fungsi hitungJumlahNode dipakai untuk menghitung berapa banyak node yang ada di dalam tree. hitungTotalInfo digunakan untuk menjumlahkan semua nilai yang tersimpan pada node-node di BST. Sedangkan hitungKedalaman berfungsi untuk mengetahui seberapa dalam tree tersebut, atau level maksimal yang dimilikinya. Setelah memasukkan data 1, 2, 6, 4, 5, 3, 6, dan 7, program menampilkan hasil perhitungan tersebut. Hasil akhirnya menunjukkan bahwa tree memiliki kedalaman 3, jumlah node 7, dan total seluruh nilai node adalah 28. Dengan tambahan fungsi-fungsi ini, program bisa memberikan informasi lebih lengkap tentang struktur BST yang sudah dibuat.
 
 #### Full code Screenshot:
 ![240309_10h21m35s_screenshot](https://github.com/suxeno/Struktur-Data-Assignment/assets/111122086/41e9641c-ad4e-4e50-9ca4-a0215e336b04)

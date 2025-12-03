@@ -696,7 +696,7 @@ int main() {
 Pada soal nomor 2, program BST dari soal sebelumnya ditambah tiga fungsi baru, yaitu hitungJumlahNode, hitungTotalInfo, dan hitungKedalaman. Fungsi hitungJumlahNode dipakai untuk menghitung berapa banyak node yang ada di dalam tree. hitungTotalInfo digunakan untuk menjumlahkan semua nilai yang tersimpan pada node-node di BST. Sedangkan hitungKedalaman berfungsi untuk mengetahui seberapa dalam tree tersebut, atau level maksimal yang dimilikinya. Setelah memasukkan data 1, 2, 6, 4, 5, 3, 6, dan 7, program menampilkan hasil perhitungan tersebut. Hasil akhirnya menunjukkan bahwa tree memiliki kedalaman 3, jumlah node 7, dan total seluruh nilai node adalah 28. Dengan tambahan fungsi-fungsi ini, program bisa memberikan informasi lebih lengkap tentang struktur BST yang sudah dibuat.
 
 #### Full code Screenshot:
-![240309_10h21m35s_screenshot](https://github.com/suxeno/Struktur-Data-Assignment/assets/111122086/41e9641c-ad4e-4e50-9ca4-a0215e336b04)
+<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/d9407977-3382-4a37-9222-0db36a0b9ae5" />
 
 ### 3. <img width="555" height="341" alt="Image" src="https://github.com/user-attachments/assets/61d9fcdf-4115-4e04-b101-58ad443b396a" />
 

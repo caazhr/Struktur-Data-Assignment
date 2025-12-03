@@ -697,7 +697,7 @@ Pada soal nomor 2, program BST dari soal sebelumnya ditambah tiga fungsi baru, y
 #### Full code Screenshot:
 ![240309_10h21m35s_screenshot](https://github.com/suxeno/Struktur-Data-Assignment/assets/111122086/41e9641c-ad4e-4e50-9ca4-a0215e336b04)
 
-### 3. 
+### 3. <img width="555" height="341" alt="Image" src="https://github.com/user-attachments/assets/61d9fcdf-4115-4e04-b101-58ad443b396a" />
 
 bstree.h
 ```C++

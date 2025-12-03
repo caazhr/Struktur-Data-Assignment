@@ -442,7 +442,8 @@ Kode pada guided ini dipakai untuk nunjukin cara kerja Binary Search Tree (BST).
 
 ## Unguided 
 
-### 1. <img width="707" height="687" alt="Image" src="https://github.com/user-attachments/assets/b4f8e3a1-a586-4296-bd3b-7f98e1ee6de1" />
+### 1. 
+<img width="707" height="687" alt="Image" src="https://github.com/user-attachments/assets/b4f8e3a1-a586-4296-bd3b-7f98e1ee6de1" />
 
 bstree.h
 ```C++
@@ -552,7 +553,8 @@ Pada soal nomor 1 ini, program dibuat untuk membangun sebuah Binary Search Tree 
 <img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/e7304d98-c050-48e4-81ab-e71ca70cf861" />
 
 
-### 2. <img width="748" height="782" alt="Image" src="https://github.com/user-attachments/assets/cacb830b-a93f-4217-8600-eea2138df9ec" />
+### 2. 
+<img width="748" height="782" alt="Image" src="https://github.com/user-attachments/assets/cacb830b-a93f-4217-8600-eea2138df9ec" />
 
 bstree.h
 ```C++
@@ -698,7 +700,8 @@ Pada soal nomor 2, program BST dari soal sebelumnya ditambah tiga fungsi baru, y
 #### Full code Screenshot:
 <img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/d9407977-3382-4a37-9222-0db36a0b9ae5" />
 
-### 3. <img width="555" height="341" alt="Image" src="https://github.com/user-attachments/assets/61d9fcdf-4115-4e04-b101-58ad443b396a" />
+### 3. 
+<img width="555" height="341" alt="Image" src="https://github.com/user-attachments/assets/61d9fcdf-4115-4e04-b101-58ad443b396a" />
 
 bstree.h
 ```C++
@@ -787,7 +790,7 @@ int main() {
 Program pada soal nomor 3 digunakan untuk menampilkan urutan data dari sebuah tree yang sudah ditentukan pada modul dengan menggunakan dua jenis traversal, yaitu preorder dan postorder. Jadi, program ini hanya bertujuan untuk membaca dan mencetak isi tree sesuai aturan kedua traversal tersebut.
 
 #### Full code Screenshot:
-![240309_10h21m35s_screenshot](https://github.com/suxeno/Struktur-Data-Assignment/assets/111122086/41e9641c-ad4e-4e50-9ca4-a0215e336b04)
+<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/5b5a8ef3-1f5a-484e-b21a-892d571f714f" />
 
 
 

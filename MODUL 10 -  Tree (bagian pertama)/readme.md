@@ -442,37 +442,104 @@ Kode pada guided ini dipakai untuk nunjukin cara kerja Binary Search Tree (BST).
 
 ## Unguided 
 
-### 1. 
+### 1. <img width="707" height="687" alt="Image" src="https://github.com/user-attachments/assets/b4f8e3a1-a586-4296-bd3b-7f98e1ee6de1" />
 
-bst.h
+bstree.h
 ```C++
-#include <iostream>
-using namespace std;
+#ifndef BSTREE_H
+#define BSTREE_H
+#define Nil NULL
 
-int main() {
-    cout << "ini adalah file code guided praktikan" << endl;
-    return 0;
-}
+typedef int infotype;
+typedef struct Node *address;
+
+struct Node {
+    infotype info;
+    address left;
+    address right;
+};
+
+address alokasi(infotype x);
+void insertNode(address &root, infotype x);
+address findNode(infotype x, address root);
+void printInorder(address root);
+
+#endif
 ```
 
-bst.cpp
+bstree.cpp
 ```C++
+#include "bstree.h"
 #include <iostream>
 using namespace std;
 
-int main() {
-    cout << "ini adalah file code guided praktikan" << endl;
-    return 0;
+address alokasi(infotype x) {
+    address p = new Node;
+    if (p != Nil) {
+        p->info = x;
+        p->left = Nil;
+        p->right = Nil;
+    }
+    return p;
+}
+
+void insertNode(address &root, infotype x) {
+    if (root == Nil) {
+        root = alokasi(x);
+    }
+    else if (x < root->info) {
+        insertNode(root->left, x);
+    }
+    else if (x > root->info) {
+        insertNode(root->right, x);
+    }
+}
+
+address findNode(infotype x, address root) {
+    if (root == Nil) {
+        return Nil;
+    } else if (x == root->info) {
+        return root;
+    } else if (x < root->info) {
+        return findNode(x, root->left);
+    } else {
+        return findNode(x, root->right);
+    }
+}
+
+void printInorder(address root) {
+    if (root == Nil) return;
+
+    printInorder(root->left);
+    cout << root->info << " - ";
+    printInorder(root->right);
 }
 ```
 
 main.cpp
 ```C++
 #include <iostream>
+#include "bstree.h"
+
 using namespace std;
 
 int main() {
-    cout << "ini adalah file code guided praktikan" << endl;
+    cout << "Hello World!" << endl;
+
+    address root = Nil;
+
+    insertNode(root, 1);
+    insertNode(root, 2);
+    insertNode(root, 6);
+    insertNode(root, 4);
+    insertNode(root, 5);
+    insertNode(root, 3);
+    insertNode(root, 6);
+    insertNode(root, 7);
+
+    printInorder(root);   
+    cout << endl;
+
     return 0;
 }
 ```

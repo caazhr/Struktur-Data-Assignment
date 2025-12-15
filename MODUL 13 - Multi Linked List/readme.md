@@ -719,6 +719,7 @@ Keterangan :
     o fungsi mengembalikan NIL jika tidak ditemukan<br>
 
 <img width="701" height="708" alt="Image" src="https://github.com/user-attachments/assets/4aa3f176-a5fa-4890-b425-35f34860cc3b" />
+<img width="479" height="264" alt="Image" src="https://github.com/user-attachments/assets/18dc3c96-d610-4f22-9ea1-f8dddf3a1e22" />
 ```C++
 #include <iostream>
 using namespace std;

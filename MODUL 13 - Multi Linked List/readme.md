@@ -710,7 +710,13 @@ Program diatas digunakan untuk mengelola data menu restoran yang dikelompokkan b
 
 ## Unguided 
 
-### 1. <img width="790" height="594" alt="Image" src="https://github.com/user-attachments/assets/ce03becb-29f6-4304-8a3e-4d87f8a0ad09" />
+### 1. 
+<img width="790" height="594" alt="Image" src="https://github.com/user-attachments/assets/ce03becb-29f6-4304-8a3e-4d87f8a0ad09" />
+
+Keterangan :
+• fungsi findElm mencari elemen di dalam list L berdasarkan nim<br>
+    o fungsi mengembalikan elemen dengan dengan info nim == x.nim jika ditemukan<br>
+    o fungsi mengembalikan NIL jika tidak ditemukan<br>
 
 ```C++
 #include <iostream>

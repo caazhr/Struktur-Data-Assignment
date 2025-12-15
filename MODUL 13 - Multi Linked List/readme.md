@@ -977,9 +977,7 @@ int main() {
 #### Output:
 <img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/f5aef720-7ca9-44e7-a3bb-5fcee2741ece" />
 
-Program ini digunakan untuk mengolah data array 1 dimensi dengan berbagai operasi dasar, yaitu menampilkan isi array, mencari nilai maksimum dan minimum, serta menghitung nilai rata-rata.
-Fungsi cariMaksimum() dan cariMinimum() masing-masing mencari nilai terbesar dan terkecil dengan membandingkan setiap elemen array. Prosedur hitungRataRata() menjumlahkan semua elemen dan membaginya dengan jumlah data.
-Di dalam main(), program menampilkan menu menggunakan switch-case agar pengguna bisa memilih operasi yang ingin dijalankan, dan perulangan do-while membuat menu terus muncul sampai pengguna memilih keluar.
+Program ini mengimplementasikan ADT Circular Linked List untuk mengelola data mahasiswa yang terdiri dari nama, NIM, jenis kelamin, dan IPK. Struktur data yang digunakan adalah single circular linked list, di mana elemen terakhir menunjuk kembali ke elemen pertama. Program menyediakan operasi pembuatan list, alokasi dan dealokasi node, penambahan data di awal, akhir, dan setelah elemen tertentu, penghapusan data, pencarian elemen berdasarkan NIM, serta penampilan seluruh data mahasiswa. Dengan penerapan circular linked list, program mampu mengelola data secara dinamis dan mendukung traversal data secara berulang dengan efisien sesuai spesifikasi ADT yang ditentukan.
 
 #### Full code Screenshot:
 <img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/811cae57-0b22-4777-95ba-e446dde210f6" />

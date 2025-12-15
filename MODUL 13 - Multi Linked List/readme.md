@@ -980,11 +980,11 @@ int main() {
 Program ini mengimplementasikan ADT Circular Linked List untuk mengelola data mahasiswa yang terdiri dari nama, NIM, jenis kelamin, dan IPK. Struktur data yang digunakan adalah single circular linked list, di mana elemen terakhir menunjuk kembali ke elemen pertama. Program menyediakan operasi pembuatan list, alokasi dan dealokasi node, penambahan data di awal, akhir, dan setelah elemen tertentu, penghapusan data, pencarian elemen berdasarkan NIM, serta penampilan seluruh data mahasiswa. Dengan penerapan circular linked list, program mampu mengelola data secara dinamis dan mendukung traversal data secara berulang dengan efisien sesuai spesifikasi ADT yang ditentukan.
 
 #### Full code Screenshot:
-<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/811cae57-0b22-4777-95ba-e446dde210f6" />
+<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/4572e6a2-8c75-4643-9d06-73c9d2c849e5" />
 
 
 ## Kesimpulan
-Dalam Praktikum ini, saya memahami bagaimana data dapat dikelola dan diolah secara efisien dalam program. Saya juga dapat menambah pemahaman mengenai array, pointer, fungsi, prosedur, dan parameter dari praktikum ini. Secara keseluruhan, praktikum ini meningkatkan kemampuan saya dalam menulis program yang modular, efisien, dan mudah dikelola, serta memperkuat pemahaman logika dasar pemrograman dalam bahasa C++.
+Praktikum ini memberikan pemahaman tentang penerapan ADT Circular Linked List dalam mengelola data mahasiswa secara dinamis melalui operasi penambahan, penghapusan, pencarian, dan penelusuran data.
 
 ## Referensi
 [1] I. Holm, Narrator, and J. Fullerton-Smith, Producer, How to Build a Human [DVD]. London: BBC; 2002.

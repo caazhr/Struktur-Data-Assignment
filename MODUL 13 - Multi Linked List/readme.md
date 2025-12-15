@@ -710,7 +710,7 @@ Program diatas digunakan untuk mengelola data menu restoran yang dikelompokkan b
 
 ## Unguided 
 
-### 1. [Buatlah program yang dapat melakukan operasi penjumlahan, pengurangan, dan perkalian matriks 3x3]
+### 1. <img width="790" height="594" alt="Image" src="https://github.com/user-attachments/assets/ce03becb-29f6-4304-8a3e-4d87f8a0ad09" />
 
 ```C++
 #include <iostream>

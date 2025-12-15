@@ -722,206 +722,260 @@ Keterangan :
 <img width="479" height="264" alt="Image" src="https://github.com/user-attachments/assets/18dc3c96-d610-4f22-9ea1-f8dddf3a1e22" />
 <img width="702" height="433" alt="Image" src="https://github.com/user-attachments/assets/1b030f24-479f-468f-8bb5-37626c8d11e5" />
 
+
+circularlist.h
 ```C++
+#ifndef CIRCULARLIST_H
+#define CIRCULARLIST_H
+
 #include <iostream>
+#include <string>
 using namespace std;
 
-int main() {
-    int A[3][3], B[3][3], C[3][3];
+struct mahasiswa {
+    string nama;
+    string nim;
+    char jenis_kelamin;
+    float ipk;
+};
 
-    cout << "\nMasukkan angka matriks A (3x3):\n";
-    for (int i = 0; i < 3; i++) {
-        for (int j = 0; j < 3; j++) {
-            cin >> A[i][j];
-        }
-    }
+typedef mahasiswa infotype;
 
-    cout << "\nMasukkan angka matriks B (3x3):\n";
-    for (int i = 0; i < 3; i++) {
-        for (int j = 0; j < 3; j++) {
-            cin >> B[i][j];
-        }
-    }
+struct ElmList;
+typedef ElmList* address;
 
-    cout << "\nHasil Penjumlahan Matriks (A + B):\n";
-    for (int i = 0; i < 3; i++) {
-        for (int j = 0; j < 3; j++) {
-            C[i][j] = A[i][j] + B[i][j];
-            cout << C[i][j] << "\t";
-        }
-        cout << endl;
-    }
+struct ElmList {
+    infotype info;
+    address next;
+};
 
-    cout << "\nHasil Pengurangan Matriks (A - B):\n";
-    for (int i = 0; i < 3; i++) {
-        for (int j = 0; j < 3; j++) {
-            C[i][j] = A[i][j] - B[i][j];
-            cout << C[i][j] << "\t";
-        }
-        cout << endl;
-    }
+struct List {
+    address first;
+};
 
-    cout << "\nHasil Perkalian Matriks (A x B):\n";
-    for (int i = 0; i < 3; i++) {
-        for (int j = 0; j < 3; j++) {
-            C[i][j] = 0;
-            for (int k = 0; k < 3; k++) {
-                C[i][j] += A[i][k] * B[k][j];
-            }
-            cout << C[i][j] << "\t";
-        }
-        cout << endl;
-    }
+#define NIL NULL
 
-    return 0;
-}
+void CreateList(List &L);
+address alokasi(infotype x);
+void dealokasi(address &P);
+void insertFirst(List &L, address P);
+void insertAfter(List &L, address Prec, address P);
+void insertLast(List &L, address P);
+void deleteFirst(List &L, address &P);
+void deleteAfter(List &L, address Prec, address &P);
+void deleteLast(List &L, address &P);
+address findElm(List L, infotype x);   
+void printInfo(List L);
 
+#endif
 ```
-#### Output:
-<img width="1098" height="579" alt="Image" src="https://github.com/user-attachments/assets/9df9336d-0089-4d70-ad7d-ef1774cd812f" />
 
-Kode di atas digunakan untuk menghitung Penjumlahan, pengurangan, dan perkalian dari 2 matriks yang diinput user.
-
-#### Full code Screenshot:
-<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/5c15915e-54fc-434b-bcba-3c3b383d684e" />
-
-### 2. [Berdasarkan guided pointer dan reference sebelumnya, buatlah keduanya dapat menukar nilai dari 3 variabel]
-
+circularlist.cpp
 ```C++
-#include <iostream>
-using namespace std;
+#include "circularlist.h"
 
-void tukar3_ptr(int *a, int *b, int *c) {
-    int temp = *a;
-    *a = *b;
-    *b = *c;
-    *c = temp;
+void CreateList(List &L) {
+    L.first = NIL;
 }
 
-void tukar3_ref(int &a, int &b, int &c) {
-    int temp = a;
-    a = b;
-    b = c;
-    c = temp;
+address alokasi(infotype x) {
+    address P = new ElmList;
+    P->info = x;
+    P->next = NIL;
+    return P;
 }
 
-int main() {
-    int a = 10, b = 20, c = 30;
-
-    cout << "Sebelum Penukaran:" << endl;
-    cout << "a = " << a << ", b = " << b << ", c = " << c << endl;
-
-    tukar3_ptr(&a, &b, &c);
-    cout << "\nSetelah Penukaran (pointer):" << endl;
-    cout << "a = " << a << ", b = " << b << ", c = " << c << endl;
-
-    tukar3_ref(a, b, c);
-    cout << "\nSetelah Penukaran (refrence):" << endl;
-    cout << "a = " << a << ", b = " << b << ", c = " << c << endl;
-
-    return 0;
+void dealokasi(address &P) {
+    delete P;
+    P = NIL;
 }
 
-```
-#### Output:
-<img width="1117" height="200" alt="Image" src="https://github.com/user-attachments/assets/1b9fa623-403d-4d33-8173-d88a3da3a9d0" />
-
-Kode di atas digunakan untuk menukar nilai tiga variabel (a, b, c) menggunakan dua cara: pointer dan reference.
-Fungsi tukar3_ptr() menukar nilai melalui alamat memori variabel, sedangkan tukar3_ref() menukar langsung lewat alias variabel.
-
-#### Full code Screenshot:
-<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/5a1f30a9-cffd-418f-9715-f9d3e787d013" />
-
-### 3. [Diketahui sebuah array 1 dimensi sebagai berikut : arrA = {11, 8, 5, 7, 12, 26, 3, 54, 33, 55}
-Buatlah program yang dapat mencari nilai minimum, maksimum, dan rata – rata dari array tersebut! Gunakan function cariMinimum() untuk mencari nilai minimum dan function cariMaksimum() untuk mencari nilai maksimum, serta gunakan prosedur hitungRataRata() untuk menghitung nilai rata – rata! Buat program menggunakan menu switch-case seperti berikut ini :
---- Menu Program Array ---
-
-1. Tampilkan isi array
-2. cari nilai maksimum
-3. cari nilai minimum
-4. Hitung nilai rata - rata]
-
-```C++
-#include <iostream>
-using namespace std;
-
-int cariMaksimum(int arr[], int n) {
-    int maks = arr[0];
-    for (int i = 1; i < n; i++) {
-        if (arr[i] > maks)
-            maks = arr[i];
+static address lastNode(List L) {
+    if (L.first == NIL) return NIL;
+    address Q = L.first;
+    while (Q->next != L.first) {
+        Q = Q->next;
     }
-    return maks;
+    return Q;
 }
 
-int cariMinimum(int arr[], int n) {
-    int min = arr[0];
-    for (int i = 1; i < n; i++) {
-        if (arr[i] < min)
-            min = arr[i];
+void insertFirst(List &L, address P) {
+    if (P == NIL) return;
+
+    if (L.first == NIL) {
+        L.first = P;
+        P->next = P;
+    } else {
+        address Last = lastNode(L);
+        P->next = L.first;
+        L.first = P;
+        Last->next = L.first;
     }
-    return min;
 }
 
-void hitungRataRata(int arr[], int n) {
-    float total = 0;
-    for (int i = 0; i < n; i++) {
-        total += arr[i];
+void insertLast(List &L, address P) {
+    if (P == NIL) return;
+
+    if (L.first == NIL) {
+        insertFirst(L, P);
+    } else {
+        address Last = lastNode(L);
+        Last->next = P;
+        P->next = L.first;
     }
-    float rata = total / n;
-    cout << "Nilai rata-rata = " << rata << endl;
 }
 
-int main() {
-    int arrA[] = {11, 8, 5, 7, 12, 26, 3, 54, 33, 55};
-    int n = sizeof(arrA) / sizeof(arrA[0]);
-    int pilihan;
+void insertAfter(List &L, address Prec, address P) {
+    if (L.first == NIL || Prec == NIL || P == NIL) return;
 
+    P->next = Prec->next;
+    Prec->next = P;
+}
+
+void deleteFirst(List &L, address &P) {
+    P = NIL;
+    if (L.first == NIL) return;
+
+    if (L.first->next == L.first) {
+        P = L.first;
+        L.first = NIL;
+        P->next = NIL;
+        return;
+    }
+
+    address Last = lastNode(L);
+    P = L.first;
+    L.first = L.first->next;
+    Last->next = L.first;
+    P->next = NIL;
+}
+
+void deleteLast(List &L, address &P) {
+    P = NIL;
+    if (L.first == NIL) return;
+
+    if (L.first->next == L.first) {
+        P = L.first;
+        L.first = NIL;
+        P->next = NIL;
+        return;
+    }
+
+    address Prec = L.first;
+    while (Prec->next->next != L.first) { 
+        Prec = Prec->next;
+    }
+
+    P = Prec->next;      
+    Prec->next = L.first; 
+    P->next = NIL;
+}
+
+void deleteAfter(List &L, address Prec, address &P) {
+    P = NIL;
+    if (L.first == NIL || Prec == NIL) return;
+
+    address target = Prec->next;
+    if (target == NIL) return;
+
+    if (target == L.first) {
+        deleteFirst(L, P);
+        return;
+    }
+
+    P = target;
+    Prec->next = target->next;
+    P->next = NIL;
+}
+
+address findElm(List L, infotype x) {
+    if (L.first == NIL) return NIL;
+
+    address P = L.first;
     do {
-        cout << "\n--- Menu Program Array ---\n";
-        cout << "1. Tampilkan isi array\n";
-        cout << "2. Cari nilai maksimum\n";
-        cout << "3. Cari nilai minimum\n";
-        cout << "4. Hitung nilai rata-rata\n";
-        cout << "5. Keluar\n";
-        cout << "Pilih menu (1-5): ";
-        cin >> pilihan;
+        if (P->info.nim == x.nim) return P;
+        P = P->next;
+    } while (P != L.first);
 
-        switch (pilihan) {
-            case 1:
-                cout << "Isi array: ";
-                for (int i = 0; i < n; i++)
-                    cout << arrA[i] << " ";
-                cout << endl;
-                break;
+    return NIL;
+}
 
-            case 2:
-                cout << "Nilai maksimum = " << cariMaksimum(arrA, n) << endl;
-                break;
+void printInfo(List L) {
+    if (L.first == NIL) {
+        cout << "List kosong" << endl;
+        return;
+    }
 
-            case 3:
-                cout << "Nilai minimum = " << cariMinimum(arrA, n) << endl;
-                break;
+    address P = L.first;
+    do {
+        cout << "Nama : " << P->info.nama << "\n";
+        cout << "NIM  : " << P->info.nim << "\n";
+        cout << "L/P  : " << P->info.jenis_kelamin << "\n";
+        cout << "IPK  : " << P->info.ipk << "\n\n";
+        P = P->next;
+    } while (P != L.first);
+}
+```
 
-            case 4:
-                hitungRataRata(arrA, n);
-                break;
+main.cpp
+```C++
+#include "circularlist.h"
 
-            case 5:
-                cout << "Program selesai.\n";
-                break;
+address createData(string nama, string nim, char jk, float ipk) {
+    infotype x;
+    x.nama = nama;
+    x.nim = nim;
+    x.jenis_kelamin = jk;
+    x.ipk = ipk;
+    return alokasi(x);
+}
 
-            default:
-                cout << "Pilihan tidak valid!\n";
-        }
-    } while (pilihan != 5);
+int main() {
+    List L;
+    address P1 = NIL, P2 = NIL;
+    infotype x;
+
+    CreateList(L);
+
+    cout << "coba insert first, last, dan after" << endl;
+
+    P1 = createData("Danu", "04", 'L', 4.0);
+    insertFirst(L, P1);
+
+    P1 = createData("Fahmi", "06", 'L', 3.45);
+    insertLast(L, P1);
+
+    P1 = createData("Bobi", "02", 'L', 3.71);
+    insertFirst(L, P1);
+
+    P1 = createData("Ali", "01", 'L', 3.3);
+    insertFirst(L, P1);
+
+    P1 = createData("Gita", "07", 'P', 3.75);
+    insertLast(L, P1);
+
+    x.nim = "07";
+    P1 = findElm(L, x);
+    P2 = createData("Cindi", "03", 'P', 3.5);
+    if (P1 != NIL) insertAfter(L, P1, P2);
+
+    x.nim = "02";
+    P1 = findElm(L, x);
+    P2 = createData("Hilmi", "08", 'P', 3.3); 
+    if (P1 != NIL) insertAfter(L, P1, P2);
+
+    x.nim = "04";
+    P1 = findElm(L, x);
+    P2 = createData("Eli", "05", 'P', 3.4);
+    if (P1 != NIL) insertAfter(L, P1, P2);
+
+    printInfo(L);
 
     return 0;
 }
-
 ```
 #### Output:
-<img width="1130" height="815" alt="Image" src="https://github.com/user-attachments/assets/8ad79606-09a2-4149-9f0a-cde2d4ebd060" />
+<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/f5aef720-7ca9-44e7-a3bb-5fcee2741ece" />
 
 Program ini digunakan untuk mengolah data array 1 dimensi dengan berbagai operasi dasar, yaitu menampilkan isi array, mencari nilai maksimum dan minimum, serta menghitung nilai rata-rata.
 Fungsi cariMaksimum() dan cariMinimum() masing-masing mencari nilai terbesar dan terkecil dengan membandingkan setiap elemen array. Prosedur hitungRataRata() menjumlahkan semua elemen dan membaginya dengan jumlah data.

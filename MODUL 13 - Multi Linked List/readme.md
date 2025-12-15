@@ -720,6 +720,8 @@ Keterangan :
 
 <img width="701" height="708" alt="Image" src="https://github.com/user-attachments/assets/4aa3f176-a5fa-4890-b425-35f34860cc3b" />
 <img width="479" height="264" alt="Image" src="https://github.com/user-attachments/assets/18dc3c96-d610-4f22-9ea1-f8dddf3a1e22" />
+<img width="702" height="433" alt="Image" src="https://github.com/user-attachments/assets/1b030f24-479f-468f-8bb5-37626c8d11e5" />
+
 ```C++
 #include <iostream>
 using namespace std;

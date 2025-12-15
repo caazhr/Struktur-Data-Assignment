@@ -718,6 +718,7 @@ Keterangan :
     o fungsi mengembalikan elemen dengan dengan info nim == x.nim jika ditemukan<br>
     o fungsi mengembalikan NIL jika tidak ditemukan<br>
 
+<img width="701" height="708" alt="Image" src="https://github.com/user-attachments/assets/4aa3f176-a5fa-4890-b425-35f34860cc3b" />
 ```C++
 #include <iostream>
 using namespace std;

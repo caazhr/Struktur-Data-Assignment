@@ -369,8 +369,9 @@ program diatas digunakan untuk mengimplementasikan struktur data Graph tidak ber
 
 ### 1. 
 <img width="906" height="803" alt="Image" src="https://github.com/user-attachments/assets/07dbafa6-1597-43a5-ad93-73c977304ec5" />
-2. Buatlah prosedur untuk menampilkanhasil penelusuran DFS.<br>
-3. Buatlah prosedur untuk menampilkanhasil penelusuran DFS.
+
+2. Buatlah prosedur untuk menampilkan hasil penelusuran DFS.<br>
+3. Buatlah prosedur untuk menampilkan hasil penelusuran DFS.
 prosedur PrintBFS (Graph G, adrNode N);<br>
 
 
@@ -627,8 +628,7 @@ int main() {
 Program ini dibuat untuk mengimplementasikan struktur data Graph tidak berarah menggunakan representasi Adjacency List berbasis multi linked list. Program menyediakan operasi pembuatan graph, penambahan node, serta penghubungan antar node menggunakan edge dua arah. Selain itu, program juga menampilkan struktur graph dalam bentuk adjacency list dan melakukan penelusuran graph menggunakan metode Depth First Search (DFS) dan Breadth First Search (BFS) yang masing-masing menggunakan stack dan queue.
 
 #### Full code Screenshot:
-<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/4572e6a2-8c75-4643-9d06-73c9d2c849e5" />
-
+<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/580038ae-100a-4ca2-9591-8032a84b7231" />
 
 ## Kesimpulan
 Melalui praktikum ini, dapat dipahami konsep dasar struktur data graph beserta cara merepresentasikannya menggunakan adjacency list. Praktikum ini juga membantu memahami proses penelusuran graph menggunakan metode DFS dan BFS serta penerapan struktur data stack dan queue dalam traversal graph.

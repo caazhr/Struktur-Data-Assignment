@@ -369,259 +369,254 @@ program diatas digunakan untuk mengimplementasikan struktur data Graph tidak ber
 
 ### 1. 
 <img width="906" height="803" alt="Image" src="https://github.com/user-attachments/assets/07dbafa6-1597-43a5-ad93-73c977304ec5" />
-2. Buatlah prosedur untuk menampilkanhasil penelusuran DFS.
+2. Buatlah prosedur untuk menampilkanhasil penelusuran DFS.<br>
 3. Buatlah prosedur untuk menampilkanhasil penelusuran DFS.
-prosedur PrintBFS (Graph G, adrNode N);
+prosedur PrintBFS (Graph G, adrNode N);<br>
 
 
-
-circularlist.h
+graph.h
 ```C++
-#ifndef CIRCULARLIST_H
-#define CIRCULARLIST_H
+#ifndef GRAPH_H_INCLUDE
+#define GRAPH_H_INCLUDE
 
 #include <iostream>
-#include <string>
 using namespace std;
 
-struct mahasiswa {
-    string nama;
-    string nim;
-    char jenis_kelamin;
-    float ipk;
+typedef char infoGraph;
+typedef struct ElmNode *adrNode;
+typedef struct ElmEdge *adrEdge;
+
+struct ElmNode {
+    infoGraph info;
+    int visited;
+    adrEdge firstEdge;
+    adrNode Next;
 };
 
-typedef mahasiswa infotype;
-
-struct ElmList;
-typedef ElmList* address;
-
-struct ElmList {
-    infotype info;
-    address next;
+struct ElmEdge {
+    adrNode Node;
+    adrEdge Next;
 };
 
-struct List {
-    address first;
+struct Graph {
+    adrNode first;
 };
 
-#define NIL NULL
+void CreateGraph(Graph &G);
+void InsertNode(Graph &G, infoGraph X);
+void ConnectNode(adrNode N1, adrNode N2);
+adrNode FindNode(Graph G, infoGraph X);
+void PrintInfoGraph(Graph G);
 
-void CreateList(List &L);
-address alokasi(infotype x);
-void dealokasi(address &P);
-void insertFirst(List &L, address P);
-void insertAfter(List &L, address Prec, address P);
-void insertLast(List &L, address P);
-void deleteFirst(List &L, address &P);
-void deleteAfter(List &L, address Prec, address &P);
-void deleteLast(List &L, address &P);
-address findElm(List L, infotype x);   
-void printInfo(List L);
+void PrintDFS(Graph G, adrNode N);
+void PrintBFS(Graph G, adrNode N);
 
 #endif
 ```
 
-circularlist.cpp
+graph.cpp
 ```C++
-#include "circularlist.h"
+#include "graph.h"
+#include <queue>
+#include <stack>
 
-void CreateList(List &L) {
-    L.first = NIL;
-}
-
-address alokasi(infotype x) {
-    address P = new ElmList;
-    P->info = x;
-    P->next = NIL;
+static adrNode AlokasiNode(infoGraph X) {
+    adrNode P = new ElmNode;
+    P->info = X;
+    P->visited = 0;
+    P->firstEdge = NULL;
+    P->Next = NULL;
     return P;
 }
 
-void dealokasi(address &P) {
-    delete P;
-    P = NIL;
+static adrEdge AlokasiEdge(adrNode tujuan) {
+    adrEdge E = new ElmEdge;
+    E->Node = tujuan;
+    E->Next = NULL;
+    return E;
 }
 
-static address lastNode(List L) {
-    if (L.first == NIL) return NIL;
-    address Q = L.first;
-    while (Q->next != L.first) {
-        Q = Q->next;
+static void ResetVisited(Graph &G) {
+    adrNode P = G.first;
+    while (P != NULL) {
+        P->visited = 0;
+        P = P->Next;
     }
-    return Q;
 }
 
-void insertFirst(List &L, address P) {
-    if (P == NIL) return;
+static bool HasEdge(adrNode from, adrNode to) {
+    adrEdge e = from->firstEdge;
+    while (e != NULL) {
+        if (e->Node == to) return true;
+        e = e->Next;
+    }
+    return false;
+}
 
-    if (L.first == NIL) {
-        L.first = P;
-        P->next = P;
+void CreateGraph(Graph &G) {
+    G.first = NULL;
+}
+
+adrNode FindNode(Graph G, infoGraph X) {
+    adrNode P = G.first;
+    while (P != NULL) {
+        if (P->info == X) return P;
+        P = P->Next;
+    }
+    return NULL;
+}
+
+void InsertNode(Graph &G, infoGraph X) {
+    if (FindNode(G, X) != NULL) return;
+
+    adrNode P = AlokasiNode(X);
+    if (G.first == NULL) {
+        G.first = P;
     } else {
-        address Last = lastNode(L);
-        P->next = L.first;
-        L.first = P;
-        Last->next = L.first;
+        adrNode Q = G.first;
+        while (Q->Next != NULL) Q = Q->Next;
+        Q->Next = P;
     }
 }
 
-void insertLast(List &L, address P) {
-    if (P == NIL) return;
+void ConnectNode(adrNode N1, adrNode N2) {
+    if (N1 == NULL || N2 == NULL) return;
+    if (N1 == N2) return;
 
-    if (L.first == NIL) {
-        insertFirst(L, P);
-    } else {
-        address Last = lastNode(L);
-        Last->next = P;
-        P->next = L.first;
+    if (!HasEdge(N1, N2)) {
+        adrEdge E1 = AlokasiEdge(N2);
+        E1->Next = N1->firstEdge;    
+        N1->firstEdge = E1;
+    }
+    if (!HasEdge(N2, N1)) {
+        adrEdge E2 = AlokasiEdge(N1);
+        E2->Next = N2->firstEdge;     
+        N2->firstEdge = E2;
     }
 }
 
-void insertAfter(List &L, address Prec, address P) {
-    if (L.first == NIL || Prec == NIL || P == NIL) return;
-
-    P->next = Prec->next;
-    Prec->next = P;
+void PrintInfoGraph(Graph G) {
+    adrNode P = G.first;
+    while (P != NULL) {
+        cout << P->info << " : ";
+        adrEdge E = P->firstEdge;
+        while (E != NULL) {
+            cout << E->Node->info << " ";
+            E = E->Next;
+        }
+        cout << endl;
+        P = P->Next;
+    }
 }
 
-void deleteFirst(List &L, address &P) {
-    P = NIL;
-    if (L.first == NIL) return;
+void PrintDFS(Graph G, adrNode N) {
+    if (N == NULL) return;
 
-    if (L.first->next == L.first) {
-        P = L.first;
-        L.first = NIL;
-        P->next = NIL;
-        return;
+    ResetVisited(G);
+    stack<adrNode> S;
+    S.push(N);
+
+    cout << "DFS: ";
+    bool firstOut = true;
+
+    while (!S.empty()) {
+        adrNode u = S.top();
+        S.pop();
+
+        if (u->visited == 1) continue;
+        u->visited = 1;
+
+        if (!firstOut) cout << " ";
+        cout << u->info;
+        firstOut = false;
+
+        adrEdge e = u->firstEdge;
+        while (e != NULL) {
+            if (e->Node->visited == 0) S.push(e->Node);
+            e = e->Next;
+        }
     }
-
-    address Last = lastNode(L);
-    P = L.first;
-    L.first = L.first->next;
-    Last->next = L.first;
-    P->next = NIL;
+    cout << endl;
 }
 
-void deleteLast(List &L, address &P) {
-    P = NIL;
-    if (L.first == NIL) return;
+void PrintBFS(Graph G, adrNode N) {
+    if (N == NULL) return;
 
-    if (L.first->next == L.first) {
-        P = L.first;
-        L.first = NIL;
-        P->next = NIL;
-        return;
+    ResetVisited(G);
+    queue<adrNode> Q;
+    Q.push(N);
+    N->visited = 1;
+
+    cout << "BFS: ";
+    bool firstOut = true;
+
+    while (!Q.empty()) {
+        adrNode u = Q.front();
+        Q.pop();
+
+        if (!firstOut) cout << " ";
+        cout << u->info;
+        firstOut = false;
+
+        adrEdge e = u->firstEdge;
+        while (e != NULL) {
+            if (e->Node->visited == 0) {
+                e->Node->visited = 1;
+                Q.push(e->Node);
+            }
+            e = e->Next;
+        }
     }
-
-    address Prec = L.first;
-    while (Prec->next->next != L.first) { 
-        Prec = Prec->next;
-    }
-
-    P = Prec->next;      
-    Prec->next = L.first; 
-    P->next = NIL;
-}
-
-void deleteAfter(List &L, address Prec, address &P) {
-    P = NIL;
-    if (L.first == NIL || Prec == NIL) return;
-
-    address target = Prec->next;
-    if (target == NIL) return;
-
-    if (target == L.first) {
-        deleteFirst(L, P);
-        return;
-    }
-
-    P = target;
-    Prec->next = target->next;
-    P->next = NIL;
-}
-
-address findElm(List L, infotype x) {
-    if (L.first == NIL) return NIL;
-
-    address P = L.first;
-    do {
-        if (P->info.nim == x.nim) return P;
-        P = P->next;
-    } while (P != L.first);
-
-    return NIL;
-}
-
-void printInfo(List L) {
-    if (L.first == NIL) {
-        cout << "List kosong" << endl;
-        return;
-    }
-
-    address P = L.first;
-    do {
-        cout << "Nama : " << P->info.nama << "\n";
-        cout << "NIM  : " << P->info.nim << "\n";
-        cout << "L/P  : " << P->info.jenis_kelamin << "\n";
-        cout << "IPK  : " << P->info.ipk << "\n\n";
-        P = P->next;
-    } while (P != L.first);
+    cout << endl;
 }
 ```
 
 main.cpp
 ```C++
-#include "circularlist.h"
-
-address createData(string nama, string nim, char jk, float ipk) {
-    infotype x;
-    x.nama = nama;
-    x.nim = nim;
-    x.jenis_kelamin = jk;
-    x.ipk = ipk;
-    return alokasi(x);
-}
+#include "graph.h"
 
 int main() {
-    List L;
-    address P1 = NIL, P2 = NIL;
-    infotype x;
+    Graph G;
+    CreateGraph(G);
 
-    CreateList(L);
+    InsertNode(G, 'A');
+    InsertNode(G, 'B');
+    InsertNode(G, 'C');
+    InsertNode(G, 'D');
+    InsertNode(G, 'E');
+    InsertNode(G, 'F');
+    InsertNode(G, 'G');
+    InsertNode(G, 'H');
 
-    cout << "coba insert first, last, dan after" << endl;
+    adrNode A = FindNode(G, 'A');
+    adrNode B = FindNode(G, 'B');
+    adrNode C = FindNode(G, 'C');
+    adrNode D = FindNode(G, 'D');
+    adrNode E = FindNode(G, 'E');
+    adrNode F = FindNode(G, 'F');
+    adrNode Gg = FindNode(G, 'G');
+    adrNode H = FindNode(G, 'H');
 
-    P1 = createData("Danu", "04", 'L', 4.0);
-    insertFirst(L, P1);
+    ConnectNode(A, B);
+    ConnectNode(A, C);
 
-    P1 = createData("Fahmi", "06", 'L', 3.45);
-    insertLast(L, P1);
+    ConnectNode(B, D);
+    ConnectNode(B, E);
 
-    P1 = createData("Bobi", "02", 'L', 3.71);
-    insertFirst(L, P1);
+    ConnectNode(C, F);
+    ConnectNode(C, Gg);
 
-    P1 = createData("Ali", "01", 'L', 3.3);
-    insertFirst(L, P1);
+    ConnectNode(D, H);
+    ConnectNode(E, H);
+    ConnectNode(F, H);
+    ConnectNode(Gg, H);
 
-    P1 = createData("Gita", "07", 'P', 3.75);
-    insertLast(L, P1);
+    cout << "Adjacency List:\n";
+    PrintInfoGraph(G);
+    cout << endl;
 
-    x.nim = "07";
-    P1 = findElm(L, x);
-    P2 = createData("Cindi", "03", 'P', 3.5);
-    if (P1 != NIL) insertAfter(L, P1, P2);
-
-    x.nim = "02";
-    P1 = findElm(L, x);
-    P2 = createData("Hilmi", "08", 'P', 3.3); 
-    if (P1 != NIL) insertAfter(L, P1, P2);
-
-    x.nim = "04";
-    P1 = findElm(L, x);
-    P2 = createData("Eli", "05", 'P', 3.4);
-    if (P1 != NIL) insertAfter(L, P1, P2);
-
-    printInfo(L);
+    PrintDFS(G, A);
+    PrintBFS(G, A);
 
     return 0;
 }
@@ -629,14 +624,14 @@ int main() {
 #### Output:
 <img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/f5aef720-7ca9-44e7-a3bb-5fcee2741ece" />
 
-Program ini mengimplementasikan ADT Circular Linked List untuk mengelola data mahasiswa yang terdiri dari nama, NIM, jenis kelamin, dan IPK. Struktur data yang digunakan adalah single circular linked list, di mana elemen terakhir menunjuk kembali ke elemen pertama. Program menyediakan operasi pembuatan list, alokasi dan dealokasi node, penambahan data di awal, akhir, dan setelah elemen tertentu, penghapusan data, pencarian elemen berdasarkan NIM, serta penampilan seluruh data mahasiswa. Dengan penerapan circular linked list, program mampu mengelola data secara dinamis dan mendukung traversal data secara berulang dengan efisien sesuai spesifikasi ADT yang ditentukan.
+Program ini dibuat untuk mengimplementasikan struktur data Graph tidak berarah menggunakan representasi Adjacency List berbasis multi linked list. Program menyediakan operasi pembuatan graph, penambahan node, serta penghubungan antar node menggunakan edge dua arah. Selain itu, program juga menampilkan struktur graph dalam bentuk adjacency list dan melakukan penelusuran graph menggunakan metode Depth First Search (DFS) dan Breadth First Search (BFS) yang masing-masing menggunakan stack dan queue.
 
 #### Full code Screenshot:
 <img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/4572e6a2-8c75-4643-9d06-73c9d2c849e5" />
 
 
 ## Kesimpulan
-Praktikum ini memberikan pemahaman tentang penerapan ADT Circular Linked List dalam mengelola data mahasiswa secara dinamis melalui operasi penambahan, penghapusan, pencarian, dan penelusuran data.
+Melalui praktikum ini, dapat dipahami konsep dasar struktur data graph beserta cara merepresentasikannya menggunakan adjacency list. Praktikum ini juga membantu memahami proses penelusuran graph menggunakan metode DFS dan BFS serta penerapan struktur data stack dan queue dalam traversal graph.
 
 ## Referensi
 [1] I. Holm, Narrator, and J. Fullerton-Smith, Producer, How to Build a Human [DVD]. London: BBC; 2002.

@@ -368,16 +368,11 @@ program diatas digunakan untuk mengimplementasikan struktur data Graph tidak ber
 ## Unguided 
 
 ### 1. 
-<img width="790" height="594" alt="Image" src="https://github.com/user-attachments/assets/ce03becb-29f6-4304-8a3e-4d87f8a0ad09" />
+<img width="906" height="803" alt="Image" src="https://github.com/user-attachments/assets/07dbafa6-1597-43a5-ad93-73c977304ec5" />
+2. Buatlah prosedur untuk menampilkanhasil penelusuran DFS.
+3. Buatlah prosedur untuk menampilkanhasil penelusuran DFS.
+prosedur PrintBFS (Graph G, adrNode N);
 
-Keterangan :
-• fungsi findElm mencari elemen di dalam list L berdasarkan nim<br>
-    o fungsi mengembalikan elemen dengan dengan info nim == x.nim jika ditemukan<br>
-    o fungsi mengembalikan NIL jika tidak ditemukan<br>
-
-<img width="701" height="708" alt="Image" src="https://github.com/user-attachments/assets/4aa3f176-a5fa-4890-b425-35f34860cc3b" />
-<img width="479" height="264" alt="Image" src="https://github.com/user-attachments/assets/18dc3c96-d610-4f22-9ea1-f8dddf3a1e22" />
-<img width="702" height="433" alt="Image" src="https://github.com/user-attachments/assets/1b030f24-479f-468f-8bb5-37626c8d11e5" />
 
 
 circularlist.h

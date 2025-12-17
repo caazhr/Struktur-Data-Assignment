@@ -622,7 +622,7 @@ int main() {
 }
 ```
 #### Output:
-<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/f5aef720-7ca9-44e7-a3bb-5fcee2741ece" />
+<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/6cf8f3af-001e-442d-9e74-05fd2e8e5856" />
 
 Program ini dibuat untuk mengimplementasikan struktur data Graph tidak berarah menggunakan representasi Adjacency List berbasis multi linked list. Program menyediakan operasi pembuatan graph, penambahan node, serta penghubungan antar node menggunakan edge dua arah. Selain itu, program juga menampilkan struktur graph dalam bentuk adjacency list dan melakukan penelusuran graph menggunakan metode Depth First Search (DFS) dan Breadth First Search (BFS) yang masing-masing menggunakan stack dan queue.
 
